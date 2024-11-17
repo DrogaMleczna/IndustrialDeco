@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "industrialdeco:block/street_lamp"
+    },
+    "facing=north": {
+      "model": "industrialdeco:block/street_lamp",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "industrialdeco:block/street_lamp",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "industrialdeco:block/street_lamp",
+      "y": 270
+    }
+  }
+}
