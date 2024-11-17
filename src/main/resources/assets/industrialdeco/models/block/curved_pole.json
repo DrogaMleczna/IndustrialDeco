@@ -1,0 +1,4 @@
+{
+  "parent": "industrialdeco:block/post_bent_model",
+  "render_type": "minecraft:cutout"
+}

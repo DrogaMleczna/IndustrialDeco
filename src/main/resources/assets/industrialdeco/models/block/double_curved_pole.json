@@ -1,0 +1,4 @@
+{
+  "parent": "industrialdeco:block/post_double_model",
+  "render_type": "minecraft:cutout"
+}

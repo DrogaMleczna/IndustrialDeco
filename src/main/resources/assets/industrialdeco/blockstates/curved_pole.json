@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "industrialdeco:block/curved_pole"
+    },
+    "facing=north": {
+      "model": "industrialdeco:block/curved_pole",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "industrialdeco:block/curved_pole",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "industrialdeco:block/curved_pole",
+      "y": 270
+    }
+  }
+}
