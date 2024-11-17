@@ -2,6 +2,14 @@
   "item.industrialdeco.street_lamp": "Street Lamp",
   "block.industrialdeco.street_lamp": "Street Lamp",
   "block.industrialdeco.curved_pole": "Curved Pole",
+  "block.industrialdeco.wire_pole": "Wire Pole",
   "block.industrialdeco.double_curved_pole": "Double Curved Pole",
+  "block.industrialdeco.quadruple_curved_pole": "Quadruple Curved Pole",
+  "block.industrialdeco.pole_base": "Pole Base",
+  "block.industrialdeco.large_base": "Large Base",
+  "block.industrialdeco.pole_block": "Pole",
+  "block.industrialdeco.split_pole": "Split Pole",
+  "block.industrialdeco.switchboard": "Switchboard",
+  "block.industrialdeco.wall_switchboard": "Wall Switchboard",
   "creativetab.industrial_deco_tab": "Industrial Deco"
 }

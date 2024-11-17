@@ -20,6 +20,14 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.STREET_LAMP.get());
         this.dropSelf(ModBlocks.CURVED_POLE.get());
         this.dropSelf(ModBlocks.DOUBLE_CURVED_POLE.get());
+        this.dropSelf(ModBlocks.QUADRUPLE_CURVED_POLE.get());
+        this.dropSelf(ModBlocks.WIRE_POLE.get());
+        this.dropSelf(ModBlocks.POLE_BASE.get());
+        this.dropSelf(ModBlocks.LARGE_BASE.get());
+        this.dropSelf(ModBlocks.POLE_BLOCK.get());
+        this.dropSelf(ModBlocks.SPLIT_POLE.get());
+        this.dropSelf(ModBlocks.SWITCHBOARD.get());
+        this.dropSelf(ModBlocks.WALL_SWITCHBOARD.get());
     }
 
     @Override

@@ -16,7 +16,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 import java.util.logging.Logger;
 
-public class DoubleCurvedPoleBlock extends HorizontalDirectionalBlock {
+public class WirePoleBlock extends HorizontalDirectionalBlock {
 
     //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
 
@@ -31,11 +31,11 @@ public class DoubleCurvedPoleBlock extends HorizontalDirectionalBlock {
     public static final VoxelShape BASE;
 
     static {
-        BASE = Block.box(5,0,5,11,12,11);
-        SHAPE_ARM_E = Block.box(5,11,0,11,15,16);
-        SHAPE_ARM_W = Block.box(5,11,0,11,15,16);
-        SHAPE_ARM_N = Block.box(0,11,5,16,15,11);
-        SHAPE_ARM_S = Block.box(0,11,5,16,15,11);
+        BASE = Block.box(6,0,6,10,16,10);
+        SHAPE_ARM_E = Block.box(6,6,0,10,10,16);
+        SHAPE_ARM_W = Block.box(6,6,0,10,10,16);
+        SHAPE_ARM_N = Block.box(0,6,6,16,10,10);
+        SHAPE_ARM_S = Block.box(0,6,6,16,10,10);
         SHAPE_N = Shapes.or(BASE, SHAPE_ARM_N);
         SHAPE_S = Shapes.or(BASE, SHAPE_ARM_S);
         SHAPE_E = Shapes.or(BASE, SHAPE_ARM_E);
@@ -44,7 +44,7 @@ public class DoubleCurvedPoleBlock extends HorizontalDirectionalBlock {
     };
 
 
-    public DoubleCurvedPoleBlock(Properties pProperties) {
+    public WirePoleBlock(Properties pProperties) {
 
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
@@ -79,6 +79,6 @@ public class DoubleCurvedPoleBlock extends HorizontalDirectionalBlock {
     @Override
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection());
+        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 }

@@ -1,9 +1,7 @@
 package com.drogamleczna.industrialdeco.block;
 
 import com.drogamleczna.industrialdeco.IndustrialDeco;
-import com.drogamleczna.industrialdeco.block.custom.CurvedPoleBlock;
-import com.drogamleczna.industrialdeco.block.custom.DoubleCurvedPoleBlock;
-import com.drogamleczna.industrialdeco.block.custom.StreetLampBlock;
+import com.drogamleczna.industrialdeco.block.custom.*;
 import com.drogamleczna.industrialdeco.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -32,6 +30,30 @@ public class ModBlocks {
                     .dynamicShape()));
     public static final RegistryObject<Block> DOUBLE_CURVED_POLE = registerBlock("double_curved_pole",
             () -> new DoubleCurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> QUADRUPLE_CURVED_POLE = registerBlock("quadruple_curved_pole",
+            () -> new QuadrupleCurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> WIRE_POLE = registerBlock("wire_pole",
+            () -> new WirePoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> POLE_BASE = registerBlock("pole_base",
+            () -> new PoleBaseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> LARGE_BASE = registerBlock("large_base",
+            () -> new LargeBaseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> POLE_BLOCK = registerBlock("pole_block",
+            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> SPLIT_POLE = registerBlock("split_pole",
+            () -> new CurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> SWITCHBOARD = registerBlock("switchboard",
+            () -> new SwitchboardBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> WALL_SWITCHBOARD = registerBlock("wall_switchboard",
+            () -> new WallSwitchboardBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){

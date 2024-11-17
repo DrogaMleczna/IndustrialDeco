@@ -16,35 +16,20 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 import java.util.logging.Logger;
 
-public class DoubleCurvedPoleBlock extends HorizontalDirectionalBlock {
+public class SwitchboardBlock extends HorizontalDirectionalBlock {
 
     //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
 
-    public static final VoxelShape SHAPE_N;
-    public static final VoxelShape SHAPE_S;
-    public static final VoxelShape SHAPE_E;
-    public static final VoxelShape SHAPE_W;
-    public static final VoxelShape SHAPE_ARM_N;
-    public static final VoxelShape SHAPE_ARM_S;
-    public static final VoxelShape SHAPE_ARM_E;
-    public static final VoxelShape SHAPE_ARM_W;
-    public static final VoxelShape BASE;
+    public static final VoxelShape SHAPE_NS;
+    public static final VoxelShape SHAPE_WE;
 
     static {
-        BASE = Block.box(5,0,5,11,12,11);
-        SHAPE_ARM_E = Block.box(5,11,0,11,15,16);
-        SHAPE_ARM_W = Block.box(5,11,0,11,15,16);
-        SHAPE_ARM_N = Block.box(0,11,5,16,15,11);
-        SHAPE_ARM_S = Block.box(0,11,5,16,15,11);
-        SHAPE_N = Shapes.or(BASE, SHAPE_ARM_N);
-        SHAPE_S = Shapes.or(BASE, SHAPE_ARM_S);
-        SHAPE_E = Shapes.or(BASE, SHAPE_ARM_E);
-        SHAPE_W = Shapes.or(BASE, SHAPE_ARM_W);
-
+        SHAPE_NS = Block.box(2,0,4.5,14,16,11.5);
+        SHAPE_WE = Block.box(4.5,0,2,11.5,16,14);
     };
 
 
-    public DoubleCurvedPoleBlock(Properties pProperties) {
+    public SwitchboardBlock(Properties pProperties) {
 
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
@@ -54,14 +39,10 @@ public class DoubleCurvedPoleBlock extends HorizontalDirectionalBlock {
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         Direction direction = pState.getValue(FACING);
-        if (direction == Direction.EAST){
-            return SHAPE_E;
-        }else if (direction == Direction.WEST){
-            return SHAPE_W;
-        }else if (direction == Direction.SOUTH){
-            return SHAPE_S;
+        if (direction == Direction.EAST || direction == Direction.WEST) {
+            return SHAPE_WE;
         }else{
-            return SHAPE_N;
+            return SHAPE_NS;
         }
     }
 
@@ -79,6 +60,6 @@ public class DoubleCurvedPoleBlock extends HorizontalDirectionalBlock {
     @Override
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection());
+        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 }

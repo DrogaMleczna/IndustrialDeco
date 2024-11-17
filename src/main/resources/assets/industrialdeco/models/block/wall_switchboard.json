@@ -1,0 +1,4 @@
+{
+  "parent": "industrialdeco:block/wall_switchboard_model",
+  "render_type": "minecraft:cutout"
+}

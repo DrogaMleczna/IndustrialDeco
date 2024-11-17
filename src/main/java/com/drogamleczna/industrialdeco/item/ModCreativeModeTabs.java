@@ -19,8 +19,17 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.industrial_deco_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.STREET_LAMP.get());
+                        pOutput.accept(ModBlocks.POLE_BLOCK.get());
                         pOutput.accept(ModBlocks.CURVED_POLE.get());
+                        pOutput.accept(ModBlocks.SPLIT_POLE.get());
                         pOutput.accept(ModBlocks.DOUBLE_CURVED_POLE.get());
+                        pOutput.accept(ModBlocks.QUADRUPLE_CURVED_POLE.get());
+                        pOutput.accept(ModBlocks.WIRE_POLE.get());
+                        pOutput.accept(ModBlocks.POLE_BASE.get());
+                        pOutput.accept(ModBlocks.LARGE_BASE.get());
+                        pOutput.accept(ModBlocks.SWITCHBOARD.get());
+                        pOutput.accept(ModBlocks.WALL_SWITCHBOARD.get());
+
                     })
                     .build());
 

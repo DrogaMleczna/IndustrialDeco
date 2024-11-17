@@ -16,7 +16,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 import java.util.logging.Logger;
 
-public class DoubleCurvedPoleBlock extends HorizontalDirectionalBlock {
+public class WallSwitchboardBlock extends HorizontalDirectionalBlock {
 
     //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
 
@@ -24,27 +24,17 @@ public class DoubleCurvedPoleBlock extends HorizontalDirectionalBlock {
     public static final VoxelShape SHAPE_S;
     public static final VoxelShape SHAPE_E;
     public static final VoxelShape SHAPE_W;
-    public static final VoxelShape SHAPE_ARM_N;
-    public static final VoxelShape SHAPE_ARM_S;
-    public static final VoxelShape SHAPE_ARM_E;
-    public static final VoxelShape SHAPE_ARM_W;
-    public static final VoxelShape BASE;
 
     static {
-        BASE = Block.box(5,0,5,11,12,11);
-        SHAPE_ARM_E = Block.box(5,11,0,11,15,16);
-        SHAPE_ARM_W = Block.box(5,11,0,11,15,16);
-        SHAPE_ARM_N = Block.box(0,11,5,16,15,11);
-        SHAPE_ARM_S = Block.box(0,11,5,16,15,11);
-        SHAPE_N = Shapes.or(BASE, SHAPE_ARM_N);
-        SHAPE_S = Shapes.or(BASE, SHAPE_ARM_S);
-        SHAPE_E = Shapes.or(BASE, SHAPE_ARM_E);
-        SHAPE_W = Shapes.or(BASE, SHAPE_ARM_W);
+        SHAPE_S = Block.box(2,3,0,14,15,6);
+        SHAPE_N = Block.box(2,3,10,14,15,16);
+        SHAPE_E = Block.box(0,3,2,6,15,14);
+        SHAPE_W = Block.box(10,3,2,16,15,14);
 
     };
 
 
-    public DoubleCurvedPoleBlock(Properties pProperties) {
+    public WallSwitchboardBlock(Properties pProperties) {
 
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
@@ -79,6 +69,6 @@ public class DoubleCurvedPoleBlock extends HorizontalDirectionalBlock {
     @Override
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection());
+        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 }

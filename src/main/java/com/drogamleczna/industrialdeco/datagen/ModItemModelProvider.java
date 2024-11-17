@@ -22,6 +22,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.STREET_LAMP);
         blockItem(ModBlocks.CURVED_POLE);
         blockItem(ModBlocks.DOUBLE_CURVED_POLE);
+        blockItem(ModBlocks.QUADRUPLE_CURVED_POLE);
+        blockItem(ModBlocks.WIRE_POLE);
+        blockItem(ModBlocks.POLE_BASE);
+        blockItem(ModBlocks.LARGE_BASE);
+        blockItem(ModBlocks.POLE_BLOCK);
+        blockItem(ModBlocks.SPLIT_POLE);
+        blockItem(ModBlocks.SWITCHBOARD);
+        blockItem(ModBlocks.WALL_SWITCHBOARD);
 
     }
 

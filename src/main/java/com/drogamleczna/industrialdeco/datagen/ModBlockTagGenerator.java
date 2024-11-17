@@ -22,11 +22,27 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.CURVED_POLE.get())
                 .add(ModBlocks.DOUBLE_CURVED_POLE.get())
+                .add(ModBlocks.WIRE_POLE.get())
+                .add(ModBlocks.QUADRUPLE_CURVED_POLE.get())
+                .add(ModBlocks.POLE_BASE.get())
+                .add(ModBlocks.LARGE_BASE.get())
+                .add(ModBlocks.POLE_BLOCK.get())
+                .add(ModBlocks.SPLIT_POLE.get())
+                .add(ModBlocks.SWITCHBOARD.get())
+                .add(ModBlocks.WALL_SWITCHBOARD.get())
                 .add(ModBlocks.STREET_LAMP.get());
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.STREET_LAMP.get())
                 .add(ModBlocks.CURVED_POLE.get())
-                .add(ModBlocks.DOUBLE_CURVED_POLE.get());
+                .add(ModBlocks.DOUBLE_CURVED_POLE.get())
+                .add(ModBlocks.WIRE_POLE.get())
+                .add(ModBlocks.POLE_BASE.get())
+                .add(ModBlocks.LARGE_BASE.get())
+                .add(ModBlocks.POLE_BLOCK.get())
+                .add(ModBlocks.SPLIT_POLE.get())
+                .add(ModBlocks.SWITCHBOARD.get())
+                .add(ModBlocks.WALL_SWITCHBOARD.get())
+                .add(ModBlocks.QUADRUPLE_CURVED_POLE.get());
 
     }
 }

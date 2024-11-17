@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "industrialdeco:block/split_pole"
+    },
+    "facing=north": {
+      "model": "industrialdeco:block/split_pole",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "industrialdeco:block/split_pole",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "industrialdeco:block/split_pole",
+      "y": 270
+    }
+  }
+}
