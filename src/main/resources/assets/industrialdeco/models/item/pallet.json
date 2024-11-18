@@ -1,0 +1,19 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "industrialdeco:block/pallet"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "industrialdeco:item/pallet_2d"
+    },
+    "ground":
+    {
+      "parent": "industrialdeco:block/pallet"
+    },
+    "fixed": {
+      "parent": "industrialdeco:item/pallet_2d"
+    }
+  }
+}

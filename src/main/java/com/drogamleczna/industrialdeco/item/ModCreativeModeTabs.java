@@ -30,6 +30,9 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.LARGE_BASE.get());
                         pOutput.accept(ModBlocks.SWITCHBOARD.get());
                         pOutput.accept(ModBlocks.WALL_SWITCHBOARD.get());
+                        pOutput.accept(ModBlocks.WARNING_POLE.get());
+                        pOutput.accept(ModBlocks.HAZARD_POLE.get());
+                        pOutput.accept(ModBlocks.PALLET.get());
 
                     })
                     .build());

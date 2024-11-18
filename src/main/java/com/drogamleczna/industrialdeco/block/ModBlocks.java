@@ -46,6 +46,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> POLE_BLOCK = registerBlock("pole_block",
             () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
+    public static final RegistryObject<Block> HAZARD_POLE = registerBlock("hazard_pole",
+            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> WARNING_POLE = registerBlock("warning_pole",
+            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
     public static final RegistryObject<Block> SPLIT_POLE = registerBlock("split_pole",
             () -> new CurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
@@ -57,6 +63,9 @@ public class ModBlocks {
                     .dynamicShape()));
     public static final RegistryObject<Block> MEDIUM_BASE = registerBlock("medium_pole_base",
             () -> new MediumPoleBaseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> PALLET = registerBlock("pallet",
+            () -> new PalletBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
                     .dynamicShape()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){

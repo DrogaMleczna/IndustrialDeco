@@ -8,9 +8,12 @@
   "block.industrialdeco.pole_base": "Pole Base",
   "block.industrialdeco.large_base": "Large Base",
   "block.industrialdeco.pole_block": "Pole",
+  "block.industrialdeco.hazard_pole": "Hazard Pole",
+  "block.industrialdeco.warning_pole": "Warning Pole",
   "block.industrialdeco.split_pole": "Split Pole",
   "block.industrialdeco.switchboard": "Switchboard",
   "block.industrialdeco.wall_switchboard": "Wall Switchboard",
   "block.industrialdeco.medium_pole_base": "Medium Pole Base",
+  "block.industrialdeco.pallet": "Pallet",
   "creativetab.industrial_deco_tab": "Industrial Deco"
 }

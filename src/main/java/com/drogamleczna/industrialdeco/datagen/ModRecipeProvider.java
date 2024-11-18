@@ -2,11 +2,10 @@ package com.drogamleczna.industrialdeco.datagen;
 
 import com.drogamleczna.industrialdeco.block.ModBlocks;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
@@ -107,5 +106,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Items.IRON_NUGGET)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.PALLET.get())
+                .pattern("N N")
+                .pattern("SSS")
+                .define('N', Items.IRON_NUGGET)
+                .define('S', Blocks.OAK_SLAB)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.HAZARD_POLE.get())
+                .requires(ModBlocks.POLE_BLOCK.get())
+                .requires(Tags.Items.DYES_YELLOW)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Tags.Items.DYES_YELLOW))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.WARNING_POLE.get())
+                .requires(ModBlocks.POLE_BLOCK.get())
+                .requires(Tags.Items.DYES_RED)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Tags.Items.DYES_RED))
+                .save(pWriter);
+
     }
 }

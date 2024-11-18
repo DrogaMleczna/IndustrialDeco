@@ -28,6 +28,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.LARGE_BASE.get())
                 .add(ModBlocks.MEDIUM_BASE.get())
                 .add(ModBlocks.POLE_BLOCK.get())
+                .add(ModBlocks.HAZARD_POLE.get())
+                .add(ModBlocks.WARNING_POLE.get())
                 .add(ModBlocks.SPLIT_POLE.get())
                 .add(ModBlocks.SWITCHBOARD.get())
                 .add(ModBlocks.WALL_SWITCHBOARD.get())
@@ -41,10 +43,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.LARGE_BASE.get())
                 .add(ModBlocks.MEDIUM_BASE.get())
                 .add(ModBlocks.POLE_BLOCK.get())
+                .add(ModBlocks.HAZARD_POLE.get())
+                .add(ModBlocks.WARNING_POLE.get())
                 .add(ModBlocks.SPLIT_POLE.get())
                 .add(ModBlocks.SWITCHBOARD.get())
                 .add(ModBlocks.WALL_SWITCHBOARD.get())
                 .add(ModBlocks.QUADRUPLE_CURVED_POLE.get());
+        this.tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(ModBlocks.PALLET.get());
 
     }
 }

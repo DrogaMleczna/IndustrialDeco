@@ -1,0 +1,4 @@
+{
+  "parent": "industrialdeco:block/pallet_model",
+  "render_type": "minecraft:cutout"
+}
