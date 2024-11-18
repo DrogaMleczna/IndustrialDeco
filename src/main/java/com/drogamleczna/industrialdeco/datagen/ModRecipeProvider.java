@@ -19,21 +19,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STREET_LAMP.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STREET_LAMP.get(), 4)
                 .pattern("SSS")
                 .pattern("SNS")
                 .define('S', Items.IRON_INGOT)
                 .define('N', Items.GLOWSTONE)
                 .unlockedBy(getHasName(Items.GLOWSTONE), has(Items.IRON_INGOT))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CURVED_POLE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CURVED_POLE.get(),2)
                 .pattern("  S")
                 .pattern(" S ")
                 .pattern(" S ")
                 .define('S', Items.IRON_INGOT)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.DOUBLE_CURVED_POLE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.DOUBLE_CURVED_POLE.get(),2)
                 .pattern("S S")
                 .pattern(" S ")
                 .pattern(" S ")
@@ -47,17 +47,25 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Items.IRON_INGOT)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.WIRE_POLE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.WIRE_POLE.get(),4)
                 .pattern(" S ")
                 .pattern("SSS")
                 .pattern(" S ")
                 .define('S', Items.IRON_INGOT)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.LARGE_BASE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MEDIUM_BASE.get())
                 .pattern(" Z ")
                 .pattern(" N ")
-                .define('Z', Items.IRON_INGOT)
+                .pattern(" N ")
+                .define('Z', Items.IRON_NUGGET)
+                .define('N', Items.IRON_INGOT)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.LARGE_BASE.get(),2)
+                .pattern(" Z ")
+                .pattern(" N ")
+                .define('Z', Items.IRON_NUGGET)
                 .define('N', Items.IRON_BLOCK)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
@@ -68,7 +76,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('N', Items.IRON_INGOT)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.POLE_BLOCK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.POLE_BLOCK.get(), 3)
                 .pattern(" Z ")
                 .pattern(" N ")
                 .pattern(" N ")
@@ -76,7 +84,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('N', Items.IRON_INGOT)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SPLIT_POLE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SPLIT_POLE.get(),2)
                 .pattern(" SS")
                 .pattern(" S ")
                 .pattern(" S ")

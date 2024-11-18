@@ -1,0 +1,4 @@
+{
+  "parent": "industrialdeco:block/medium_pole_base_model",
+  "render_type": "minecraft:cutout"
+}

@@ -26,6 +26,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.QUADRUPLE_CURVED_POLE.get());
                         pOutput.accept(ModBlocks.WIRE_POLE.get());
                         pOutput.accept(ModBlocks.POLE_BASE.get());
+                        pOutput.accept(ModBlocks.MEDIUM_BASE.get());
                         pOutput.accept(ModBlocks.LARGE_BASE.get());
                         pOutput.accept(ModBlocks.SWITCHBOARD.get());
                         pOutput.accept(ModBlocks.WALL_SWITCHBOARD.get());

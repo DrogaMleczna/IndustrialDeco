@@ -26,6 +26,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.WIRE_POLE);
         blockItem(ModBlocks.POLE_BASE);
         blockItem(ModBlocks.LARGE_BASE);
+        blockItem(ModBlocks.MEDIUM_BASE);
         blockItem(ModBlocks.POLE_BLOCK);
         blockItem(ModBlocks.SPLIT_POLE);
         blockItem(ModBlocks.SWITCHBOARD);

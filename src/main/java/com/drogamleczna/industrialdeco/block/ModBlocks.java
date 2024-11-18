@@ -55,6 +55,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> WALL_SWITCHBOARD = registerBlock("wall_switchboard",
             () -> new WallSwitchboardBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
+    public static final RegistryObject<Block> MEDIUM_BASE = registerBlock("medium_pole_base",
+            () -> new MediumPoleBaseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
