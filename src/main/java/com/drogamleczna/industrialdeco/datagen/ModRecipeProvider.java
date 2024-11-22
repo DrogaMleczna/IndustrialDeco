@@ -123,6 +123,34 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Tags.Items.DYES_RED)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Tags.Items.DYES_RED))
                 .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.CAMERA_POLE_CORNER.get())
+                .requires(ModBlocks.POLE_BLOCK.get())
+                .requires(Items.IRON_NUGGET, 2)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Tags.Items.DYES_RED))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.CAMERA_POLE_TRIPLE.get())
+                .requires(ModBlocks.POLE_BLOCK.get())
+                .requires(Items.IRON_NUGGET, 3)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Tags.Items.DYES_RED))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.CAMERA_POLE_QUADRUPLE.get())
+                .requires(ModBlocks.POLE_BLOCK.get())
+                .requires(Items.IRON_NUGGET, 4)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Tags.Items.DYES_RED))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.CAMERA_POLE.get())
+                .requires(ModBlocks.POLE_BLOCK.get())
+                .requires(Items.IRON_NUGGET)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Tags.Items.DYES_RED))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SECURITY_CAMERA.get())
+                .pattern("NNN")
+                .pattern("N S")
+                .define('N', Items.IRON_NUGGET)
+                .define('S', Blocks.GLASS_PANE)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
 
     }
 }

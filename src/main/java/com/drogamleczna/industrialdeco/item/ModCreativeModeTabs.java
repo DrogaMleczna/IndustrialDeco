@@ -32,6 +32,11 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.WALL_SWITCHBOARD.get());
                         pOutput.accept(ModBlocks.WARNING_POLE.get());
                         pOutput.accept(ModBlocks.HAZARD_POLE.get());
+                        pOutput.accept(ModBlocks.CAMERA_POLE.get());
+                        pOutput.accept(ModBlocks.CAMERA_POLE_CORNER.get());
+                        pOutput.accept(ModBlocks.CAMERA_POLE_TRIPLE.get());
+                        pOutput.accept(ModBlocks.CAMERA_POLE_QUADRUPLE.get());
+                        pOutput.accept(ModBlocks.SECURITY_CAMERA.get());
                         pOutput.accept(ModBlocks.PALLET.get());
 
                     })

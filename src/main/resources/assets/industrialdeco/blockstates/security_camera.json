@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "industrialdeco:block/security_camera"
+    },
+    "facing=north": {
+      "model": "industrialdeco:block/security_camera",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "industrialdeco:block/security_camera",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "industrialdeco:block/security_camera",
+      "y": 270
+    }
+  }
+}

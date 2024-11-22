@@ -10,10 +10,15 @@
   "block.industrialdeco.pole_block": "Pole",
   "block.industrialdeco.hazard_pole": "Hazard Pole",
   "block.industrialdeco.warning_pole": "Warning Pole",
+  "block.industrialdeco.camera_pole": "Camera Pole",
+  "block.industrialdeco.camera_pole_corner": "Corner Camera Pole",
+  "block.industrialdeco.camera_pole_triple": "Triple Camera Pole",
+  "block.industrialdeco.camera_pole_quadruple": "Quadruple Camera Pole",
   "block.industrialdeco.split_pole": "Split Pole",
   "block.industrialdeco.switchboard": "Switchboard",
   "block.industrialdeco.wall_switchboard": "Wall Switchboard",
   "block.industrialdeco.medium_pole_base": "Medium Pole Base",
   "block.industrialdeco.pallet": "Pallet",
+  "block.industrialdeco.security_camera": "Security Camera",
   "creativetab.industrial_deco_tab": "Industrial Deco"
 }

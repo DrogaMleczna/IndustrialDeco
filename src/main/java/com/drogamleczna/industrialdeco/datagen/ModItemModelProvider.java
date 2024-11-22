@@ -30,6 +30,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.POLE_BLOCK);
         blockItem(ModBlocks.HAZARD_POLE);
         blockItem(ModBlocks.WARNING_POLE);
+        blockItem(ModBlocks.CAMERA_POLE);
+        blockItem(ModBlocks.CAMERA_POLE_CORNER);
+        blockItem(ModBlocks.CAMERA_POLE_TRIPLE);
+        blockItem(ModBlocks.CAMERA_POLE_QUADRUPLE);
+        blockItem(ModBlocks.SECURITY_CAMERA);
         blockItem(ModBlocks.SPLIT_POLE);
         blockItem(ModBlocks.SWITCHBOARD);
         blockItem(ModBlocks.WALL_SWITCHBOARD);

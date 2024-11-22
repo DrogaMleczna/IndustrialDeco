@@ -52,6 +52,18 @@ public class ModBlocks {
     public static final RegistryObject<Block> WARNING_POLE = registerBlock("warning_pole",
             () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
+    public static final RegistryObject<Block> CAMERA_POLE = registerBlock("camera_pole",
+            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> CAMERA_POLE_CORNER = registerBlock("camera_pole_corner",
+            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> CAMERA_POLE_TRIPLE = registerBlock("camera_pole_triple",
+            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> CAMERA_POLE_QUADRUPLE = registerBlock("camera_pole_quadruple",
+            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
     public static final RegistryObject<Block> SPLIT_POLE = registerBlock("split_pole",
             () -> new CurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
@@ -66,6 +78,9 @@ public class ModBlocks {
                     .dynamicShape()));
     public static final RegistryObject<Block> PALLET = registerBlock("pallet",
             () -> new PalletBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> SECURITY_CAMERA = registerBlock("security_camera",
+            () -> new SecurityCameraBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
                     .dynamicShape()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){

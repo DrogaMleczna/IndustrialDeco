@@ -1,0 +1,4 @@
+{
+  "parent": "industrialdeco:block/security_camera_model",
+  "render_type": "minecraft:cutout"
+}
