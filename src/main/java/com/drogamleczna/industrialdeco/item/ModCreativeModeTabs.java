@@ -38,6 +38,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.CAMERA_POLE_QUADRUPLE.get());
                         pOutput.accept(ModBlocks.SECURITY_CAMERA.get());
                         pOutput.accept(ModBlocks.PALLET.get());
+                        pOutput.accept(ModBlocks.CHIMNEY_BLOCK.get());
+                        pOutput.accept(ModBlocks.WALL_CHIMNEY.get());
 
                     })
                     .build());

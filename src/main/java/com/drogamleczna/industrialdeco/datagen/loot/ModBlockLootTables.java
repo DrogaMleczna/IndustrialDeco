@@ -37,6 +37,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.WALL_SWITCHBOARD.get());
         this.dropSelf(ModBlocks.PALLET.get());
         this.dropSelf(ModBlocks.SECURITY_CAMERA.get());
+        this.dropSelf(ModBlocks.CHIMNEY_BLOCK.get());
+        this.dropSelf(ModBlocks.WALL_CHIMNEY.get());
     }
 
     @Override

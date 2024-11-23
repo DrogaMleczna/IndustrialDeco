@@ -82,6 +82,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> SECURITY_CAMERA = registerBlock("security_camera",
             () -> new SecurityCameraBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
                     .dynamicShape()));
+    public static final RegistryObject<Block> CHIMNEY_BLOCK = registerBlock("chimney_block",
+            () -> new ChimneyBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> WALL_CHIMNEY = registerBlock("chimney_wall",
+            () -> new WallChimneyBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
+                    .dynamicShape()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
