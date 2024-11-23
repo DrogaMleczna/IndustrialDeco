@@ -14,7 +14,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class WallChimneyBlock extends HorizontalDirectionalBlock {
+public class BentChimneyBlock extends HorizontalDirectionalBlock {
 
     public static final VoxelShape SHAPE_N;
     public static final VoxelShape SHAPE_S;
@@ -22,13 +22,13 @@ public class WallChimneyBlock extends HorizontalDirectionalBlock {
     public static final VoxelShape SHAPE_W;
 
     static {
-        SHAPE_N = Block.box(0,0,5,6,16,11);
-        SHAPE_S = Block.box(10,0,5,16,16,11);
-        SHAPE_W = Block.box(5,0,10,11,16,16);
-        SHAPE_E = Block.box(5,0,0,11,16,6);
+        SHAPE_W = Block.box(5,0,5,11,16,16);
+        SHAPE_E = Block.box(5,0,0,11,16,11);
+        SHAPE_S = Block.box(5,0,5,16,16,11);
+        SHAPE_N = Block.box(0,0,5,11,16,11);
     }
 
-    public WallChimneyBlock(Properties pProperties) {
+    public BentChimneyBlock(Properties pProperties) {
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
     }

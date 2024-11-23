@@ -39,6 +39,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.SWITCHBOARD);
         blockItem(ModBlocks.WALL_SWITCHBOARD);
         blockItem(ModBlocks.CHIMNEY_BLOCK);
+        blockItem(ModBlocks.BENT_CHIMNEY);
         blockItem(ModBlocks.WALL_CHIMNEY);
 
     }

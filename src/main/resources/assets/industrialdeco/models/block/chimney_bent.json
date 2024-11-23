@@ -1,0 +1,4 @@
+{
+  "parent": "industrialdeco:block/chimney_bent_model",
+  "render_type": "minecraft:cutout"
+}

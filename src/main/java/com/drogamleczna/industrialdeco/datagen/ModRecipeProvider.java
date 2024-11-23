@@ -152,17 +152,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CHIMNEY_BLOCK.get())
-                .pattern("N N")
-                .pattern("NSN")
                 .pattern("NNN")
+                .pattern("NSN")
+                .pattern("N N")
                 .define('N', Items.IRON_NUGGET)
                 .define('S', Blocks.CAMPFIRE)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.WALL_CHIMNEY.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BENT_CHIMNEY.get())
                 .pattern("N N")
                 .pattern(" NN")
                 .pattern("  N")
+                .define('N', Items.IRON_NUGGET)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.WALL_CHIMNEY.get())
+                .pattern("N N")
+                .pattern("N N")
+                .pattern("N N")
                 .define('N', Items.IRON_NUGGET)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
