@@ -22,6 +22,8 @@
   "block.industrialdeco.security_camera": "Security Camera",
   "block.industrialdeco.chimney_block": "Chimney",
   "block.industrialdeco.chimney_wall": "Wall Chimney",
+  "block.industrialdeco.curved_wall_pole": "Curved Wall Pole",
+  "block.industrialdeco.corner_pole": "Corner Pole",
   "block.industrialdeco.chimney_bent": "Bent Chimney",
   "creativetab.industrial_deco_tab": "Industrial Deco"
 }

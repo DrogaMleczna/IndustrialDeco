@@ -23,6 +23,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.CURVED_POLE);
         blockItem(ModBlocks.DOUBLE_CURVED_POLE);
         blockItem(ModBlocks.QUADRUPLE_CURVED_POLE);
+        blockItem(ModBlocks.WALL_CURVED_POLE);
+        blockItem(ModBlocks.CORNER_POLE);
         blockItem(ModBlocks.WIRE_POLE);
         blockItem(ModBlocks.POLE_BASE);
         blockItem(ModBlocks.LARGE_BASE);

@@ -4,14 +4,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -20,34 +16,52 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 import java.util.logging.Logger;
 
-public class SwitchboardBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock{
+public class CornerPoleBlock extends HorizontalDirectionalBlock {
 
     //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
 
-    public static final VoxelShape SHAPE_NS;
-    public static final VoxelShape SHAPE_WE;
+    public static final VoxelShape SHAPE_N;
+    public static final VoxelShape SHAPE_S;
+    public static final VoxelShape SHAPE_E;
+    public static final VoxelShape SHAPE_W;
+    public static final VoxelShape SHAPE_ARM_N;
+    public static final VoxelShape SHAPE_ARM_S;
+    public static final VoxelShape SHAPE_ARM_E;
+    public static final VoxelShape SHAPE_ARM_W;
+    public static final VoxelShape BASE;
 
     static {
-        SHAPE_NS = Block.box(2,0,4.5,14,16,11.5);
-        SHAPE_WE = Block.box(4.5,0,2,11.5,16,14);
+        BASE = Block.box(5,0,5,11,15,11);
+        SHAPE_ARM_E = Block.box(5,11,8,11,15,16);
+        SHAPE_ARM_W = Block.box(5,11,0,11,15,8);
+        SHAPE_ARM_N = Block.box(0,11,5,8,15,11);
+        SHAPE_ARM_S = Block.box(8,11,5,16,15,11);
+        SHAPE_N = Shapes.or(BASE, Shapes.or(SHAPE_ARM_N, SHAPE_ARM_E));
+        SHAPE_S = Shapes.or(BASE, Shapes.or(SHAPE_ARM_S, SHAPE_ARM_W));
+        SHAPE_W = Shapes.or(BASE, Shapes.or(SHAPE_ARM_E, SHAPE_ARM_S));
+        SHAPE_E = Shapes.or(BASE, Shapes.or(SHAPE_ARM_W,SHAPE_ARM_N));
+
     };
 
 
-    public SwitchboardBlock(Properties pProperties) {
+    public CornerPoleBlock(Properties pProperties) {
 
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
-        registerDefaultState(defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, false));
     }
 
     @Nullable
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         Direction direction = pState.getValue(FACING);
-        if (direction == Direction.EAST || direction == Direction.WEST) {
-            return SHAPE_WE;
+        if (direction == Direction.EAST){
+            return SHAPE_E;
+        }else if (direction == Direction.WEST){
+            return SHAPE_W;
+        }else if (direction == Direction.SOUTH){
+            return SHAPE_S;
         }else{
-            return SHAPE_NS;
+            return SHAPE_N;
         }
     }
 
@@ -60,14 +74,11 @@ public class SwitchboardBlock extends HorizontalDirectionalBlock implements Simp
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder){
         super.createBlockStateDefinition(builder);
         builder.add(FACING);
-        builder.add(BlockStateProperties.WATERLOGGED);
     }
 
     @Override
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
+        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection());
     }
-
-
 }

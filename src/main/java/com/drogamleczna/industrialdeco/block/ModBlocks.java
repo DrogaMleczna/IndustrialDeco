@@ -32,6 +32,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> QUADRUPLE_CURVED_POLE = registerBlock("quadruple_curved_pole",
             () -> new QuadrupleCurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
+    public static final RegistryObject<Block> CORNER_POLE = registerBlock("corner_pole",
+            () -> new CornerPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> WALL_CURVED_POLE = registerBlock("curved_wall_pole",
+            () -> new WallCurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
+                    .dynamicShape()));
     public static final RegistryObject<Block> WIRE_POLE = registerBlock("wire_pole",
             () -> new WirePoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));

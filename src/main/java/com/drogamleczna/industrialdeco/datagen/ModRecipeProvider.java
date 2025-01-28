@@ -56,9 +56,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MEDIUM_BASE.get())
                 .pattern(" Z ")
                 .pattern(" N ")
-                .pattern(" N ")
+                .pattern(" S ")
                 .define('Z', Items.IRON_NUGGET)
                 .define('N', Items.IRON_INGOT)
+                .define('S', Items.IRON_BLOCK)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.LARGE_BASE.get(),2)
@@ -86,6 +87,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SPLIT_POLE.get(),2)
                 .pattern(" SS")
                 .pattern(" S ")
+                .pattern(" S ")
+                .define('S', Items.IRON_INGOT)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CORNER_POLE.get(),2)
+                .pattern(" SS")
+                .pattern(" SS")
                 .pattern(" S ")
                 .define('S', Items.IRON_INGOT)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
@@ -142,6 +150,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.POLE_BLOCK.get())
                 .requires(Items.IRON_NUGGET)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Tags.Items.DYES_RED))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.WALL_CURVED_POLE.get())
+                .requires(ModBlocks.CURVED_POLE.get())
+                .unlockedBy(getHasName(ModBlocks.WALL_CURVED_POLE.get()), has(ModBlocks.WALL_CURVED_POLE.get()))
                 .save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SECURITY_CAMERA.get())

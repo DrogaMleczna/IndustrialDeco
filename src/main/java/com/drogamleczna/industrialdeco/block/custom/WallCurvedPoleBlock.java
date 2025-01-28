@@ -4,50 +4,48 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
-import java.util.logging.Logger;
 
-public class SwitchboardBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock{
+public class WallCurvedPoleBlock extends HorizontalDirectionalBlock {
 
-    //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
-
-    public static final VoxelShape SHAPE_NS;
-    public static final VoxelShape SHAPE_WE;
+    public static final VoxelShape SHAPE_N;
+    public static final VoxelShape SHAPE_S;
+    public static final VoxelShape SHAPE_E;
+    public static final VoxelShape SHAPE_W;
 
     static {
-        SHAPE_NS = Block.box(2,0,4.5,14,16,11.5);
-        SHAPE_WE = Block.box(4.5,0,2,11.5,16,14);
-    };
+        SHAPE_N = Shapes.or(Block.box(0,-6,6,4,15,10),Block.box(0,11,6,16,15,10));
+        SHAPE_S = Shapes.or(Block.box(12,-6,6,16,15,10),Block.box(0,11,6,16,15,10));
+        SHAPE_W = Shapes.or(Block.box(6,-6,12,10,15,16),Block.box(6,11,0,10,15,16));
+        SHAPE_E = Shapes.or(Block.box(6,-6,0,10,15,4),Block.box(6,11,0,10,15,16));
+    }
 
-
-    public SwitchboardBlock(Properties pProperties) {
-
+    public WallCurvedPoleBlock(Properties pProperties) {
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
-        registerDefaultState(defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, false));
     }
 
     @Nullable
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         Direction direction = pState.getValue(FACING);
-        if (direction == Direction.EAST || direction == Direction.WEST) {
-            return SHAPE_WE;
+        if (direction == Direction.EAST){
+            return SHAPE_E;
+        }else if (direction == Direction.WEST){
+            return SHAPE_W;
+        }else if (direction == Direction.SOUTH){
+            return SHAPE_S;
         }else{
-            return SHAPE_NS;
+            return SHAPE_N;
         }
     }
 
@@ -60,14 +58,11 @@ public class SwitchboardBlock extends HorizontalDirectionalBlock implements Simp
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder){
         super.createBlockStateDefinition(builder);
         builder.add(FACING);
-        builder.add(BlockStateProperties.WATERLOGGED);
     }
 
     @Override
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
+        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getClockWise());
     }
-
-
 }
