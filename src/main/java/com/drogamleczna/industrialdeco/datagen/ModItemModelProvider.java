@@ -23,7 +23,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.CURVED_POLE);
         blockItem(ModBlocks.DOUBLE_CURVED_POLE);
         blockItem(ModBlocks.QUADRUPLE_CURVED_POLE);
-        blockItem(ModBlocks.WALL_CURVED_POLE);
+        blockItemWithExisting(ModBlocks.WALL_CURVED_POLE, "post_bent_wall_item_model");
         blockItem(ModBlocks.CORNER_POLE);
         blockItem(ModBlocks.WIRE_POLE);
         blockItem(ModBlocks.POLE_BASE);
@@ -43,6 +43,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.CHIMNEY_BLOCK);
         blockItem(ModBlocks.BENT_CHIMNEY);
         blockItem(ModBlocks.WALL_CHIMNEY);
+        blockItem(ModBlocks.WIRE_BOX);
 
     }
 
@@ -55,5 +56,10 @@ public class ModItemModelProvider extends ItemModelProvider {
     public void blockItem(RegistryObject<Block> block) {
         this.withExistingParent(IndustrialDeco.MODID + ":" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
                 modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath()));
+    }
+
+    public void blockItemWithExisting(RegistryObject<Block> block, String modelname){
+        this.withExistingParent(IndustrialDeco.MODID + ":" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
+                modLoc("item/" + modelname));
     }
 }

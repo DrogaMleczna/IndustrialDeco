@@ -43,7 +43,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.STREET_LAMP.get())
                 .add(ModBlocks.BENT_CHIMNEY.get())
                 .add(ModBlocks.WALL_CHIMNEY.get())
-                .add(ModBlocks.CHIMNEY_BLOCK.get());
+                .add(ModBlocks.CHIMNEY_BLOCK.get())
+                .add(ModBlocks.WIRE_BOX.get());
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.STREET_LAMP.get())
                 .add(ModBlocks.CURVED_POLE.get())
@@ -68,7 +69,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.QUADRUPLE_CURVED_POLE.get())
                 .add(ModBlocks.CHIMNEY_BLOCK.get())
                 .add(ModBlocks.WALL_CHIMNEY.get())
-                .add(ModBlocks.BENT_CHIMNEY.get());
+                .add(ModBlocks.BENT_CHIMNEY.get())
+                .add(ModBlocks.WIRE_BOX.get());
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.PALLET.get());
 

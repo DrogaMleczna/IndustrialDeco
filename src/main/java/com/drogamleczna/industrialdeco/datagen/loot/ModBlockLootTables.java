@@ -42,6 +42,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.CHIMNEY_BLOCK.get());
         this.dropSelf(ModBlocks.BENT_CHIMNEY.get());
         this.dropSelf(ModBlocks.WALL_CHIMNEY.get());
+        this.dropSelf(ModBlocks.WIRE_BOX.get());
     }
 
     @Override

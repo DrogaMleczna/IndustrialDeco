@@ -95,6 +95,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> WALL_CHIMNEY = registerBlock("chimney_wall",
             () -> new WallChimneyBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
                     .dynamicShape()));
+    public static final RegistryObject<Block> WIRE_BOX = registerBlock("wire_box",
+            () -> new WireBoxBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
+                    .dynamicShape()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -155,6 +155,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.CURVED_POLE.get())
                 .unlockedBy(getHasName(ModBlocks.WALL_CURVED_POLE.get()), has(ModBlocks.WALL_CURVED_POLE.get()))
                 .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.WIRE_BOX.get())
+                .requires(Items.IRON_NUGGET)
+                .requires(Items.COPPER_INGOT)
+                .unlockedBy(getHasName(Items.IRON_NUGGET), has(Items.IRON_NUGGET))
+                .save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SECURITY_CAMERA.get())
                 .pattern("NNN")
