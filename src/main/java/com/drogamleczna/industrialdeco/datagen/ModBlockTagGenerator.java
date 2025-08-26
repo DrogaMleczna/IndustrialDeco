@@ -3,8 +3,11 @@ package com.drogamleczna.industrialdeco.datagen;
 import com.drogamleczna.industrialdeco.IndustrialDeco;
 import com.drogamleczna.industrialdeco.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -44,7 +47,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.BENT_CHIMNEY.get())
                 .add(ModBlocks.WALL_CHIMNEY.get())
                 .add(ModBlocks.CHIMNEY_BLOCK.get())
-                .add(ModBlocks.WIRE_BOX.get());
+                .add(ModBlocks.WIRE_BOX.get())
+                .add(ModBlocks.CEILING_OFFICE_LAMP.get());
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.STREET_LAMP.get())
                 .add(ModBlocks.CURVED_POLE.get())
@@ -70,9 +74,13 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.CHIMNEY_BLOCK.get())
                 .add(ModBlocks.WALL_CHIMNEY.get())
                 .add(ModBlocks.BENT_CHIMNEY.get())
+                .add(ModBlocks.CEILING_OFFICE_LAMP.get())
                 .add(ModBlocks.WIRE_BOX.get());
         this.tag(BlockTags.MINEABLE_WITH_AXE)
-                .add(ModBlocks.PALLET.get());
+                .add(ModBlocks.PALLET.get())
+                .add(ModBlocks.BENCH.get());
+        //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("create:windmill_sails")))
+        //        .add());
 
     }
 }

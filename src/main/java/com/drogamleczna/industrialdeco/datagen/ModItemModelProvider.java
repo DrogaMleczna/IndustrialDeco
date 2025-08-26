@@ -44,6 +44,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.BENT_CHIMNEY);
         blockItem(ModBlocks.WALL_CHIMNEY);
         blockItem(ModBlocks.WIRE_BOX);
+        blockItem(ModBlocks.CEILING_OFFICE_LAMP);
+        blockItem(ModBlocks.BENCH);
 
     }
 

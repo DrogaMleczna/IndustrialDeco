@@ -1,10 +1,14 @@
 package com.drogamleczna.industrialdeco;
 
 import com.drogamleczna.industrialdeco.block.ModBlocks;
+import com.drogamleczna.industrialdeco.entity.ModEntities;
+import com.drogamleczna.industrialdeco.entity.client.SeatRenderer;
 import com.drogamleczna.industrialdeco.item.ModCreativeModeTabs;
 import com.drogamleczna.industrialdeco.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
@@ -44,6 +48,7 @@ public class IndustrialDeco
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -64,6 +69,7 @@ public class IndustrialDeco
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            EntityRenderers.register(ModEntities.SEAT.get(), SeatRenderer::new);
         }
     }
 }

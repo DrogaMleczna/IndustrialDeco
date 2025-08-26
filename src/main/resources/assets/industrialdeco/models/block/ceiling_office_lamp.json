@@ -1,0 +1,4 @@
+{
+  "parent": "industrialdeco:block/ceiling_office_lamp_model",
+  "render_type": "minecraft:cutout"
+}

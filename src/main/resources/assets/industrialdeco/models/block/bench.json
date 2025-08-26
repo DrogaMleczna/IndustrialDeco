@@ -1,0 +1,4 @@
+{
+  "parent": "industrialdeco:block/bench_model",
+  "render_type": "minecraft:cutout"
+}

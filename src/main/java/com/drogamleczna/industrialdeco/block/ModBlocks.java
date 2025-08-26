@@ -13,9 +13,11 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class ModBlocks {
+
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, IndustrialDeco.MODID);
 
@@ -34,10 +36,10 @@ public class ModBlocks {
                     .dynamicShape()));
     public static final RegistryObject<Block> CORNER_POLE = registerBlock("corner_pole",
             () -> new CornerPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
-                    .dynamicShape()));
+                    .dynamicShape().forceSolidOn()));
     public static final RegistryObject<Block> WALL_CURVED_POLE = registerBlock("curved_wall_pole",
             () -> new WallCurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
-                    .dynamicShape()));
+                    .dynamicShape().forceSolidOn()));
     public static final RegistryObject<Block> WIRE_POLE = registerBlock("wire_pole",
             () -> new WirePoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
@@ -82,7 +84,7 @@ public class ModBlocks {
                     .dynamicShape()));
     public static final RegistryObject<Block> PALLET = registerBlock("pallet",
             () -> new PalletBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
-                    .dynamicShape()));
+                    .dynamicShape().forceSolidOn()));
     public static final RegistryObject<Block> SECURITY_CAMERA = registerBlock("security_camera",
             () -> new SecurityCameraBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
                     .dynamicShape()));
@@ -98,6 +100,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> WIRE_BOX = registerBlock("wire_box",
             () -> new WireBoxBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
                     .dynamicShape()));
+    public static final RegistryObject<Block> CEILING_OFFICE_LAMP = registerBlock("ceiling_office_lamp",
+            () -> new CeilingOfficeLampBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
+                    .dynamicShape().lightLevel((state) -> {return 15;})));
+    public static final RegistryObject<Block> BENCH = registerBlock("bench",
+            () -> new ChairBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2.0f).noOcclusion()
+                    .dynamicShape()));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -112,4 +121,6 @@ public class ModBlocks {
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
+
+
 }

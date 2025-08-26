@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "industrialdeco:block/bench"
+    },
+    "facing=north": {
+      "model": "industrialdeco:block/bench",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "industrialdeco:block/bench",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "industrialdeco:block/bench",
+      "y": 270
+    }
+  }
+}
