@@ -1,8 +1,6 @@
 package com.drogamleczna.industrialdeco.entity;
 
 import com.drogamleczna.industrialdeco.IndustrialDeco;
-import net.minecraft.core.RegistryAccess;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;

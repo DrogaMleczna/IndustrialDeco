@@ -3,12 +3,8 @@ package com.drogamleczna.industrialdeco.datagen;
 import com.drogamleczna.industrialdeco.IndustrialDeco;
 import com.drogamleczna.industrialdeco.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -79,8 +75,5 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.PALLET.get())
                 .add(ModBlocks.BENCH.get());
-        //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("create:windmill_sails")))
-        //        .add());
-
     }
 }

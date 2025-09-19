@@ -2,9 +2,7 @@ package com.drogamleczna.industrialdeco.datagen.loot;
 
 import com.drogamleczna.industrialdeco.block.ModBlocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
 

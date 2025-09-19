@@ -4,16 +4,9 @@ import com.drogamleczna.industrialdeco.block.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.CraftingBookCategory;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.StonecutterRecipe;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
-
-import java.util.List;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -209,38 +202,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('N', Items.OAK_FENCE)
                 .unlockedBy(getHasName(Items.GLOWSTONE), has(Items.IRON_INGOT))
                 .save(pWriter);
-
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.CEILING_OFFICE_LAMP.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.STREET_LAMP.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.POLE_BLOCK.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.CURVED_POLE.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.WALL_CURVED_POLE.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.SPLIT_POLE.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.DOUBLE_CURVED_POLE.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.QUADRUPLE_CURVED_POLE.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.CORNER_POLE.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.WIRE_POLE.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.POLE_BASE.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.MEDIUM_BASE.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.LARGE_BASE.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.SWITCHBOARD.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.WALL_SWITCHBOARD.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.WIRE_BOX.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.WARNING_POLE.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.HAZARD_POLE.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.CAMERA_POLE.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.CAMERA_POLE_CORNER.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.CAMERA_POLE_TRIPLE.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.CAMERA_POLE_QUADRUPLE.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.SECURITY_CAMERA.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.PALLET.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.CHIMNEY_BLOCK.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.BENT_CHIMNEY.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT), RecipeCategory.MISC, ModBlocks.WALL_CHIMNEY.get() );
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(Items.OAK_SLAB), RecipeCategory.MISC, ModBlocks.BENCH.get() );
-
-
-
 
     }
 
