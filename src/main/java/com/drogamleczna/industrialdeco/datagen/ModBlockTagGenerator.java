@@ -3,8 +3,12 @@ package com.drogamleczna.industrialdeco.datagen;
 import com.drogamleczna.industrialdeco.IndustrialDeco;
 import com.drogamleczna.industrialdeco.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -76,4 +80,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.PALLET.get())
                 .add(ModBlocks.BENCH.get());
     }
+
+    //private static TagKey<Block> create(String pName) {
+    //    return TagKey.create(Registries., new ResourceLocation(pName));
+    //}
 }
