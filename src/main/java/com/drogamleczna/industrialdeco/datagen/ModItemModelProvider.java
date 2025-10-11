@@ -46,6 +46,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.WIRE_BOX);
         blockItem(ModBlocks.CEILING_OFFICE_LAMP);
         blockItem(ModBlocks.BENCH);
+        blockItem(ModBlocks.CROSSBUCK_BLOCK);
 
     }
 

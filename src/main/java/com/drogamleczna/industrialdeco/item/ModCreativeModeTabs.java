@@ -46,6 +46,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.BENT_CHIMNEY.get());
                         pOutput.accept(ModBlocks.WALL_CHIMNEY.get());
                         pOutput.accept(ModBlocks.BENCH.get());
+                        pOutput.accept(ModBlocks.CROSSBUCK_BLOCK.get());
 
                     })
                     .build());

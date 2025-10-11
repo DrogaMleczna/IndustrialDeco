@@ -105,6 +105,10 @@ public class ModBlocks {
             () -> new ChairBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2.0f).noOcclusion()
                     .dynamicShape()));
 
+    public static final RegistryObject<Block> CROSSBUCK_BLOCK = registerBlock("crossbuck_block",
+            () -> new CrossbuckBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

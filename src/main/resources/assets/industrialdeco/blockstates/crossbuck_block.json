@@ -1,0 +1,80 @@
+{
+  "variants": {
+    "crossbuck_type=poland,facing=south": {
+        "model": "industrialdeco:block/crossbuck_poland"
+      },
+      "crossbuck_type=poland,facing=north": {
+        "model": "industrialdeco:block/crossbuck_poland",
+        "y": 180
+      },
+      "crossbuck_type=poland,facing=west": {
+        "model": "industrialdeco:block/crossbuck_poland",
+        "y": 90
+      },
+      "crossbuck_type=poland,facing=east": {
+        "model": "industrialdeco:block/crossbuck_poland",
+        "y": 270
+      },
+
+    "crossbuck_type=poland_multitrack,facing=south": {
+        "model": "industrialdeco:block/crossbuck_poland_multitrack"
+      },
+      "crossbuck_type=poland_multitrack,facing=north": {
+        "model": "industrialdeco:block/crossbuck_poland_multitrack",
+        "y": 180
+      },
+      "crossbuck_type=poland_multitrack,facing=west": {
+        "model": "industrialdeco:block/crossbuck_poland_multitrack",
+        "y": 90
+      },
+      "crossbuck_type=poland_multitrack,facing=east": {
+        "model": "industrialdeco:block/crossbuck_poland_multitrack",
+        "y": 270
+      }, "crossbuck_type=sweden,facing=south": {
+        "model": "industrialdeco:block/crossbuck_sweden"
+      },
+      "crossbuck_type=sweden,facing=north": {
+        "model": "industrialdeco:block/crossbuck_sweden",
+        "y": 180
+      },
+      "crossbuck_type=sweden,facing=west": {
+        "model": "industrialdeco:block/crossbuck_sweden",
+        "y": 90
+      },
+      "crossbuck_type=sweden,facing=east": {
+        "model": "industrialdeco:block/crossbuck_sweden",
+        "y": 270
+      },
+
+    "crossbuck_type=sweden_multitrack,facing=south": {
+        "model": "industrialdeco:block/crossbuck_sweden_multitrack"
+      },
+      "crossbuck_type=sweden_multitrack,facing=north": {
+        "model": "industrialdeco:block/crossbuck_sweden_multitrack",
+        "y": 180
+      },
+      "crossbuck_type=sweden_multitrack,facing=west": {
+        "model": "industrialdeco:block/crossbuck_sweden_multitrack",
+        "y": 90
+      },
+      "crossbuck_type=sweden_multitrack,facing=east": {
+        "model": "industrialdeco:block/crossbuck_sweden_multitrack",
+        "y": 270
+      },
+    "crossbuck_type=canada,facing=south": {
+        "model": "industrialdeco:block/crossbuck_canada"
+      },
+      "crossbuck_type=canada,facing=north": {
+        "model": "industrialdeco:block/crossbuck_canada",
+        "y": 180
+      },
+      "crossbuck_type=canada,facing=west": {
+        "model": "industrialdeco:block/crossbuck_canada",
+        "y": 90
+      },
+      "crossbuck_type=canada,facing=east": {
+        "model": "industrialdeco:block/crossbuck_canada",
+        "y": 270
+      }
+    }
+  }
