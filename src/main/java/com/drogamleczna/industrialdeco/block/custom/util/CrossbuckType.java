@@ -7,7 +7,12 @@ public enum CrossbuckType implements StringRepresentable {
     POLAND_MULTITRACK("poland_multitrack"),
     SWEDEN("sweden"),
     SWEDEN_MULTITRACK("sweden_multitrack"),
-    CANADA("canada")
+    BELGIUM("belgium"),
+    BELGIUM_MULTITRACK("belgium_multitrack"),
+    EUROPE("europe"),
+    EUROPE_MULTITRACK("europe_multitrack"),
+    CANADA("canada"),
+    JAPAN("japan")
     ;
     private String name;
     private CrossbuckType(String pName){
