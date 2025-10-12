@@ -21,7 +21,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import javax.annotation.Nullable;
 
 public class CrossbuckBlock extends PoleBlock {
-    private boolean canSwitchState = false;
     TagKey<Item> WRENCH_TAG = ItemTags.create(new ResourceLocation("forge", "tools/wrench"));
 
     public static final CrossbuckTypeProperty CTYPE = CrossbuckTypeProperty.create("crossbuck_type",
@@ -34,18 +33,17 @@ public class CrossbuckBlock extends PoleBlock {
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if(pPlayer.getMainHandItem().is(Items.STICK) && canSwitchState) {
-            changeType(pState, pLevel, pPos);
+        pLevel.updateNeighborsAt(pPos, this);
+        if(pPlayer.getMainHandItem().is(Items.STICK)) {
+            this.changeType(pState, pLevel, pPos);
             return InteractionResult.SUCCESS;
-        }else if(pPlayer.getMainHandItem().is(WRENCH_TAG) && canSwitchState) {
-            changeType(pState, pLevel, pPos);
+        }else if(pPlayer.getMainHandItem().is(WRENCH_TAG)) {
+            this.changeType(pState, pLevel, pPos);
             return InteractionResult.SUCCESS;
-        }else if (!canSwitchState) {
-            canSwitchState = true;
-            return InteractionResult.CONSUME;
         }else{
-            return InteractionResult.SUCCESS;
+            return InteractionResult.FAIL;
         }
+
     }
 
     @Override
@@ -76,8 +74,6 @@ public class CrossbuckBlock extends PoleBlock {
             case CANADA -> pLevel.setBlock(pPos, (BlockState) pState.setValue(CTYPE, CrossbuckType.JAPAN), 0);
             case JAPAN -> pLevel.setBlock(pPos, (BlockState) pState.setValue(CTYPE, CrossbuckType.POLAND), 0);
         }
-        pLevel.updateNeighborsAt(pPos, this);
-        this.canSwitchState = false;
 
     }
 
