@@ -2,17 +2,25 @@ package com.drogamleczna.industrialdeco.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
+
+import static com.drogamleczna.industrialdeco.IndustrialDeco.WRENCH_TAG;
 
 public class SecurityCameraBlock extends HorizontalDirectionalBlock {
 
@@ -62,5 +70,35 @@ public class SecurityCameraBlock extends HorizontalDirectionalBlock {
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
         return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getCounterClockWise());
+    }
+    @Override
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        pLevel.updateNeighborsAt(pPos, this);
+        if(pPlayer.getMainHandItem().is(Items.STICK)) {
+            this.changeType(pState, pLevel, pPos);
+            return InteractionResult.SUCCESS;
+        }else if(pPlayer.getMainHandItem().is(WRENCH_TAG)) {
+            this.changeType(pState, pLevel, pPos);
+            return InteractionResult.SUCCESS;
+        }else{
+            return InteractionResult.FAIL;
+        }
+
+    }
+
+    public void changeType(BlockState pState, Level pLevel, BlockPos pPos){
+
+        switch (pState.getValue(FACING)) {
+            case NORTH ->
+                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.EAST), 0);
+            case EAST ->
+                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.WEST), 0);
+            case WEST ->
+                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.SOUTH), 0);
+            case SOUTH ->
+                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.NORTH), 0);
+
+        }
+
     }
 }

@@ -20,8 +20,10 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import javax.annotation.Nullable;
 
+import static com.drogamleczna.industrialdeco.IndustrialDeco.WRENCH_TAG;
+
 public class CrossbuckBlock extends PoleBlock {
-    TagKey<Item> WRENCH_TAG = ItemTags.create(new ResourceLocation("forge", "tools/wrench"));
+
 
     public static final CrossbuckTypeProperty CTYPE = CrossbuckTypeProperty.create("crossbuck_type",
             CrossbuckType.CANADA, CrossbuckType.POLAND, CrossbuckType.POLAND_MULTITRACK, CrossbuckType.SWEDEN, CrossbuckType.SWEDEN_MULTITRACK,
