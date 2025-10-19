@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "industrialdeco:block/metal_fence_block"
+    },
+    "facing=north": {
+      "model": "industrialdeco:block/metal_fence_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "industrialdeco:block/metal_fence_block",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "industrialdeco:block/metal_fence_block",
+      "y": 270
+    }
+  }
+}

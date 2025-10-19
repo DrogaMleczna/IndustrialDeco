@@ -202,6 +202,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('N', Items.OAK_FENCE)
                 .unlockedBy(getHasName(Items.GLOWSTONE), has(Items.IRON_INGOT))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CROSSBUCK_BLOCK.get(), 8)
+                .pattern("S S")
+                .pattern(" N ")
+                .pattern("S S")
+                .define('S', Items.IRON_NUGGET)
+                .define('N', ModBlocks.POLE_BLOCK.get())
+                .unlockedBy(getHasName(Items.IRON_NUGGET), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.METAL_FENCE_BLOCK.get(), 8)
+                .pattern(" S ")
+                .pattern("SSS")
+                .pattern("S S")
+                .define('S', Items.IRON_NUGGET)
+                .unlockedBy(getHasName(Items.GLOWSTONE), has(Items.IRON_INGOT))
+                .save(pWriter);
 
     }
 

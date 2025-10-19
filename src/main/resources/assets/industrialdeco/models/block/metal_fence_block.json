@@ -1,0 +1,4 @@
+{
+  "parent": "industrialdeco:block/metal_fence_block_model",
+  "render_type": "minecraft:cutout"
+}

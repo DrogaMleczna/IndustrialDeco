@@ -108,6 +108,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> CROSSBUCK_BLOCK = registerBlock("crossbuck_block",
             () -> new CrossbuckBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
+    public static final RegistryObject<Block> METAL_FENCE_BLOCK = registerBlock("metal_fence_block",
+            () -> new MetalFenceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
