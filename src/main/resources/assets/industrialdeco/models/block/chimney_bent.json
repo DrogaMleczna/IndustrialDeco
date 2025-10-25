@@ -1,4 +1,5 @@
 {
+	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "industrialdeco:block/chimney",
@@ -18,8 +19,8 @@
 			}
 		},
 		{
-			"from": [5, 1.45, 5],
-			"to": [11, 11, 11],
+			"from": [5, 1.45, 4.95],
+			"to": [11, 11, 11.05],
 			"rotation": {"angle": 45, "axis": "z", "origin": [5, 11, 5]},
 			"faces": {
 				"north": {"uv": [0, 0, 3, 4.55], "texture": "#0"},
