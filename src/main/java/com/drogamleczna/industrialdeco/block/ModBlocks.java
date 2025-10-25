@@ -99,8 +99,11 @@ public class ModBlocks {
             () -> new WireBoxBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
                     .dynamicShape()));
     public static final RegistryObject<Block> CEILING_OFFICE_LAMP = registerBlock("ceiling_office_lamp",
-            () -> new CeilingOfficeLampBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
+            () -> new CeilingBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
                     .dynamicShape().lightLevel((state) -> {return 15;})));
+    public static final RegistryObject<Block> OFFICE_CEILING = registerBlock("office_ceiling",
+            () -> new CeilingBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
+                    .dynamicShape()));
     public static final RegistryObject<Block> BENCH = registerBlock("bench",
             () -> new ChairBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2.0f).noOcclusion()
                     .dynamicShape()));

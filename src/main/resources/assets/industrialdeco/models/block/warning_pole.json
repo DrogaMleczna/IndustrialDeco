@@ -1,5 +1,5 @@
 {
-  "parent": "industrialdeco:block/pole_model",
+  "parent": "industrialdeco:block/pole_block",
   "render_type": "minecraft:cutout",
   "textures": {
     "0": "industrialdeco:block/warning_pole",

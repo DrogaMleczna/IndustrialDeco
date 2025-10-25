@@ -8,7 +8,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 
-public class CeilingOfficeLampBlock extends Block {
+public class CeilingBlock extends Block {
 
 
     public static final VoxelShape SHAPE;
@@ -18,7 +18,7 @@ public class CeilingOfficeLampBlock extends Block {
     };
 
 
-    public CeilingOfficeLampBlock(Properties pProperties) {
+    public CeilingBlock(Properties pProperties) {
 
         super(pProperties);
     }
