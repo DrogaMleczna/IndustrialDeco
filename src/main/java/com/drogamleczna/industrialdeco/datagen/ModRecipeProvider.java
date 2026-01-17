@@ -1,12 +1,20 @@
 package com.drogamleczna.industrialdeco.datagen;
 
 import com.drogamleczna.industrialdeco.block.ModBlocks;
+import com.drogamleczna.industrialdeco.util.ModTags;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.registries.RegistryObject;
+
+import java.util.ArrayList;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -14,8 +22,54 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         super(pOutput);
     }
 
+
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
+        ArrayList<RegistryObject<Block>> blocks = new ArrayList<RegistryObject<Block>>();
+        blocks.add(ModBlocks.STREET_LAMP);
+        blocks.add(ModBlocks.CURVED_POLE);
+        blocks.add(ModBlocks.DOUBLE_CURVED_POLE);
+        blocks.add(ModBlocks.QUADRUPLE_CURVED_POLE);
+        blocks.add(ModBlocks.CORNER_POLE);
+        blocks.add(ModBlocks.WALL_CURVED_POLE);
+        blocks.add(ModBlocks.WIRE_POLE);
+        blocks.add(ModBlocks.POLE_BASE);
+        blocks.add(ModBlocks.LARGE_BASE);
+        blocks.add(ModBlocks.POLE_BLOCK);
+        blocks.add(ModBlocks.HAZARD_POLE);
+        blocks.add(ModBlocks.WARNING_POLE);
+        blocks.add(ModBlocks.CAMERA_POLE);
+        blocks.add(ModBlocks.CAMERA_POLE_CORNER);
+        blocks.add(ModBlocks.CAMERA_POLE_TRIPLE);
+        blocks.add(ModBlocks.CAMERA_POLE_QUADRUPLE);
+        blocks.add(ModBlocks.SPLIT_POLE);
+        blocks.add(ModBlocks.SWITCHBOARD);
+        blocks.add(ModBlocks.WALL_SWITCHBOARD);
+        blocks.add(ModBlocks.MEDIUM_BASE);
+        blocks.add(ModBlocks.PALLET);
+        blocks.add(ModBlocks.SECURITY_CAMERA);
+        blocks.add(ModBlocks.CHIMNEY_BLOCK);
+        blocks.add(ModBlocks.BENT_CHIMNEY);
+        blocks.add(ModBlocks.WALL_CHIMNEY);
+        blocks.add(ModBlocks.WIRE_BOX);
+        blocks.add(ModBlocks.CEILING_OFFICE_LAMP);
+        blocks.add(ModBlocks.OFFICE_CEILING);
+        blocks.add(ModBlocks.BENCH);
+        blocks.add(ModBlocks.CROSSBUCK_BLOCK);
+        blocks.add(ModBlocks.METAL_FENCE_BLOCK);
+        for (RegistryObject<Block> block : blocks){
+            if(!(block == ModBlocks.BENCH || block == ModBlocks.PALLET || block == ModBlocks.STREET_LAMP || block == ModBlocks.CEILING_OFFICE_LAMP) ){
+                CustomRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT),RecipeCategory.MISC, block.get(),4 )
+                        .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                        .saveWithSuffix("_iron",pWriter, block.getId());
+                CustomRecipeBuilder.stonecutting(Ingredient.of(ModTags.Items.INDUSTRIAL_DECO_METAL_BLOCKS),RecipeCategory.MISC, block.get(),4 )
+                        .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                        .save(pWriter);
+            }
+
+        }
+
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STREET_LAMP.get(), 4)
                 .pattern("SSS")
                 .pattern("SNS")
