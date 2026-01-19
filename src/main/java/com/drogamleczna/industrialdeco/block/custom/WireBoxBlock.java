@@ -35,7 +35,7 @@ public class WireBoxBlock extends DirectionalBlock {
         SHAPE_U = Block.box(4,0,4,12,3,12);
         SHAPE_D = Block.box(4,13,4,12,16,12);
 
-    };
+    }
 
     @Nullable
     @Override

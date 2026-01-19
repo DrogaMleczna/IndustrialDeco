@@ -15,7 +15,7 @@ public class CeilingBlock extends Block {
 
     static {
         SHAPE = Block.box(0,13,0,16,16,16);
-    };
+    }
 
 
     public CeilingBlock(Properties pProperties) {

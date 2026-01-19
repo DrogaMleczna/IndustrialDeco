@@ -29,7 +29,7 @@ public class ChimneyBlock extends Block {
             if (pRandom.nextInt(1) == 0) {
                 for(int i = 0; i < pRandom.nextInt(1) + 1; ++i) {
                     pLevel.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, (double)pPos.getX() + (double)0.5F, (double)pPos.getY() + (double)0.75F, (double)pPos.getZ() + (double)0.5F,
-                            (double)(((pRandom.nextFloat() * 2) -1) / 200.0F), 0.05F, (double)(((pRandom.nextFloat() * 2) -1) / 200.0F));
+                            ((pRandom.nextFloat() * 2) -1) / 200.0F, 0.05F, ((pRandom.nextFloat() * 2) -1) / 200.0F);
                 }
             }
         }

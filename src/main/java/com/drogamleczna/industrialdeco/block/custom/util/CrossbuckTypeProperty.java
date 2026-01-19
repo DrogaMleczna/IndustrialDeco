@@ -21,7 +21,7 @@ public class CrossbuckTypeProperty extends EnumProperty<CrossbuckType> {
     }
 
     public static CrossbuckTypeProperty create(String pName, Predicate<CrossbuckType> pFilter) {
-        return create(pName, (Collection) Arrays.stream(CrossbuckType.values()).filter(pFilter).collect(Collectors.toList()));
+        return create(pName, Arrays.stream(CrossbuckType.values()).filter(pFilter).collect(Collectors.toList()));
     }
 
     public static CrossbuckTypeProperty create(String pName, CrossbuckType... pValues) {

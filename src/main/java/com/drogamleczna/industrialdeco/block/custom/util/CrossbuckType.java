@@ -14,8 +14,8 @@ public enum CrossbuckType implements StringRepresentable {
     CANADA("canada"),
     JAPAN("japan")
     ;
-    private String name;
-    private CrossbuckType(String pName){
+    private final String name;
+    CrossbuckType(String pName){
         name = pName;
     }
     @Override

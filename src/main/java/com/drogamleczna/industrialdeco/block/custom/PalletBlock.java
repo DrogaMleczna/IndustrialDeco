@@ -33,7 +33,7 @@ public class PalletBlock extends HorizontalDirectionalBlock {
         SHAPE_N = Block.box(3.2,0,-1.25,16,2.3,17.5);
         SHAPE_W = Block.box(-1.25,0,0,17.5,2.3,12.8);
         SHAPE_E = Block.box(-1.25,0,3.2,17.5,2.3,16);
-    };
+    }
 
 
     public PalletBlock(Properties pProperties) {
@@ -93,13 +93,13 @@ public class PalletBlock extends HorizontalDirectionalBlock {
 
         switch (pState.getValue(FACING)) {
             case NORTH ->
-                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.EAST), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.EAST), 0);
             case EAST ->
-                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.WEST), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.WEST), 0);
             case WEST ->
-                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.SOUTH), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.SOUTH), 0);
             case SOUTH ->
-                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.NORTH), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.NORTH), 0);
 
         }
 

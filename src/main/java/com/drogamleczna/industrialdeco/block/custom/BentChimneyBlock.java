@@ -92,13 +92,13 @@ public class BentChimneyBlock extends HorizontalDirectionalBlock {
 
         switch (pState.getValue(FACING)) {
             case NORTH ->
-                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.EAST), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.EAST), 0);
             case EAST ->
-                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.WEST), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.WEST), 0);
             case WEST ->
-                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.SOUTH), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.SOUTH), 0);
             case SOUTH ->
-                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.NORTH), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.NORTH), 0);
 
         }
 

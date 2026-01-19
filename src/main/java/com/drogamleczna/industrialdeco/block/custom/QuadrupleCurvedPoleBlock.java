@@ -14,8 +14,6 @@ import javax.annotation.Nullable;
 
 public class QuadrupleCurvedPoleBlock extends HorizontalDirectionalBlock {
 
-    //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
-
     public static final VoxelShape SHAPE;
     public static final VoxelShape SHAPE_ARM_NS;
     public static final VoxelShape SHAPE_ARM_WE;
@@ -25,9 +23,8 @@ public class QuadrupleCurvedPoleBlock extends HorizontalDirectionalBlock {
         BASE = Block.box(5,0,5,11,12,11);
         SHAPE_ARM_NS = Block.box(0,11,5,16,15,11);
         SHAPE_ARM_WE = Block.box(5,11,0,11,15,16);
-        SHAPE = Shapes.or(BASE, new VoxelShape[]{SHAPE_ARM_NS, SHAPE_ARM_WE});
-
-    };
+        SHAPE = Shapes.or(BASE, SHAPE_ARM_NS, SHAPE_ARM_WE);
+    }
 
 
     public QuadrupleCurvedPoleBlock(Properties pProperties) {

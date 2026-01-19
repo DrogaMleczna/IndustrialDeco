@@ -26,7 +26,7 @@ public class WallSwitchboardBlock extends HorizontalDirectionalBlock {
         SHAPE_E = Block.box(0,3,2,6,15,14);
         SHAPE_W = Block.box(10,3,2,16,15,14);
 
-    };
+    }
 
 
     public WallSwitchboardBlock(Properties pProperties) {

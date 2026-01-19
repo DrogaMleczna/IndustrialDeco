@@ -38,7 +38,7 @@ public class WirePoleBlock extends HorizontalDirectionalBlock {
         SHAPE_E = Shapes.or(BASE, SHAPE_ARM_E);
         SHAPE_W = Shapes.or(BASE, SHAPE_ARM_W);
 
-    };
+    }
 
 
     public WirePoleBlock(Properties pProperties) {

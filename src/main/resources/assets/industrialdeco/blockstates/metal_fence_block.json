@@ -1,18 +1,33 @@
 {
   "variants": {
-    "facing=south": {
+    "facing=south,has_pole_base=false": {
       "model": "industrialdeco:block/metal_fence_block"
     },
-    "facing=north": {
+    "facing=north,has_pole_base=false": {
       "model": "industrialdeco:block/metal_fence_block",
       "y": 180
     },
-    "facing=west": {
+    "facing=west,has_pole_base=false": {
       "model": "industrialdeco:block/metal_fence_block",
       "y": 90
     },
-    "facing=east": {
+    "facing=east,has_pole_base=false": {
       "model": "industrialdeco:block/metal_fence_block",
+      "y": 270
+    },
+    "facing=south,has_pole_base=true": {
+      "model": "industrialdeco:block/metal_fence_block_crossbuck"
+    },
+    "facing=north,has_pole_base=true": {
+      "model": "industrialdeco:block/metal_fence_block_crossbuck",
+      "y": 180
+    },
+    "facing=west,has_pole_base=true": {
+      "model": "industrialdeco:block/metal_fence_block_crossbuck",
+      "y": 90
+    },
+    "facing=east,has_pole_base=true": {
+      "model": "industrialdeco:block/metal_fence_block_crossbuck",
       "y": 270
     }
   }

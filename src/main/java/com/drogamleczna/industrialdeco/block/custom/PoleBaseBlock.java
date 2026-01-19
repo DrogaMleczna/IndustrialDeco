@@ -26,7 +26,7 @@ public class PoleBaseBlock extends HorizontalDirectionalBlock {
         SHAPE_TOP = Block.box(6,8,6,10,16,10);
         SHAPE = Shapes.or(BASE, SHAPE_TOP);
 
-    };
+    }
 
 
     public PoleBaseBlock(Properties pProperties) {

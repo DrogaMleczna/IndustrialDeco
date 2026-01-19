@@ -34,7 +34,8 @@ public class SecurityCameraBlock extends HorizontalDirectionalBlock {
         SHAPE_E = Block.box(6.5,5,7,9.5,10,16);
         SHAPE_S = Block.box(0,5,6.5,9,10,9.5);
         SHAPE_N = Block.box(7,5,6.5,16,10,9.5);
-    };
+    }
+
     public SecurityCameraBlock(Properties pProperties) {
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
@@ -90,13 +91,13 @@ public class SecurityCameraBlock extends HorizontalDirectionalBlock {
 
         switch (pState.getValue(FACING)) {
             case NORTH ->
-                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.EAST), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.EAST), 0);
             case EAST ->
-                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.WEST), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.WEST), 0);
             case WEST ->
-                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.SOUTH), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.SOUTH), 0);
             case SOUTH ->
-                    pLevel.setBlock(pPos, (BlockState) pState.setValue(FACING, Direction.NORTH), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.NORTH), 0);
 
         }
 

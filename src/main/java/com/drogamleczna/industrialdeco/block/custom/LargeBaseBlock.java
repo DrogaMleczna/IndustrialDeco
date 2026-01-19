@@ -28,7 +28,7 @@ public class LargeBaseBlock extends HorizontalDirectionalBlock {
         SHAPE_TOP = Block.box(5,14,5,11,16,11);
         SHAPE = Shapes.or(BASE, SHAPE_TOP);
 
-    };
+    }
 
 
     public LargeBaseBlock(Properties pProperties) {

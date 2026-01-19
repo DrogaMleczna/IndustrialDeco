@@ -22,7 +22,7 @@ public class SwitchboardBlock extends HorizontalDirectionalBlock implements Simp
     static {
         SHAPE_NS = Block.box(2,0,4.5,14,16,11.5);
         SHAPE_WE = Block.box(4.5,0,2,11.5,16,14);
-    };
+    }
 
 
     public SwitchboardBlock(Properties pProperties) {
