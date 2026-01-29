@@ -46,6 +46,7 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ModBlocks.BENT_CHIMNEY.get().asItem())
                 .add(ModBlocks.WALL_CHIMNEY.get().asItem())
                 .add(ModBlocks.METAL_FENCE_BLOCK.get().asItem())
+                .add(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get().asItem())
                 .add(ModBlocks.WIRE_BOX.get().asItem());
     }
 }

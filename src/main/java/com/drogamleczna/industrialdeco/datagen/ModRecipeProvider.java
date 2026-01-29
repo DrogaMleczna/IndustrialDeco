@@ -189,6 +189,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Tags.Items.DYES_RED)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Tags.Items.DYES_RED))
                 .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.METAL_FENCE_BLOCK_YELLOW.get())
+                .requires(ModBlocks.METAL_FENCE_BLOCK.get())
+                .requires(Tags.Items.DYES_YELLOW)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Tags.Items.DYES_YELLOW))
+                .save(pWriter);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.CAMERA_POLE_CORNER.get())
                 .requires(ModBlocks.POLE_BLOCK.get())
                 .requires(Items.IRON_NUGGET, 2)

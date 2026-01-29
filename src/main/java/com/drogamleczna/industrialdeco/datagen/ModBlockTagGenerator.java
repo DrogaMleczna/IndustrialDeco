@@ -49,6 +49,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.WIRE_BOX.get())
                 .add(ModBlocks.CROSSBUCK_BLOCK.get())
                 .add(ModBlocks.METAL_FENCE_BLOCK.get())
+                .add(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get())
                 .add(ModBlocks.OFFICE_CEILING.get())
                 .add(ModBlocks.CEILING_OFFICE_LAMP.get());
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
@@ -80,7 +81,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.OFFICE_CEILING.get())
                 .add(ModBlocks.WIRE_BOX.get())
                 .add(ModBlocks.CROSSBUCK_BLOCK.get())
-                .add(ModBlocks.METAL_FENCE_BLOCK.get());
+                .add(ModBlocks.METAL_FENCE_BLOCK.get())
+                .add(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get());
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.PALLET.get())
                 .add(ModBlocks.BENCH.get());
@@ -113,7 +115,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.WIRE_BOX.get())
                 .add(ModBlocks.CROSSBUCK_BLOCK.get())
                 .add(ModBlocks.OFFICE_CEILING.get())
-                .add(ModBlocks.METAL_FENCE_BLOCK.get());
+                .add(ModBlocks.METAL_FENCE_BLOCK.get())
+                .add(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get());
     }
 
     TagKey<Block> WRENCH_PICKUP = BlockTags.create(ResourceLocation.fromNamespaceAndPath("create", "wrench_pickup"));

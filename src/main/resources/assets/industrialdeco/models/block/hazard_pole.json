@@ -1,8 +1,0 @@
-{
-  "parent": "industrialdeco:block/pole_block",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "0": "industrialdeco:block/hazard_pole",
-    "particle": "industrialdeco:block/hazard_pole"
-  }
-}
