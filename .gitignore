@@ -30,9 +30,9 @@ src/generated/resources/data/industrialdeco/
 src/generated/resources/data/minecraft/
 src/generated/resources/data/create/tags/block/
 .github/
-src/main/resources/assets//industrialdeco/models/block
-src/main/resources/assets//industrialdeco/blockstates
-src/main/resources/assets//industrialdeco/textures
+src/main/resources/assets/industrialdeco/models/block
+src/main/resources/assets/industrialdeco/blockstates
+src/main/resources/assets/industrialdeco/textures
 
 # Files from Forge MDK
 forge*changelog.txt
