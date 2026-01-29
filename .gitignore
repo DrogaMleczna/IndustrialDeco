@@ -24,11 +24,7 @@ gradlew.bat
 eclipse
 run
 run-data/
-src/generated/resources/.cache/
-src/generated/resources/assets/
-src/generated/resources/data/industrialdeco/
-src/generated/resources/data/minecraft/
-src/generated/resources/data/create/tags/block/
+src/generated
 .github/
 src/main/resources/assets/industrialdeco/models/block
 src/main/resources/assets/industrialdeco/blockstates
