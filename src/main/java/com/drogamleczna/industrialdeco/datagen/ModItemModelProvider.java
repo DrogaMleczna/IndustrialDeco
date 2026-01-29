@@ -49,6 +49,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.BENCH);
         blockItem(ModBlocks.CROSSBUCK_BLOCK);
         blockItem(ModBlocks.METAL_FENCE_BLOCK);
+        blockItem(ModBlocks.METAL_FENCE_BLOCK_YELLOW);
 
     }
 

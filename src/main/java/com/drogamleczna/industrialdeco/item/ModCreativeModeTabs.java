@@ -39,6 +39,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.HAZARD_POLE.get());
                         pOutput.accept(ModBlocks.CROSSBUCK_BLOCK.get());
                         pOutput.accept(ModBlocks.METAL_FENCE_BLOCK.get());
+                        pOutput.accept(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get());
                         pOutput.accept(ModBlocks.CAMERA_POLE.get());
                         pOutput.accept(ModBlocks.CAMERA_POLE_CORNER.get());
                         pOutput.accept(ModBlocks.CAMERA_POLE_TRIPLE.get());

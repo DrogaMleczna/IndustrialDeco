@@ -45,6 +45,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.BENCH.get());
         this.dropSelf(ModBlocks.CROSSBUCK_BLOCK.get());
         this.dropSelf(ModBlocks.METAL_FENCE_BLOCK.get());
+        this.dropSelf(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get());
         this.dropSelf(ModBlocks.OFFICE_CEILING.get());
     }
 

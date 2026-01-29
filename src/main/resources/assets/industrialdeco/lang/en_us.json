@@ -31,5 +31,6 @@
   "block.industrialdeco.crossbuck_block": "Crossbuck",
   "block.industrialdeco.bench": "Bench",
   "block.industrialdeco.metal_fence_block": "Metal Fence",
+  "block.industrialdeco.metal_fence_block_yellow": "Hazard Metal Fence",
   "creativetab.industrial_deco_tab": "Industrial Deco"
 }
