@@ -59,10 +59,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         blocks.add(ModBlocks.METAL_FENCE_BLOCK);
         for (RegistryObject<Block> block : blocks){
             if(!(block == ModBlocks.BENCH || block == ModBlocks.PALLET || block == ModBlocks.STREET_LAMP || block == ModBlocks.CEILING_OFFICE_LAMP) ){
-                CustomRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT),RecipeCategory.MISC, block.get(),4 )
+                CustomRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT),RecipeCategory.MISC, block.get() )
                         .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                         .saveWithSuffix("_iron",pWriter, block.getId());
-                CustomRecipeBuilder.stonecutting(Ingredient.of(ModTags.Items.INDUSTRIAL_DECO_METAL_BLOCKS),RecipeCategory.MISC, block.get(),4 )
+                CustomRecipeBuilder.stonecutting(Ingredient.of(ModTags.Items.INDUSTRIAL_DECO_METAL_BLOCKS),RecipeCategory.MISC, block.get() )
                         .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                         .save(pWriter);
             }
@@ -262,7 +262,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('N', Items.OAK_FENCE)
                 .unlockedBy(getHasName(Items.GLOWSTONE), has(Items.IRON_INGOT))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CROSSBUCK_BLOCK.get(), 8)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CROSSBUCK_BLOCK.get(), 1)
                 .pattern("S S")
                 .pattern(" N ")
                 .pattern("S S")
