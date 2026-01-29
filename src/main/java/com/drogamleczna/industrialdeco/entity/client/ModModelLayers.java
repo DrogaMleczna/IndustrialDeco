@@ -6,5 +6,5 @@ import net.minecraft.resources.ResourceLocation;
 
 public class ModModelLayers {
     public static final ModelLayerLocation SEAT_LAYER = new ModelLayerLocation(
-            new ResourceLocation(IndustrialDeco.MODID, "seat_layer"), "main");
+            ResourceLocation.fromNamespaceAndPath(IndustrialDeco.MODID, "seat_layer"), "main");
 }

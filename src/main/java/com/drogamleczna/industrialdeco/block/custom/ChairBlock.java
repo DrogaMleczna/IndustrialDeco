@@ -2,6 +2,7 @@ package com.drogamleczna.industrialdeco.block.custom;
 
 import com.drogamleczna.industrialdeco.entity.ModEntities;
 import com.drogamleczna.industrialdeco.entity.Seat;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -21,6 +22,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+
 import javax.annotation.Nullable;
 
 public class ChairBlock extends HorizontalDirectionalBlock {
@@ -32,6 +34,12 @@ public class ChairBlock extends HorizontalDirectionalBlock {
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
     }
+
+    @Override
+    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
+        return null;
+    }
+
     public static final VoxelShape SHAPE_N;
     public static final VoxelShape SHAPE_S;
     public static final VoxelShape SHAPE_E;
@@ -84,9 +92,9 @@ public class ChairBlock extends HorizontalDirectionalBlock {
 
 
 
+
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result)
-    {
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         if (Seat.sit(ModEntities.SEAT.get(),player, pos, 0.25, state.getValue(DIRECTION).getOpposite()))
         {
             return InteractionResult.CONSUME;

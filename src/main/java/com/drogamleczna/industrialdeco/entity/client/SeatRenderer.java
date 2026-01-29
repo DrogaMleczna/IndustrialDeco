@@ -15,7 +15,7 @@ public class SeatRenderer extends EntityRenderer<Seat> {
 
     @Override
     public ResourceLocation getTextureLocation(Seat pEntity) {
-        return new ResourceLocation(IndustrialDeco.MODID, "textures/empty.png");
+        return ResourceLocation.fromNamespaceAndPath(IndustrialDeco.MODID, "textures/empty.png");
     }
 
     @Override

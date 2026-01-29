@@ -1,10 +1,13 @@
 package com.drogamleczna.industrialdeco.block.custom;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -78,16 +81,21 @@ public class MetalFenceBlock extends HorizontalDirectionalBlock {
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
+        return null;
+    }
+
+    @Override
+    protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         pLevel.updateNeighborsAt(pPos, this);
         if(pPlayer.getMainHandItem().is(Items.STICK)) {
             this.changeType(pState, pLevel, pPos);
-            return InteractionResult.SUCCESS;
+            return ItemInteractionResult.SUCCESS;
         }else if(pPlayer.getMainHandItem().is(WRENCH_TAG)) {
             this.changeType(pState, pLevel, pPos);
-            return InteractionResult.SUCCESS;
+            return ItemInteractionResult.SUCCESS;
         }else{
-            return InteractionResult.FAIL;
+            return ItemInteractionResult.FAIL;
         }
     }
 

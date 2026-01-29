@@ -1,21 +1,27 @@
 package com.drogamleczna.industrialdeco.block.custom;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+
 import javax.annotation.Nullable;
 
 import static com.drogamleczna.industrialdeco.IndustrialDeco.WRENCH_TAG;
@@ -54,6 +60,11 @@ public class CornerPoleBlock extends HorizontalDirectionalBlock {
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
     }
 
+    @Override
+    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
+        return null;
+    }
+
     @Nullable
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
@@ -87,18 +98,17 @@ public class CornerPoleBlock extends HorizontalDirectionalBlock {
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         pLevel.updateNeighborsAt(pPos, this);
         if(pPlayer.getMainHandItem().is(Items.STICK)) {
             this.changeType(pState, pLevel, pPos);
-            return InteractionResult.SUCCESS;
+            return ItemInteractionResult.SUCCESS;
         }else if(pPlayer.getMainHandItem().is(WRENCH_TAG)) {
             this.changeType(pState, pLevel, pPos);
-            return InteractionResult.SUCCESS;
+            return ItemInteractionResult.SUCCESS;
         }else{
-            return InteractionResult.FAIL;
+            return ItemInteractionResult.FAIL;
         }
-
     }
 
     public void changeType(BlockState pState, Level pLevel, BlockPos pPos){

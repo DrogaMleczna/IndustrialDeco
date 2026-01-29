@@ -6,15 +6,17 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.function.Supplier;
+
 
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, IndustrialDeco.MODID);
 
-    public static final RegistryObject<CreativeModeTab> INDUSTRIAL_DECO_TAB = CREATIVE_MODE_TABS.register("industrial_deco_tab",
+    public static final Supplier<CreativeModeTab> INDUSTRIAL_DECO_TAB = CREATIVE_MODE_TABS.register("industrial_deco_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.STREET_LAMP.get()))
                     .title(Component.translatable("creativetab.industrial_deco_tab"))
                     .displayItems((pParameters, pOutput) -> {

@@ -3,16 +3,13 @@ package com.drogamleczna.industrialdeco.datagen;
 import com.drogamleczna.industrialdeco.IndustrialDeco;
 import com.drogamleczna.industrialdeco.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.BlockTagsProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -119,5 +116,5 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.METAL_FENCE_BLOCK.get());
     }
 
-    TagKey<Block> WRENCH_PICKUP = BlockTags.create(new ResourceLocation("create", "wrench_pickup"));
+    TagKey<Block> WRENCH_PICKUP = BlockTags.create(ResourceLocation.fromNamespaceAndPath("create", "wrench_pickup"));
 }

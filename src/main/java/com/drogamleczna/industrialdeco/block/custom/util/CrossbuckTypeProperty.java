@@ -1,11 +1,8 @@
 package com.drogamleczna.industrialdeco.block.custom.util;
 
 import com.google.common.collect.Lists;
-import net.minecraft.core.Direction;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.function.Predicate;

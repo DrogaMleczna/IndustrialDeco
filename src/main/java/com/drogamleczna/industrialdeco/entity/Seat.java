@@ -3,6 +3,7 @@ package com.drogamleczna.industrialdeco.entity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -30,14 +31,17 @@ public class Seat extends Entity {
         this.setRot(seatYaw, 0);
     }
 
-    @Override
-    protected void defineSynchedData() {}
 
     @Override
     protected void readAdditionalSaveData(CompoundTag compoundTag) {}
 
     @Override
     protected void addAdditionalSaveData(CompoundTag compoundTag) {}
+
+    @Override
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+
+    }
 
     @Override
     public void tick()

@@ -10,18 +10,15 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static class Blocks {
-
-
-
         private static TagKey<Block> tag(String name) {
-            return BlockTags.create(new ResourceLocation(IndustrialDeco.MODID, name));
+            return BlockTags.create(ResourceLocation.fromNamespaceAndPath(IndustrialDeco.MODID, name));
         }
     }
 
     public static class Items {
         public static final TagKey<Item> INDUSTRIAL_DECO_METAL_BLOCKS = tag("industrial_deco_metal_blocks");
         private static TagKey<Item> tag(String name) {
-            return ItemTags.create(new ResourceLocation(IndustrialDeco.MODID, name));
+            return ItemTags.create(ResourceLocation.fromNamespaceAndPath(IndustrialDeco.MODID, name));
         }
     }
 }

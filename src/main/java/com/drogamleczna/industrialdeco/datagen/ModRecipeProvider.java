@@ -2,30 +2,41 @@ package com.drogamleczna.industrialdeco.datagen;
 
 import com.drogamleczna.industrialdeco.block.ModBlocks;
 import com.drogamleczna.industrialdeco.util.ModTags;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import net.neoforged.neoforge.registries.DeferredBlock;
+
 
 import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
-    public ModRecipeProvider(PackOutput pOutput) {
-        super(pOutput);
+    public ModRecipeProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> registries) {
+        super(pOutput, registries);
     }
 
+    protected static void stonecutterRecipeFromTag(RecipeOutput recipeOutput, RecipeCategory category, ItemLike result, TagKey material) {
+        SingleItemRecipeBuilder var10000 = SingleItemRecipeBuilder.stonecutting(Ingredient.of(material), category, result, 1)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT));
+        var10000.save(recipeOutput, getItemName(result) + "_stonecutting");
+    }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
-        ArrayList<RegistryObject<Block>> blocks = new ArrayList<RegistryObject<Block>>();
+    protected void buildRecipes(RecipeOutput pWriter) {
+        ArrayList<DeferredBlock> blocks = new ArrayList<DeferredBlock>();
         blocks.add(ModBlocks.STREET_LAMP);
         blocks.add(ModBlocks.CURVED_POLE);
         blocks.add(ModBlocks.DOUBLE_CURVED_POLE);
@@ -57,14 +68,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         blocks.add(ModBlocks.BENCH);
         blocks.add(ModBlocks.CROSSBUCK_BLOCK);
         blocks.add(ModBlocks.METAL_FENCE_BLOCK);
-        for (RegistryObject<Block> block : blocks){
+        for (DeferredBlock block : blocks){
             if(!(block == ModBlocks.BENCH || block == ModBlocks.PALLET || block == ModBlocks.STREET_LAMP || block == ModBlocks.CEILING_OFFICE_LAMP) ){
-                CustomRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT),RecipeCategory.MISC, block.get() )
-                        .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
-                        .saveWithSuffix("_iron",pWriter, block.getId());
-                CustomRecipeBuilder.stonecutting(Ingredient.of(ModTags.Items.INDUSTRIAL_DECO_METAL_BLOCKS),RecipeCategory.MISC, block.get() )
-                        .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
-                        .save(pWriter);
+                stonecutterRecipeFromTag( pWriter, RecipeCategory.MISC, (ItemLike) block.get(), ModTags.Items.INDUSTRIAL_DECO_METAL_BLOCKS);
+                stonecutterResultFromBase(pWriter, RecipeCategory.MISC, block, Items.IRON_INGOT);
             }
 
         }
@@ -277,6 +284,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Items.IRON_NUGGET)
                 .unlockedBy(getHasName(Items.GLOWSTONE), has(Items.IRON_INGOT))
                 .save(pWriter);
+
 
     }
 

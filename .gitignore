@@ -28,6 +28,8 @@ src/generated/resources/.cache/
 src/generated/resources/assets/
 src/generated/resources/data/industrialdeco/
 src/generated/resources/data/minecraft/
+src/generated/resources/data/create/tags/block/
+.github/
 
 # Files from Forge MDK
 forge*changelog.txt
