@@ -56,10 +56,10 @@ public class MetalFenceBlock extends HorizontalDirectionalBlock {
         LEG_NE = Block.box(0,0,14,2,19,16);
         LEG_SW = Block.box(14,0,0,16,19,2);
         LEG_NW = Block.box(14,0,14,16,19,16);
-        SHAPE_S_P = Block.box(1,17,0,15,20,2);
-        SHAPE_N_P = Block.box(1,17,14,15,20,16);
-        SHAPE_E_P = Block.box(0,17,1,2,20,15);
-        SHAPE_W_P = Block.box(14,17,1,16,20,15);
+        SHAPE_S_P = Block.box(1,17,0,15,21,2);
+        SHAPE_N_P = Block.box(1,17,14,15,21,16);
+        SHAPE_E_P = Block.box(0,17,1,2,21,15);
+        SHAPE_W_P = Block.box(14,17,1,16,21,15);
         SHAPE_S_P2 = Block.box(0,10,0,16,12,2);
         SHAPE_N_P2 = Block.box(0,10,14,16,12,16);
         SHAPE_E_P2 = Block.box(0,10,0,2,12,16);
