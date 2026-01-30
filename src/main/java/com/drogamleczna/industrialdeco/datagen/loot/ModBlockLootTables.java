@@ -15,38 +15,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        this.dropSelf(ModBlocks.STREET_LAMP.get());
-        this.dropSelf(ModBlocks.CURVED_POLE.get());
-        this.dropSelf(ModBlocks.DOUBLE_CURVED_POLE.get());
-        this.dropSelf(ModBlocks.QUADRUPLE_CURVED_POLE.get());
-        this.dropSelf(ModBlocks.CORNER_POLE.get());
-        this.dropSelf(ModBlocks.WALL_CURVED_POLE.get());
-        this.dropSelf(ModBlocks.WIRE_POLE.get());
-        this.dropSelf(ModBlocks.POLE_BASE.get());
-        this.dropSelf(ModBlocks.LARGE_BASE.get());
-        this.dropSelf(ModBlocks.MEDIUM_BASE.get());
-        this.dropSelf(ModBlocks.POLE_BLOCK.get());
-        this.dropSelf(ModBlocks.HAZARD_POLE.get());
-        this.dropSelf(ModBlocks.WARNING_POLE.get());
-        this.dropSelf(ModBlocks.CAMERA_POLE.get());
-        this.dropSelf(ModBlocks.CAMERA_POLE_CORNER.get());
-        this.dropSelf(ModBlocks.CAMERA_POLE_TRIPLE.get());
-        this.dropSelf(ModBlocks.CAMERA_POLE_QUADRUPLE.get());
-        this.dropSelf(ModBlocks.SPLIT_POLE.get());
-        this.dropSelf(ModBlocks.SWITCHBOARD.get());
-        this.dropSelf(ModBlocks.WALL_SWITCHBOARD.get());
-        this.dropSelf(ModBlocks.PALLET.get());
-        this.dropSelf(ModBlocks.SECURITY_CAMERA.get());
-        this.dropSelf(ModBlocks.CHIMNEY_BLOCK.get());
-        this.dropSelf(ModBlocks.BENT_CHIMNEY.get());
-        this.dropSelf(ModBlocks.WALL_CHIMNEY.get());
-        this.dropSelf(ModBlocks.WIRE_BOX.get());
-        this.dropSelf(ModBlocks.CEILING_OFFICE_LAMP.get());
-        this.dropSelf(ModBlocks.BENCH.get());
-        this.dropSelf(ModBlocks.CROSSBUCK_BLOCK.get());
-        this.dropSelf(ModBlocks.METAL_FENCE_BLOCK.get());
-        this.dropSelf(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get());
-        this.dropSelf(ModBlocks.OFFICE_CEILING.get());
+        getKnownBlocks().forEach(block -> dropSelf(block));
     }
 
     @Override
