@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "industrialdeco:block/wall_distribution_box"
+    },
+    "facing=north": {
+      "model": "industrialdeco:block/wall_distribution_box",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "industrialdeco:block/wall_distribution_box",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "industrialdeco:block/wall_distribution_box",
+      "y": 270
+    }
+  }
+}

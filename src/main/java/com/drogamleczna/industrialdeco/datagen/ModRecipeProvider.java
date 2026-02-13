@@ -5,6 +5,7 @@ import com.drogamleczna.industrialdeco.util.ModTags;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -43,8 +44,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         blocks.add(ModBlocks.CAMERA_POLE_TRIPLE);
         blocks.add(ModBlocks.CAMERA_POLE_QUADRUPLE);
         blocks.add(ModBlocks.SPLIT_POLE);
-        blocks.add(ModBlocks.SWITCHBOARD);
-        blocks.add(ModBlocks.WALL_SWITCHBOARD);
+        blocks.add(ModBlocks.DISTRIBUTION_BOX);
+        blocks.add(ModBlocks.WALL_DISTRIBUTION_BOX);
         blocks.add(ModBlocks.MEDIUM_BASE);
         blocks.add(ModBlocks.PALLET);
         blocks.add(ModBlocks.SECURITY_CAMERA);
@@ -149,7 +150,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Items.IRON_INGOT)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SWITCHBOARD.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.DISTRIBUTION_BOX.get())
                 .pattern("SNS")
                 .pattern("N N")
                 .pattern("SNS")
@@ -157,7 +158,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('N', Items.IRON_NUGGET)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.WALL_SWITCHBOARD.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.WALL_DISTRIBUTION_BOX.get())
                 .pattern("SNS")
                 .pattern("N N")
                 .pattern("SNS")
@@ -263,8 +264,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BENCH.get(), 8)
                 .pattern("SSS")
                 .pattern("N N")
-                .define('S', Items.OAK_SLAB)
-                .define('N', Items.OAK_FENCE)
+                .define('S', ItemTags.WOODEN_SLABS)
+                .define('N', ItemTags.WOODEN_FENCES)
                 .unlockedBy(getHasName(Items.GLOWSTONE), has(Items.IRON_INGOT))
                 .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CROSSBUCK_BLOCK.get(), 1)

@@ -71,11 +71,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> SPLIT_POLE = registerBlock("split_pole",
             () -> new CurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
-    public static final RegistryObject<Block> SWITCHBOARD = registerBlock("switchboard",
-            () -> new SwitchboardBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+    public static final RegistryObject<Block> DISTRIBUTION_BOX = registerBlock("distribution_box",
+            () -> new DistributionBoxBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
-    public static final RegistryObject<Block> WALL_SWITCHBOARD = registerBlock("wall_switchboard",
-            () -> new WallSwitchboardBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+    public static final RegistryObject<Block> WALL_DISTRIBUTION_BOX = registerBlock("wall_distribution_box",
+            () -> new WallDistributionBoxBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
     public static final RegistryObject<Block> MEDIUM_BASE = registerBlock("medium_pole_base",
             () -> new MediumPoleBaseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()

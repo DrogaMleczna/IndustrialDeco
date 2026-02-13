@@ -74,6 +74,7 @@ public class SecurityCameraBlock extends HorizontalDirectionalBlock {
     }
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if(!pLevel.isClientSide()){
         pLevel.updateNeighborsAt(pPos, this);
         if(pPlayer.getMainHandItem().is(Items.STICK)) {
             this.changeType(pState, pLevel, pPos);
@@ -83,6 +84,8 @@ public class SecurityCameraBlock extends HorizontalDirectionalBlock {
             return InteractionResult.SUCCESS;
         }else{
             return InteractionResult.FAIL;
+        }}else{
+            return InteractionResult.SUCCESS;
         }
 
     }
