@@ -51,7 +51,7 @@ public class MetalFenceBlock extends HorizontalDirectionalBlock {
     public static final VoxelShape LEG_SE;
     public static final VoxelShape MIDDLE;
     static {
-        MIDDLE = Block.box(6,0,6,10,16,10);
+        MIDDLE = Shapes.or(Block.box(6,8,6,10,16,10), Block.box(5,0,5,11,8,11));
         LEG_SE = Block.box(0,0,0,2,19,2);
         LEG_NE = Block.box(0,0,14,2,19,16);
         LEG_SW = Block.box(14,0,0,16,19,2);
@@ -87,6 +87,7 @@ public class MetalFenceBlock extends HorizontalDirectionalBlock {
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if(!pLevel.isClientSide()){
         pLevel.updateNeighborsAt(pPos, this);
         if(pPlayer.getMainHandItem().is(Items.STICK)) {
             this.changeType(pState, pLevel, pPos);
@@ -96,6 +97,8 @@ public class MetalFenceBlock extends HorizontalDirectionalBlock {
             return ItemInteractionResult.SUCCESS;
         }else{
             return ItemInteractionResult.FAIL;
+        }}else{
+            return ItemInteractionResult.SUCCESS;
         }
     }
 

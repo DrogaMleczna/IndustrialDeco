@@ -99,6 +99,7 @@ public class CornerPoleBlock extends HorizontalDirectionalBlock {
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if(!pLevel.isClientSide()){
         pLevel.updateNeighborsAt(pPos, this);
         if(pPlayer.getMainHandItem().is(Items.STICK)) {
             this.changeType(pState, pLevel, pPos);
@@ -108,6 +109,9 @@ public class CornerPoleBlock extends HorizontalDirectionalBlock {
             return ItemInteractionResult.SUCCESS;
         }else{
             return ItemInteractionResult.FAIL;
+        }
+        }else{
+            return ItemInteractionResult.SUCCESS;
         }
     }
 

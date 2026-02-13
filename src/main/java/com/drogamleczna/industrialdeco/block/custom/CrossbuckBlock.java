@@ -33,15 +33,19 @@ public class CrossbuckBlock extends PoleBlock {
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        pLevel.updateNeighborsAt(pPos, this);
-        if(pPlayer.getMainHandItem().is(Items.STICK)) {
-            this.changeType(pState, pLevel, pPos);
-            return ItemInteractionResult.SUCCESS;
-        }else if(pPlayer.getMainHandItem().is(WRENCH_TAG)) {
-            this.changeType(pState, pLevel, pPos);
-            return ItemInteractionResult.SUCCESS;
+        if(!pLevel.isClientSide()){
+            pLevel.updateNeighborsAt(pPos, this);
+            if (pPlayer.getMainHandItem().is(Items.STICK)) {
+                this.changeType(pState, pLevel, pPos);
+                return ItemInteractionResult.SUCCESS;
+            } else if (pPlayer.getMainHandItem().is(WRENCH_TAG)) {
+                this.changeType(pState, pLevel, pPos);
+                return ItemInteractionResult.SUCCESS;
+            } else {
+                return ItemInteractionResult.FAIL;
+            }
         }else{
-            return ItemInteractionResult.FAIL;
+            return ItemInteractionResult.SUCCESS;
         }
     }
 

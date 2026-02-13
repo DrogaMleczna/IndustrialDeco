@@ -34,8 +34,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.POLE_BASE.get());
                         pOutput.accept(ModBlocks.MEDIUM_BASE.get());
                         pOutput.accept(ModBlocks.LARGE_BASE.get());
-                        pOutput.accept(ModBlocks.SWITCHBOARD.get());
-                        pOutput.accept(ModBlocks.WALL_SWITCHBOARD.get());
+                        pOutput.accept(ModBlocks.DISTRIBUTION_BOX.get());
+                        pOutput.accept(ModBlocks.WALL_DISTRIBUTION_BOX.get());
                         pOutput.accept(ModBlocks.WIRE_BOX.get());
                         pOutput.accept(ModBlocks.WARNING_POLE.get());
                         pOutput.accept(ModBlocks.HAZARD_POLE.get());

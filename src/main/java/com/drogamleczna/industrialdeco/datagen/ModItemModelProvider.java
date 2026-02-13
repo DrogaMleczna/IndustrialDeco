@@ -36,8 +36,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlockItem(ModBlocks.CAMERA_POLE_QUADRUPLE.get());
         simpleBlockItem(ModBlocks.SECURITY_CAMERA.get());
         simpleBlockItem(ModBlocks.SPLIT_POLE.get());
-        simpleBlockItem(ModBlocks.SWITCHBOARD.get());
-        simpleBlockItem(ModBlocks.WALL_SWITCHBOARD.get());
+        simpleBlockItem(ModBlocks.DISTRIBUTION_BOX.get());
+        simpleBlockItem(ModBlocks.WALL_DISTRIBUTION_BOX.get());
         simpleBlockItem(ModBlocks.CHIMNEY_BLOCK.get());
         simpleBlockItem(ModBlocks.BENT_CHIMNEY.get());
         simpleBlockItem(ModBlocks.WALL_CHIMNEY.get());

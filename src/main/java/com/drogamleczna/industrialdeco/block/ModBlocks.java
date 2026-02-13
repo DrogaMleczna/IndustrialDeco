@@ -6,13 +6,10 @@ import com.drogamleczna.industrialdeco.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
@@ -73,11 +70,11 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SPLIT_POLE = registerBlock("split_pole",
             () -> new CurvedPoleBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
-    public static final DeferredBlock<Block> SWITCHBOARD = registerBlock("switchboard",
-            () -> new SwitchboardBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+    public static final DeferredBlock<Block> DISTRIBUTION_BOX = registerBlock("distribution_box",
+            () -> new DistributionBoxBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
-    public static final DeferredBlock<Block> WALL_SWITCHBOARD = registerBlock("wall_switchboard",
-            () -> new WallSwitchboardBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+    public static final DeferredBlock<Block> WALL_DISTRIBUTION_BOX = registerBlock("wall_distribution_box",
+            () -> new WallDistributionBoxBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
     public static final DeferredBlock<Block> MEDIUM_BASE = registerBlock("medium_pole_base",
             () -> new MediumPoleBaseBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
