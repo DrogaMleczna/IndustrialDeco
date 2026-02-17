@@ -79,7 +79,6 @@ public class MetalFenceBlock extends HorizontalDirectionalBlock {
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if(!pLevel.isClientSide()){
         pLevel.updateNeighborsAt(pPos, this);
         if(pPlayer.getMainHandItem().is(Items.STICK)) {
             this.changeType(pState, pLevel, pPos);
@@ -89,16 +88,14 @@ public class MetalFenceBlock extends HorizontalDirectionalBlock {
             return InteractionResult.SUCCESS;
         }else{
             return InteractionResult.FAIL;
-        }}else{
-            return InteractionResult.SUCCESS;
         }
     }
 
     public void changeType (BlockState pState, Level pLevel, BlockPos pPos){
         if (pLevel.getBlockState(pPos).getValue(HAS_POLE_BASE).booleanValue()) {
-            pLevel.setBlock(pPos, pState.setValue(HAS_POLE_BASE, false), 0);
+            pLevel.setBlock(pPos, pState.setValue(HAS_POLE_BASE, false), 10);
         }else{
-            pLevel.setBlock(pPos, pState.setValue(HAS_POLE_BASE, true), 0);
+            pLevel.setBlock(pPos, pState.setValue(HAS_POLE_BASE, true), 10);
         }
     }
 

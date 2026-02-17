@@ -31,7 +31,6 @@ public class CrossbuckBlock extends PoleBlock {
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if(!pLevel.isClientSide()){
         pLevel.updateNeighborsAt(pPos, this);
         if(pPlayer.getMainHandItem().is(Items.STICK)) {
             this.changeType(pState, pLevel, pPos);
@@ -41,8 +40,6 @@ public class CrossbuckBlock extends PoleBlock {
             return InteractionResult.SUCCESS;
         }else{
             return InteractionResult.FAIL;
-        }}else{
-            return InteractionResult.SUCCESS;
         }
     }
 
@@ -56,25 +53,25 @@ public class CrossbuckBlock extends PoleBlock {
 
         switch (pState.getValue(CTYPE)) {
             case POLAND ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.POLAND_MULTITRACK), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.POLAND_MULTITRACK), 10);
             case POLAND_MULTITRACK ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.SWEDEN), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.SWEDEN), 10);
             case SWEDEN ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.SWEDEN_MULTITRACK), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.SWEDEN_MULTITRACK), 10);
             case SWEDEN_MULTITRACK ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.BELGIUM), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.BELGIUM), 10);
             case BELGIUM ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.BELGIUM_MULTITRACK), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.BELGIUM_MULTITRACK), 10);
             case BELGIUM_MULTITRACK ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.EUROPE), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.EUROPE), 10);
             case EUROPE ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.EUROPE_MULTITRACK), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.EUROPE_MULTITRACK), 10);
             case EUROPE_MULTITRACK ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.CANADA), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.CANADA), 10);
             case CANADA ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.JAPAN), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.JAPAN), 10);
             case JAPAN ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.POLAND), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.POLAND), 10);
         }
 
     }
