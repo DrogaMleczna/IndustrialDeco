@@ -98,7 +98,6 @@ public class CurvedPoleBlock extends HorizontalDirectionalBlock {
     }
     @Override
     protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if(!pLevel.isClientSide()){
         pLevel.updateNeighborsAt(pPos, this);
         if(pPlayer.getMainHandItem().is(Items.STICK)) {
             this.changeType(pState, pLevel, pPos);
@@ -109,22 +108,19 @@ public class CurvedPoleBlock extends HorizontalDirectionalBlock {
         }else{
             return ItemInteractionResult.FAIL;
         }
-        }else{
-            return ItemInteractionResult.SUCCESS;
-        }
     }
 
     public void changeType(BlockState pState, Level pLevel, BlockPos pPos){
 
         switch (pState.getValue(FACING)) {
             case NORTH ->
-                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.EAST), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.EAST), 10);
             case EAST ->
-                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.WEST), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.WEST), 10);
             case WEST ->
-                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.SOUTH), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.SOUTH), 10);
             case SOUTH ->
-                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.NORTH), 0);
+                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.NORTH), 10);
 
         }
 
