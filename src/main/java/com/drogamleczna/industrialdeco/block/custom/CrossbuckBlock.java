@@ -10,11 +10,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockEventData;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
+import net.neoforged.neoforge.event.level.BlockEvent;
 
 import javax.annotation.Nullable;
 
@@ -33,21 +36,18 @@ public class CrossbuckBlock extends PoleBlock {
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if(!pLevel.isClientSide()){
-            pLevel.updateNeighborsAt(pPos, this);
-            if (pPlayer.getMainHandItem().is(Items.STICK)) {
-                this.changeType(pState, pLevel, pPos);
-                return ItemInteractionResult.SUCCESS;
-            } else if (pPlayer.getMainHandItem().is(WRENCH_TAG)) {
-                this.changeType(pState, pLevel, pPos);
-                return ItemInteractionResult.SUCCESS;
-            } else {
-                return ItemInteractionResult.FAIL;
-            }
-        }else{
+        pLevel.updateNeighborsAt(pPos, this);
+        if(pPlayer.getMainHandItem().is(Items.STICK)) {
+            this.changeType(pState, pLevel, pPos);
             return ItemInteractionResult.SUCCESS;
+        }else if(pPlayer.getMainHandItem().is(WRENCH_TAG)) {
+            this.changeType(pState, pLevel, pPos);
+            return ItemInteractionResult.SUCCESS;
+        }else{
+            return ItemInteractionResult.FAIL;
         }
     }
+
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder){
@@ -59,25 +59,25 @@ public class CrossbuckBlock extends PoleBlock {
 
         switch (pState.getValue(CTYPE)) {
             case POLAND ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.POLAND_MULTITRACK), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.POLAND_MULTITRACK), 10);
             case POLAND_MULTITRACK ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.SWEDEN), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.SWEDEN), 10);
             case SWEDEN ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.SWEDEN_MULTITRACK), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.SWEDEN_MULTITRACK), 10);
             case SWEDEN_MULTITRACK ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.BELGIUM), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.BELGIUM), 10);
             case BELGIUM ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.BELGIUM_MULTITRACK), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.BELGIUM_MULTITRACK), 10);
             case BELGIUM_MULTITRACK ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.EUROPE), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.EUROPE), 10);
             case EUROPE ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.EUROPE_MULTITRACK), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.EUROPE_MULTITRACK), 10);
             case EUROPE_MULTITRACK ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.CANADA), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.CANADA), 10);
             case CANADA ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.JAPAN), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.JAPAN), 10);
             case JAPAN ->
-                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.POLAND), 0);
+                    pLevel.setBlock(pPos, pState.setValue(CTYPE, CrossbuckType.POLAND), 10);
         }
 
     }

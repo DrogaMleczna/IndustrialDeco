@@ -27,7 +27,7 @@ public class Seat extends Entity {
     private Seat(EntityType<Seat> pEntityType, Level pLevel, BlockPos pos, double seatHeight, float seatYaw, boolean lockYaw)
     {
         this(pEntityType, pLevel);
-        this.setPos(Vec3.atBottomCenterOf(pos).add(0, seatHeight, 0));
+        this.setPos(Vec3.atBottomCenterOf(pos).add(0, seatHeight+0.25F, 0));
         this.setRot(seatYaw, 0);
     }
 
