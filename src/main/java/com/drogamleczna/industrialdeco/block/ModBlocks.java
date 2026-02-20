@@ -98,6 +98,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> WIRE_BOX = registerBlock("wire_box",
             () -> new WireBoxBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
                     .dynamicShape()));
+    public static final RegistryObject<Block> WALL_SWITCH = registerBlock("wall_switch",
+            () -> new WallSwitchBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
+                    .dynamicShape()));
     public static final RegistryObject<Block> CEILING_OFFICE_LAMP = registerBlock("ceiling_office_lamp",
             () -> new CeilingBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
                     .dynamicShape().lightLevel((state) -> {return 15;})));

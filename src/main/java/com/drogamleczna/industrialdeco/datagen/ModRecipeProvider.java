@@ -9,6 +9,8 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.ShapelessRecipe;
+import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
@@ -282,6 +284,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("S S")
                 .define('S', Items.IRON_NUGGET)
                 .unlockedBy(getHasName(Items.GLOWSTONE), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.WALL_SWITCH.get())
+                .requires(ModBlocks.WIRE_BOX.get())
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
 
     }

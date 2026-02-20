@@ -44,6 +44,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.BENT_CHIMNEY);
         blockItem(ModBlocks.WALL_CHIMNEY);
         blockItem(ModBlocks.WIRE_BOX);
+        blockItemFromVariant(ModBlocks.WALL_SWITCH, "wall_switch_off");
         blockItem(ModBlocks.CEILING_OFFICE_LAMP);
         blockItem(ModBlocks.OFFICE_CEILING);
         blockItem(ModBlocks.BENCH);
@@ -67,5 +68,10 @@ public class ModItemModelProvider extends ItemModelProvider {
     public void blockItemWithExisting(RegistryObject<Block> block, String modelname){
         this.withExistingParent(IndustrialDeco.MODID + ":" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
                 modLoc("item/" + modelname));
+    }
+
+    public void blockItemFromVariant(RegistryObject<Block> block, String modelname){
+        this.withExistingParent(IndustrialDeco.MODID + ":" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
+                modLoc("block/" + modelname));
     }
 }
