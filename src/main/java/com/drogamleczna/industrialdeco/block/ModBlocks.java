@@ -97,6 +97,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> WIRE_BOX = registerBlock("wire_box",
             () -> new WireBoxBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(2.0f).noOcclusion()
                     .dynamicShape()));
+    public static final DeferredBlock<Block> WALL_SWITCH = registerBlock("wall_switch",
+            () -> new WallSwitchBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(2.0f).noOcclusion()
+                    .dynamicShape()));
     public static final DeferredBlock<Block> CEILING_OFFICE_LAMP = registerBlock("ceiling_office_lamp",
             () -> new CeilingBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(2.0f).noOcclusion()
                     .dynamicShape().lightLevel((state) -> {return 15;})));

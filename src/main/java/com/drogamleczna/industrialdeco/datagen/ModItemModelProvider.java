@@ -2,6 +2,7 @@ package com.drogamleczna.industrialdeco.datagen;
 
 import com.drogamleczna.industrialdeco.IndustrialDeco;
 import com.drogamleczna.industrialdeco.block.ModBlocks;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -9,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -22,6 +24,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlockItem(ModBlocks.DOUBLE_CURVED_POLE.get());
         simpleBlockItem(ModBlocks.QUADRUPLE_CURVED_POLE.get());
         withExistingParent("curved_wall_pole", ResourceLocation.fromNamespaceAndPath("industrialdeco", "post_bent_wall_item_model"));
+        withExistingParent("wall_switch", ResourceLocation.fromNamespaceAndPath("industrialdeco", "block/wall_switch_off"));
         simpleBlockItem(ModBlocks.CORNER_POLE.get());
         simpleBlockItem(ModBlocks.WIRE_POLE.get());
         simpleBlockItem(ModBlocks.POLE_BASE.get());
@@ -51,14 +54,4 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     }
 
-
-    /**public void blockItem(RegistryObject<Block> block) {
-        this.withExistingParent(IndustrialDeco.MODID + ":" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
-                modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath()));
-    }
-
-    public void blockItemWithExisting(RegistryObject<Block> block, String modelname){
-        this.withExistingParent(IndustrialDeco.MODID + ":" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
-                modLoc("item/" + modelname));
-    }**/
 }
