@@ -120,6 +120,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> METAL_FENCE_BLOCK_YELLOW = registerBlock("metal_fence_block_yellow",
             () -> new MetalFenceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
+    public static final RegistryObject<Block> WIRE_BLOCK = registerBlock("wire",
+            () -> new WireBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){

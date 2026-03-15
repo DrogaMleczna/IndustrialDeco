@@ -1,53 +1,380 @@
 {
   "variants": {
-    "facing=south,powered=false": {
+    "face=ceiling,facing=east,powered=false,wire=0": {
+      "model": "industrialdeco:block/wall_switch_off",
+      "x": 270
+    },
+    "face=ceiling,facing=east,powered=true,wire=0": {
+      "model": "industrialdeco:block/wall_switch_on",
+      "x": 270
+    },
+    "face=ceiling,facing=north,powered=false,wire=0": {
+      "model": "industrialdeco:block/wall_switch_off",
+      "x": 270
+    },
+    "face=ceiling,facing=north,powered=true,wire=0": {
+      "model": "industrialdeco:block/wall_switch_on",
+      "x": 270
+    },
+    "face=ceiling,facing=south,powered=false,wire=0": {
+      "model": "industrialdeco:block/wall_switch_off",
+      "x": 270
+    },
+    "face=ceiling,facing=south,powered=true,wire=0": {
+      "model": "industrialdeco:block/wall_switch_on",
+      "x": 270
+    },
+    "face=ceiling,facing=west,powered=false,wire=0": {
+      "model": "industrialdeco:block/wall_switch_off",
+      "x": 270
+    },
+    "face=ceiling,facing=west,powered=true,wire=0": {
+      "model": "industrialdeco:block/wall_switch_on",
+      "x": 270
+    },
+    "face=floor,facing=east,powered=false,wire=0": {
+      "model": "industrialdeco:block/wall_switch_off",
+      "x": 90
+    },
+    "face=floor,facing=east,powered=true,wire=0": {
+      "model": "industrialdeco:block/wall_switch_on",
+      "x": 90
+    },
+    "face=floor,facing=north,powered=false,wire=0": {
+      "model": "industrialdeco:block/wall_switch_off",
+      "x": 90
+    },
+    "face=floor,facing=north,powered=true,wire=0": {
+      "model": "industrialdeco:block/wall_switch_on",
+      "x": 90
+    },
+    "face=floor,facing=south,powered=false,wire=0": {
+      "model": "industrialdeco:block/wall_switch_off",
+      "x": 90
+    },
+    "face=floor,facing=south,powered=true,wire=0": {
+      "model": "industrialdeco:block/wall_switch_on",
+      "x": 90
+    },
+    "face=floor,facing=west,powered=false,wire=0": {
+      "model": "industrialdeco:block/wall_switch_off",
+      "x": 90
+    },
+    "face=floor,facing=west,powered=true,wire=0": {
+      "model": "industrialdeco:block/wall_switch_on",
+      "x": 90
+    },
+    "face=wall,facing=east,powered=false,wire=0": {
+      "model": "industrialdeco:block/wall_switch_off",
+      "y": 270
+    },
+    "face=wall,facing=east,powered=true,wire=0": {
+      "model": "industrialdeco:block/wall_switch_on",
+      "y": 270
+    },
+    "face=wall,facing=north,powered=false,wire=0": {
+      "model": "industrialdeco:block/wall_switch_off",
+      "y": 180
+    },
+    "face=wall,facing=north,powered=true,wire=0": {
+      "model": "industrialdeco:block/wall_switch_on",
+      "y": 180
+    },
+    "face=wall,facing=south,powered=false,wire=0": {
       "model": "industrialdeco:block/wall_switch_off"
     },
-    "facing=north,powered=false": {
-      "model": "industrialdeco:block/wall_switch_off",
-      "y": 180
-    },
-    "facing=west,powered=false": {
-      "model": "industrialdeco:block/wall_switch_off",
-      "y": 90
-    },
-    "facing=east,powered=false": {
-      "model": "industrialdeco:block/wall_switch_off",
-      "y": 270
-    },
-    "facing=up,powered=false": {
-      "model": "industrialdeco:block/wall_switch_off",
-      "y": 0,
-      "x": 90
-    },
-    "facing=down,powered=false": {
-      "model": "industrialdeco:block/wall_switch_off",
-      "y": 0,
-      "x": 270
-    },"facing=south,powered=true": {
+    "face=wall,facing=south,powered=true,wire=0": {
       "model": "industrialdeco:block/wall_switch_on"
     },
-    "facing=north,powered=true": {
-      "model": "industrialdeco:block/wall_switch_on",
-      "y": 180
+    "face=wall,facing=west,powered=false,wire=0": {
+      "model": "industrialdeco:block/wall_switch_off",
+      "y": 90
     },
-    "facing=west,powered=true": {
+    "face=wall,facing=west,powered=true,wire=0": {
       "model": "industrialdeco:block/wall_switch_on",
       "y": 90
     },
-    "facing=east,powered=true": {
-      "model": "industrialdeco:block/wall_switch_on",
-      "y": 270
+    "face=ceiling,facing=east,powered=false,wire=1": {
+      "model": "industrialdeco:block/wall_switch_off_wire_1",
+      "x": 270
     },
-    "facing=up,powered=true": {
-      "model": "industrialdeco:block/wall_switch_on",
-      "y": 0,
+    "face=ceiling,facing=east,powered=true,wire=1": {
+      "model": "industrialdeco:block/wall_switch_on_wire_1",
+      "x": 270
+    },
+    "face=ceiling,facing=north,powered=false,wire=1": {
+      "model": "industrialdeco:block/wall_switch_off_wire_1",
+      "x": 270
+    },
+    "face=ceiling,facing=north,powered=true,wire=1": {
+      "model": "industrialdeco:block/wall_switch_on_wire_1",
+      "x": 270
+    },
+    "face=ceiling,facing=south,powered=false,wire=1": {
+      "model": "industrialdeco:block/wall_switch_off_wire_1",
+      "x": 270
+    },
+    "face=ceiling,facing=south,powered=true,wire=1": {
+      "model": "industrialdeco:block/wall_switch_on_wire_1",
+      "x": 270
+    },
+    "face=ceiling,facing=west,powered=false,wire=1": {
+      "model": "industrialdeco:block/wall_switch_off_wire_1",
+      "x": 270
+    },
+    "face=ceiling,facing=west,powered=true,wire=1": {
+      "model": "industrialdeco:block/wall_switch_on_wire_1",
+      "x": 270
+    },
+    "face=floor,facing=east,powered=false,wire=1": {
+      "model": "industrialdeco:block/wall_switch_off_wire_1",
       "x": 90
     },
-    "facing=down,powered=true": {
-      "model": "industrialdeco:block/wall_switch_on",
-      "y": 0,
+    "face=floor,facing=east,powered=true,wire=1": {
+      "model": "industrialdeco:block/wall_switch_on_wire_1",
+      "x": 90
+    },
+    "face=floor,facing=north,powered=false,wire=1": {
+      "model": "industrialdeco:block/wall_switch_off_wire_1",
+      "x": 90
+    },
+    "face=floor,facing=north,powered=true,wire=1": {
+      "model": "industrialdeco:block/wall_switch_on_wire_1",
+      "x": 90
+    },
+    "face=floor,facing=south,powered=false,wire=1": {
+      "model": "industrialdeco:block/wall_switch_off_wire_1",
+      "x": 90
+    },
+    "face=floor,facing=south,powered=true,wire=1": {
+      "model": "industrialdeco:block/wall_switch_on_wire_1",
+      "x": 90
+    },
+    "face=floor,facing=west,powered=false,wire=1": {
+      "model": "industrialdeco:block/wall_switch_off_wire_1",
+      "x": 90
+    },
+    "face=floor,facing=west,powered=true,wire=1": {
+      "model": "industrialdeco:block/wall_switch_on_wire_1",
+      "x": 90
+    },
+    "face=wall,facing=east,powered=false,wire=1": {
+      "model": "industrialdeco:block/wall_switch_off_wire_1",
+      "y": 270
+    },
+    "face=wall,facing=east,powered=true,wire=1": {
+      "model": "industrialdeco:block/wall_switch_on_wire_1",
+      "y": 270
+    },
+    "face=wall,facing=north,powered=false,wire=1": {
+      "model": "industrialdeco:block/wall_switch_off_wire_1",
+      "y": 180
+    },
+    "face=wall,facing=north,powered=true,wire=1": {
+      "model": "industrialdeco:block/wall_switch_on_wire_1",
+      "y": 180
+    },
+    "face=wall,facing=south,powered=false,wire=1": {
+      "model": "industrialdeco:block/wall_switch_off_wire_1"
+    },
+    "face=wall,facing=south,powered=true,wire=1": {
+      "model": "industrialdeco:block/wall_switch_on_wire_1"
+    },
+    "face=wall,facing=west,powered=false,wire=1": {
+      "model": "industrialdeco:block/wall_switch_off_wire_1",
+      "y": 90
+    },
+    "face=wall,facing=west,powered=true,wire=1": {
+      "model": "industrialdeco:block/wall_switch_on_wire_1",
+      "y": 90
+    },
+    "face=ceiling,facing=east,powered=false,wire=2": {
+      "model": "industrialdeco:block/wall_switch_off_wire_2",
       "x": 270
+    },
+    "face=ceiling,facing=east,powered=true,wire=2": {
+      "model": "industrialdeco:block/wall_switch_on_wire_2",
+      "x": 270
+    },
+    "face=ceiling,facing=north,powered=false,wire=2": {
+      "model": "industrialdeco:block/wall_switch_off_wire_2",
+      "x": 270
+    },
+    "face=ceiling,facing=north,powered=true,wire=2": {
+      "model": "industrialdeco:block/wall_switch_on_wire_2",
+      "x": 270
+    },
+    "face=ceiling,facing=south,powered=false,wire=2": {
+      "model": "industrialdeco:block/wall_switch_off_wire_2",
+      "x": 270
+    },
+    "face=ceiling,facing=south,powered=true,wire=2": {
+      "model": "industrialdeco:block/wall_switch_on_wire_2",
+      "x": 270
+    },
+    "face=ceiling,facing=west,powered=false,wire=2": {
+      "model": "industrialdeco:block/wall_switch_off_wire_2",
+      "x": 270
+    },
+    "face=ceiling,facing=west,powered=true,wire=2": {
+      "model": "industrialdeco:block/wall_switch_on_wire_2",
+      "x": 270
+    },
+    "face=floor,facing=east,powered=false,wire=2": {
+      "model": "industrialdeco:block/wall_switch_off_wire_2",
+      "x": 90
+    },
+    "face=floor,facing=east,powered=true,wire=2": {
+      "model": "industrialdeco:block/wall_switch_on_wire_2",
+      "x": 90
+    },
+    "face=floor,facing=north,powered=false,wire=2": {
+      "model": "industrialdeco:block/wall_switch_off_wire_2",
+      "x": 90
+    },
+    "face=floor,facing=north,powered=true,wire=2": {
+      "model": "industrialdeco:block/wall_switch_on_wire_2",
+      "x": 90
+    },
+    "face=floor,facing=south,powered=false,wire=2": {
+      "model": "industrialdeco:block/wall_switch_off_wire_2",
+      "x": 90
+    },
+    "face=floor,facing=south,powered=true,wire=2": {
+      "model": "industrialdeco:block/wall_switch_on_wire_2",
+      "x": 90
+    },
+    "face=floor,facing=west,powered=false,wire=2": {
+      "model": "industrialdeco:block/wall_switch_off_wire_2",
+      "x": 90
+    },
+    "face=floor,facing=west,powered=true,wire=2": {
+      "model": "industrialdeco:block/wall_switch_on_wire_2",
+      "x": 90
+    },
+    "face=wall,facing=east,powered=false,wire=2": {
+      "model": "industrialdeco:block/wall_switch_off_wire_2",
+      "y": 270
+    },
+    "face=wall,facing=east,powered=true,wire=2": {
+      "model": "industrialdeco:block/wall_switch_on_wire_2",
+      "y": 270
+    },
+    "face=wall,facing=north,powered=false,wire=2": {
+      "model": "industrialdeco:block/wall_switch_off_wire_2",
+      "y": 180
+    },
+    "face=wall,facing=north,powered=true,wire=2": {
+      "model": "industrialdeco:block/wall_switch_on_wire_2",
+      "y": 180
+    },
+    "face=wall,facing=south,powered=false,wire=2": {
+      "model": "industrialdeco:block/wall_switch_off_wire_2"
+    },
+    "face=wall,facing=south,powered=true,wire=2": {
+      "model": "industrialdeco:block/wall_switch_on_wire_2"
+    },
+    "face=wall,facing=west,powered=false,wire=2": {
+      "model": "industrialdeco:block/wall_switch_off_wire_2",
+      "y": 90
+    },
+    "face=wall,facing=west,powered=true,wire=2": {
+      "model": "industrialdeco:block/wall_switch_on_wire_2",
+      "y": 90
+    },
+    "face=ceiling,facing=east,powered=false,wire=3": {
+      "model": "industrialdeco:block/wall_switch_off_wire_3",
+      "x": 270
+    },
+    "face=ceiling,facing=east,powered=true,wire=3": {
+      "model": "industrialdeco:block/wall_switch_on_wire_3",
+      "x": 270
+    },
+    "face=ceiling,facing=north,powered=false,wire=3": {
+      "model": "industrialdeco:block/wall_switch_off_wire_3",
+      "x": 270
+    },
+    "face=ceiling,facing=north,powered=true,wire=3": {
+      "model": "industrialdeco:block/wall_switch_on_wire_3",
+      "x": 270
+    },
+    "face=ceiling,facing=south,powered=false,wire=3": {
+      "model": "industrialdeco:block/wall_switch_off_wire_3",
+      "x": 270
+    },
+    "face=ceiling,facing=south,powered=true,wire=3": {
+      "model": "industrialdeco:block/wall_switch_on_wire_3",
+      "x": 270
+    },
+    "face=ceiling,facing=west,powered=false,wire=3": {
+      "model": "industrialdeco:block/wall_switch_off_wire_3",
+      "x": 270
+    },
+    "face=ceiling,facing=west,powered=true,wire=3": {
+      "model": "industrialdeco:block/wall_switch_on_wire_3",
+      "x": 270
+    },
+    "face=floor,facing=east,powered=false,wire=3": {
+      "model": "industrialdeco:block/wall_switch_off_wire_3",
+      "x": 90
+    },
+    "face=floor,facing=east,powered=true,wire=3": {
+      "model": "industrialdeco:block/wall_switch_on_wire_3",
+      "x": 90
+    },
+    "face=floor,facing=north,powered=false,wire=3": {
+      "model": "industrialdeco:block/wall_switch_off_wire_3",
+      "x": 90
+    },
+    "face=floor,facing=north,powered=true,wire=3": {
+      "model": "industrialdeco:block/wall_switch_on_wire_3",
+      "x": 90
+    },
+    "face=floor,facing=south,powered=false,wire=3": {
+      "model": "industrialdeco:block/wall_switch_off_wire_3",
+      "x": 90
+    },
+    "face=floor,facing=south,powered=true,wire=3": {
+      "model": "industrialdeco:block/wall_switch_on_wire_3",
+      "x": 90
+    },
+    "face=floor,facing=west,powered=false,wire=3": {
+      "model": "industrialdeco:block/wall_switch_off_wire_3",
+      "x": 90
+    },
+    "face=floor,facing=west,powered=true,wire=3": {
+      "model": "industrialdeco:block/wall_switch_on_wire_3",
+      "x": 90
+    },
+    "face=wall,facing=east,powered=false,wire=3": {
+      "model": "industrialdeco:block/wall_switch_off_wire_3",
+      "y": 270
+    },
+    "face=wall,facing=east,powered=true,wire=3": {
+      "model": "industrialdeco:block/wall_switch_on_wire_3",
+      "y": 270
+    },
+    "face=wall,facing=north,powered=false,wire=3": {
+      "model": "industrialdeco:block/wall_switch_off_wire_3",
+      "y": 180
+    },
+    "face=wall,facing=north,powered=true,wire=3": {
+      "model": "industrialdeco:block/wall_switch_on_wire_3",
+      "y": 180
+    },
+    "face=wall,facing=south,powered=false,wire=3": {
+      "model": "industrialdeco:block/wall_switch_off_wire_3"
+    },
+    "face=wall,facing=south,powered=true,wire=3": {
+      "model": "industrialdeco:block/wall_switch_on_wire_3"
+    },
+    "face=wall,facing=west,powered=false,wire=3": {
+      "model": "industrialdeco:block/wall_switch_off_wire_3",
+      "y": 90
+    },
+    "face=wall,facing=west,powered=true,wire=3": {
+      "model": "industrialdeco:block/wall_switch_on_wire_3",
+      "y": 90
     }
   }
 }

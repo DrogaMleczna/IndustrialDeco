@@ -36,6 +36,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.WALL_DISTRIBUTION_BOX.get());
                         pOutput.accept(ModBlocks.WIRE_BOX.get());
                         pOutput.accept(ModBlocks.WALL_SWITCH.get());
+                        pOutput.accept(ModBlocks.WIRE_BLOCK.get());
                         pOutput.accept(ModBlocks.WARNING_POLE.get());
                         pOutput.accept(ModBlocks.HAZARD_POLE.get());
                         pOutput.accept(ModBlocks.CROSSBUCK_BLOCK.get());

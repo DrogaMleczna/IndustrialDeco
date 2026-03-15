@@ -1,28 +1,101 @@
 {
   "variants": {
-    "facing=south": {
+    "facing=south,face=wall,wire=0": {
       "model": "industrialdeco:block/wire_box"
     },
-    "facing=north": {
+    "facing=north,face=wall,wire=0": {
       "model": "industrialdeco:block/wire_box",
       "y": 180
     },
-    "facing=west": {
+    "facing=west,face=wall,wire=0": {
       "model": "industrialdeco:block/wire_box",
       "y": 90
     },
-    "facing=east": {
+    "facing=east,face=wall,wire=0": {
       "model": "industrialdeco:block/wire_box",
       "y": 270
     },
-    "facing=up": {
+    "facing=south,face=wall,wire=1": {
+      "model": "industrialdeco:block/wire_box_1"
+    },
+    "facing=north,face=wall,wire=1": {
+      "model": "industrialdeco:block/wire_box_1",
+      "y": 180
+    },
+    "facing=west,face=wall,wire=1": {
+      "model": "industrialdeco:block/wire_box_1",
+      "y": 90
+    },
+    "facing=east,face=wall,wire=1": {
+      "model": "industrialdeco:block/wire_box_1",
+      "y": 270
+    },
+    "facing=south,face=wall,wire=2": {
+      "model": "industrialdeco:block/wire_box_2"
+    },
+    "facing=north,face=wall,wire=2": {
+      "model": "industrialdeco:block/wire_box_2",
+      "y": 180
+    },
+    "facing=west,face=wall,wire=2": {
+      "model": "industrialdeco:block/wire_box_2",
+      "y": 90
+    },
+    "facing=east,face=wall,wire=2": {
+      "model": "industrialdeco:block/wire_box_2",
+      "y": 270
+    },
+    "facing=south,face=wall,wire=3": {
+      "model": "industrialdeco:block/wire_box_3"
+    },
+    "facing=north,face=wall,wire=3": {
+      "model": "industrialdeco:block/wire_box_3",
+      "y": 180
+    },
+    "facing=west,face=wall,wire=3": {
+      "model": "industrialdeco:block/wire_box_3",
+      "y": 90
+    },
+    "facing=east,face=wall,wire=3": {
+      "model": "industrialdeco:block/wire_box_3",
+      "y": 270
+    },
+    "facing=south,face=floor": {
       "model": "industrialdeco:block/wire_box",
-      "y": 0,
       "x": 90
     },
-    "facing=down": {
+    "facing=north,face=floor": {
       "model": "industrialdeco:block/wire_box",
-      "y": 0,
+      "y": 180,
+      "x": 90
+    },
+    "facing=west,face=floor": {
+      "model": "industrialdeco:block/wire_box",
+      "y": 90,
+      "x": 90
+    },
+    "facing=east,face=floor": {
+      "model": "industrialdeco:block/wire_box",
+      "y": 270,
+      "x": 90
+    },
+    "facing=south,face=ceiling": {
+      "model": "industrialdeco:block/wire_box",
+      "x": 270
+    },
+    "facing=north,face=ceiling": {
+      "model": "industrialdeco:block/wire_box",
+      "y": 180,
+      "x": 270
+    },
+    "facing=west,face=ceiling": {
+      "model": "industrialdeco:block/wire_box",
+      "y": 90,
+      "x": 270
+    },
+    "facing=east,face=ceiling": {
+      "model": "industrialdeco:block/wire_box",
+      "y": 270,
       "x": 270
     }
   }

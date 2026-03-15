@@ -25,6 +25,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.QUADRUPLE_CURVED_POLE);
         blockItemWithExisting(ModBlocks.WALL_CURVED_POLE, "post_bent_wall_item_model");
         blockItem(ModBlocks.CORNER_POLE);
+        blockItem(ModBlocks.WIRE_BLOCK);
         blockItem(ModBlocks.WIRE_POLE);
         blockItem(ModBlocks.POLE_BASE);
         blockItem(ModBlocks.LARGE_BASE);

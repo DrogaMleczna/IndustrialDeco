@@ -1,5 +1,6 @@
 package com.drogamleczna.industrialdeco.block.custom;
 
+import com.drogamleczna.industrialdeco.block.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -7,6 +8,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -14,7 +16,9 @@ import net.minecraft.world.level.block.FaceAttachedHorizontalDirectionalBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -24,21 +28,26 @@ import javax.annotation.Nullable;
 
 public class WallSwitchBlock extends FaceAttachedHorizontalDirectionalBlock {
     public static final BooleanProperty POWERED = BooleanProperty.create("powered");
+    public static final IntegerProperty WIRE = IntegerProperty.create("wire", 0, 3);
     public WallSwitchBlock(Properties pProperties) {
         super(pProperties);
-        registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(POWERED, false));
+        registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(POWERED, false).setValue(WIRE, 0));
     }
 
     public static final VoxelShape SHAPE_N;
     public static final VoxelShape SHAPE_S;
     public static final VoxelShape SHAPE_E;
     public static final VoxelShape SHAPE_W;
+    public static final VoxelShape SHAPE_F;
+    public static final VoxelShape SHAPE_C;
 
     static {
         SHAPE_S = Block.box(4,4,0,12,12,3);
         SHAPE_N = Block.box(4,4,13,12,12,16);
         SHAPE_E = Block.box(0,4,4,3,12,12);
         SHAPE_W = Block.box(13,4,4,16,12,12);
+        SHAPE_F = Block.box(4,0,4,12,3,12);
+        SHAPE_C = Block.box(4,13,4,12,16,12);
 
     }
 
@@ -46,14 +55,21 @@ public class WallSwitchBlock extends FaceAttachedHorizontalDirectionalBlock {
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         Direction direction = pState.getValue(FACING);
-        if (direction == Direction.EAST){
-            return SHAPE_E;
-        }else if (direction == Direction.WEST){
-            return SHAPE_W;
-        }else if (direction == Direction.SOUTH){
-            return SHAPE_S;
-        }else{
-            return SHAPE_N;
+        if(pState.getValue(FACE) == AttachFace.FLOOR){
+            return SHAPE_F;
+        }
+        else if(pState.getValue(FACE) == AttachFace.CEILING){
+            return SHAPE_C;
+        }else {
+            if (direction == Direction.EAST) {
+                return SHAPE_E;
+            } else if (direction == Direction.WEST) {
+                return SHAPE_W;
+            } else if (direction == Direction.SOUTH) {
+                return SHAPE_S;
+            } else {
+                return SHAPE_N;
+            }
         }
     }
 
@@ -62,6 +78,44 @@ public class WallSwitchBlock extends FaceAttachedHorizontalDirectionalBlock {
         return RenderShape.MODEL;
     }
 
+    @Override
+    public void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pNeighborBlock, BlockPos pNeighborPos, boolean pMovedByPiston) {
+        int in_wire = (pLevel.getBlockState(pPos.above()).is(ModBlocks.WIRE_BLOCK.get())
+                || pLevel.getBlockState(pPos.above()).canRedstoneConnectTo(pLevel, pPos.above(), Direction.DOWN) ? 1:0)
+                + (pLevel.getBlockState(pPos.below()).is(ModBlocks.WIRE_BLOCK.get())
+                || pLevel.getBlockState(pPos.below()).canRedstoneConnectTo(pLevel, pPos.below(), Direction.UP) ? 2:0);
+        pState = pState.setValue(WIRE, in_wire);
+        pLevel.setBlock(pPos, pState, 3);
+    }
+
+    @Override
+    @Nullable
+    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+        for(Direction direction : pContext.getNearestLookingDirections()) {
+            BlockState blockstate;
+            BlockPos pPos = pContext.getClickedPos();
+            int is_wire_above = pContext.getLevel().getBlockState(pPos.above()).is(ModBlocks.WIRE_BLOCK.get())
+                    || pContext.getLevel().getBlockState(pPos.above()).canRedstoneConnectTo(pContext.getLevel(), pPos.above(), Direction.DOWN) ? 1 : 0;
+            int is_wire_below = pContext.getLevel().getBlockState(pPos.below()).is(ModBlocks.WIRE_BLOCK.get())
+                    || pContext.getLevel().getBlockState(pPos.below()).canRedstoneConnectTo(pContext.getLevel(), pPos.below(), Direction.UP)? 2 : 0;
+            int wires = is_wire_below + is_wire_above;
+            if (direction.getAxis() == Direction.Axis.Y) {
+                blockstate = (BlockState)((BlockState)this.defaultBlockState().setValue(FACE, direction == Direction.UP ?
+                        AttachFace.CEILING : AttachFace.FLOOR)).setValue(FACING, pContext.getHorizontalDirection()).setValue(WIRE, wires);
+            } else {
+                blockstate = (BlockState)((BlockState)this.defaultBlockState().setValue(FACE, AttachFace.WALL)).setValue(FACING,
+                        direction.getOpposite()).setValue(WIRE, wires);
+            }
+
+            if (blockstate.canSurvive(pContext.getLevel(), pContext.getClickedPos())) {
+                return blockstate;
+            }
+        }
+
+        return null;
+    }
+
+    @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (pLevel.isClientSide) {
             BlockState isPowered = pState.cycle(POWERED);
@@ -74,6 +128,7 @@ public class WallSwitchBlock extends FaceAttachedHorizontalDirectionalBlock {
             return InteractionResult.CONSUME;
         }
     }
+
 
     public BlockState turn(BlockState pState, Level pLevel, BlockPos pPos) {
         pState = pState.cycle(POWERED);
@@ -101,6 +156,7 @@ public class WallSwitchBlock extends FaceAttachedHorizontalDirectionalBlock {
         builder.add(POWERED);
         builder.add(FACING);
         builder.add(FACE);
+        builder.add(WIRE);
     }
 
     public int getDirectSignal(BlockState pBlockState, BlockGetter pBlockAccess, BlockPos pPos, Direction pSide) {

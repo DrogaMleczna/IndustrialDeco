@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "industrialdeco:block/wire",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "industrialdeco:block/wire"
+    },
+    "facing=west": {
+      "model": "industrialdeco:block/wire",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "industrialdeco:block/wire",
+      "y": 270
+    }
+  }
+}

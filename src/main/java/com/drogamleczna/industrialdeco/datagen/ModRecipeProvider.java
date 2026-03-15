@@ -61,7 +61,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         blocks.add(ModBlocks.CROSSBUCK_BLOCK);
         blocks.add(ModBlocks.METAL_FENCE_BLOCK);
         for (RegistryObject<Block> block : blocks){
-            if(!(block == ModBlocks.BENCH || block == ModBlocks.PALLET || block == ModBlocks.STREET_LAMP || block == ModBlocks.CEILING_OFFICE_LAMP) ){
+            if(!(block == ModBlocks.BENCH || block == ModBlocks.PALLET || block == ModBlocks.STREET_LAMP || block == ModBlocks.CEILING_OFFICE_LAMP)
+                    || block == ModBlocks.WIRE_BLOCK || block == ModBlocks.WALL_SWITCH || block == ModBlocks.WIRE_BOX){
                 CustomRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT),RecipeCategory.MISC, block.get() )
                         .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                         .saveWithSuffix("_iron",pWriter, block.getId());
@@ -289,6 +290,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.WIRE_BOX.get())
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
+        stonecutterResultFromBase(pWriter, RecipeCategory.MISC, ModBlocks.WIRE_BLOCK.get(), Items.COPPER_INGOT);
 
     }
 
