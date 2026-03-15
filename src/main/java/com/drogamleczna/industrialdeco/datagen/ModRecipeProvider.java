@@ -2,6 +2,7 @@ package com.drogamleczna.industrialdeco.datagen;
 
 import com.drogamleczna.industrialdeco.block.ModBlocks;
 import com.drogamleczna.industrialdeco.util.ModTags;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -26,52 +27,31 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
 
+    protected Iterable<Block> getKnownBlocks() {
+        return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+    }
+
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
-        ArrayList<RegistryObject<Block>> blocks = new ArrayList<RegistryObject<Block>>();
-        blocks.add(ModBlocks.STREET_LAMP);
-        blocks.add(ModBlocks.CURVED_POLE);
-        blocks.add(ModBlocks.DOUBLE_CURVED_POLE);
-        blocks.add(ModBlocks.QUADRUPLE_CURVED_POLE);
-        blocks.add(ModBlocks.CORNER_POLE);
-        blocks.add(ModBlocks.WALL_CURVED_POLE);
-        blocks.add(ModBlocks.WIRE_POLE);
-        blocks.add(ModBlocks.POLE_BASE);
-        blocks.add(ModBlocks.LARGE_BASE);
-        blocks.add(ModBlocks.POLE_BLOCK);
-        blocks.add(ModBlocks.HAZARD_POLE);
-        blocks.add(ModBlocks.WARNING_POLE);
-        blocks.add(ModBlocks.CAMERA_POLE);
-        blocks.add(ModBlocks.CAMERA_POLE_CORNER);
-        blocks.add(ModBlocks.CAMERA_POLE_TRIPLE);
-        blocks.add(ModBlocks.CAMERA_POLE_QUADRUPLE);
-        blocks.add(ModBlocks.SPLIT_POLE);
-        blocks.add(ModBlocks.DISTRIBUTION_BOX);
-        blocks.add(ModBlocks.WALL_DISTRIBUTION_BOX);
-        blocks.add(ModBlocks.MEDIUM_BASE);
-        blocks.add(ModBlocks.PALLET);
-        blocks.add(ModBlocks.SECURITY_CAMERA);
-        blocks.add(ModBlocks.CHIMNEY_BLOCK);
-        blocks.add(ModBlocks.BENT_CHIMNEY);
-        blocks.add(ModBlocks.WALL_CHIMNEY);
-        blocks.add(ModBlocks.WIRE_BOX);
-        blocks.add(ModBlocks.CEILING_OFFICE_LAMP);
-        blocks.add(ModBlocks.OFFICE_CEILING);
-        blocks.add(ModBlocks.BENCH);
-        blocks.add(ModBlocks.CROSSBUCK_BLOCK);
-        blocks.add(ModBlocks.METAL_FENCE_BLOCK);
-        for (RegistryObject<Block> block : blocks){
-            if(!(block == ModBlocks.BENCH || block == ModBlocks.PALLET || block == ModBlocks.STREET_LAMP || block == ModBlocks.CEILING_OFFICE_LAMP)
-                    || block == ModBlocks.WIRE_BLOCK || block == ModBlocks.WALL_SWITCH || block == ModBlocks.WIRE_BOX){
-                CustomRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT),RecipeCategory.MISC, block.get() )
+        ArrayList<Block> disabled_blocks = new ArrayList<Block>();
+        disabled_blocks.add(ModBlocks.BENCH.get());
+        disabled_blocks.add(ModBlocks.PALLET.get());
+        disabled_blocks.add(ModBlocks.STREET_LAMP.get());
+        disabled_blocks.add(ModBlocks.CEILING_OFFICE_LAMP.get());
+        disabled_blocks.add(ModBlocks.WIRE_BLOCK.get());
+        disabled_blocks.add(ModBlocks.WALL_SWITCH.get());
+        disabled_blocks.add(ModBlocks.WIRE_BOX.get());
+        getKnownBlocks().forEach( block -> {
+            if(!disabled_blocks.contains(block)){
+                CustomRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT),RecipeCategory.MISC, block)
                         .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
-                        .saveWithSuffix("_iron",pWriter, block.getId());
-                CustomRecipeBuilder.stonecutting(Ingredient.of(ModTags.Items.INDUSTRIAL_DECO_METAL_BLOCKS),RecipeCategory.MISC, block.get() )
+                        .saveWithSuffix("_iron",pWriter, BuiltInRegistries.ITEM.getKey(block.asItem()));
+                CustomRecipeBuilder.stonecutting(Ingredient.of(ModTags.Items.INDUSTRIAL_DECO_METAL_BLOCKS),RecipeCategory.MISC, block)
                         .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                         .save(pWriter);
             }
 
-        }
+        });
 
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STREET_LAMP.get(), 4)
