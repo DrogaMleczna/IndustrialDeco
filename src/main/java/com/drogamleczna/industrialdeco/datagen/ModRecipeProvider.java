@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -71,7 +72,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         blocks.add(ModBlocks.CROSSBUCK_BLOCK);
         blocks.add(ModBlocks.METAL_FENCE_BLOCK);
         for (DeferredBlock block : blocks){
-            if(!(block == ModBlocks.BENCH || block == ModBlocks.PALLET || block == ModBlocks.STREET_LAMP || block == ModBlocks.CEILING_OFFICE_LAMP) ){
+            if(!(block == ModBlocks.BENCH || block == ModBlocks.PALLET || block == ModBlocks.STREET_LAMP
+                    || block == ModBlocks.CEILING_OFFICE_LAMP || block == ModBlocks.WIRE_BLOCK || block == ModBlocks.WALL_SWITCH || block == ModBlocks.WIRE_BOX) ){
                 stonecutterRecipeFromTag( pWriter, RecipeCategory.MISC, (ItemLike) block.get(), ModTags.Items.INDUSTRIAL_DECO_METAL_BLOCKS);
                 stonecutterResultFromBase(pWriter, RecipeCategory.MISC, block, Items.IRON_INGOT);
             }
@@ -295,6 +297,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Items.IRON_NUGGET)
                 .unlockedBy(getHasName(Items.GLOWSTONE), has(Items.IRON_INGOT))
                 .save(pWriter);
+        stonecutterResultFromBase(pWriter, RecipeCategory.MISC, ModBlocks.WIRE_BLOCK, Items.COPPER_INGOT);
 
 
     }

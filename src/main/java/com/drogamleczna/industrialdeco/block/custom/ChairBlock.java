@@ -72,21 +72,21 @@ public class ChairBlock extends HorizontalDirectionalBlock {
          }
 
     @Nullable
-         @Override
-         public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-             Direction direction = pState.getValue(FACING);
-             if (direction == Direction.EAST){
-                 return SHAPE_E;
-             }else if (direction == Direction.WEST){
-                 return SHAPE_W;
-             }else if (direction == Direction.SOUTH){
-                 return SHAPE_S;
-             }else{
-                 return SHAPE_N;
-             }
+    @Override
+    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+         Direction direction = pState.getValue(FACING);
+         if (direction == Direction.EAST){
+             return SHAPE_E;
+         }else if (direction == Direction.WEST){
+             return SHAPE_W;
+         }else if (direction == Direction.SOUTH){
+             return SHAPE_S;
+         }else{
+             return SHAPE_N;
          }
-         @Override
-         public RenderShape getRenderShape(BlockState pState){
+     }
+     @Override
+     public RenderShape getRenderShape(BlockState pState){
              return RenderShape.MODEL;
          }
 

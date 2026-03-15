@@ -119,6 +119,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> METAL_FENCE_BLOCK_YELLOW = registerBlock("metal_fence_block_yellow",
             () -> new MetalFenceBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
+    public static final DeferredBlock<Block> WIRE_BLOCK = registerBlock("wire",
+            () -> new WireBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){

@@ -51,6 +51,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlockItem(ModBlocks.CROSSBUCK_BLOCK.get());
         simpleBlockItem(ModBlocks.METAL_FENCE_BLOCK.get());
         simpleBlockItem(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get());
+        simpleBlockItem(ModBlocks.WIRE_BLOCK.get());
 
     }
 
