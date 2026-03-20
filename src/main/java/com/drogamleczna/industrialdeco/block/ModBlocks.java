@@ -8,6 +8,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
@@ -122,13 +123,19 @@ public class ModBlocks {
     public static final DeferredBlock<Block> WIRE_BLOCK = registerBlock("wire",
             () -> new WireBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
-
+    public static final DeferredBlock<Block> CAGE_LAMP = registerBlock("cage_lamp",
+            () -> new CageLampBlock(BlockBehaviour.Properties.of().lightLevel((state) -> state.getValue(BlockStateProperties.LIT)?15:0).sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final DeferredBlock<Block> RED_CAGE_LAMP = registerBlock("red_cage_lamp",
+            () -> new CageLampBlock(BlockBehaviour.Properties.of().lightLevel((state) -> state.getValue(BlockStateProperties.LIT)?15:0).sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
     }
+
 
     private  static  <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block){
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

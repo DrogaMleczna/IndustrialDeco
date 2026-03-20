@@ -6,26 +6,19 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
-import net.neoforged.neoforge.registries.DeferredBlock;
 
 
 import java.util.ArrayList;
 import java.util.concurrent.CompletableFuture;
-import java.util.function.Consumer;
-import java.util.stream.Stream;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
     public ModRecipeProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> registries) {
@@ -52,6 +45,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         disabled_blocks.add(ModBlocks.WIRE_BLOCK.get());
         disabled_blocks.add(ModBlocks.WALL_SWITCH.get());
         disabled_blocks.add(ModBlocks.WIRE_BOX.get());
+        disabled_blocks.add(ModBlocks.CAGE_LAMP.get());
+        disabled_blocks.add(ModBlocks.RED_CAGE_LAMP.get());
 
         getKnownBlocks().forEach(block -> {
             if(!disabled_blocks.contains(block)){
@@ -279,6 +274,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Items.IRON_NUGGET)
                 .unlockedBy(getHasName(Items.GLOWSTONE), has(Items.IRON_INGOT))
                 .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.RED_CAGE_LAMP,3)
+                .requires(ModBlocks.CAGE_LAMP,3)
+                .requires(Tags.Items.DYES_RED)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.CAGE_LAMP, 3)
+                .requires(Items.GLOWSTONE)
+                .requires(Items.IRON_NUGGET, 3)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+
         stonecutterResultFromBase(pWriter, RecipeCategory.MISC, ModBlocks.WIRE_BLOCK, Items.COPPER_INGOT);
 
 

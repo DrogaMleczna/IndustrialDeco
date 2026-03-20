@@ -22,6 +22,8 @@ public class ModCreativeModeTabs {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.CEILING_OFFICE_LAMP.get());
                         pOutput.accept(ModBlocks.OFFICE_CEILING.get());
+                        pOutput.accept(ModBlocks.CAGE_LAMP.get());
+                        pOutput.accept(ModBlocks.RED_CAGE_LAMP.get());
                         pOutput.accept(ModBlocks.STREET_LAMP.get());
                         pOutput.accept(ModBlocks.POLE_BLOCK.get());
                         pOutput.accept(ModBlocks.CURVED_POLE.get());

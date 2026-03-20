@@ -2,15 +2,10 @@ package com.drogamleczna.industrialdeco.datagen;
 
 import com.drogamleczna.industrialdeco.IndustrialDeco;
 import com.drogamleczna.industrialdeco.block.ModBlocks;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.registries.DeferredBlock;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -52,6 +47,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlockItem(ModBlocks.METAL_FENCE_BLOCK.get());
         simpleBlockItem(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get());
         simpleBlockItem(ModBlocks.WIRE_BLOCK.get());
+        simpleBlockItem(ModBlocks.CAGE_LAMP.get());
+        simpleBlockItem(ModBlocks.RED_CAGE_LAMP.get());
 
     }
 
