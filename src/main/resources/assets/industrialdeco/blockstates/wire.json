@@ -1,18 +1,123 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,long_side=0,horizontal=false": {
       "model": "industrialdeco:block/wire",
       "y": 180
     },
-    "facing=south": {
+    "facing=south,long_side=0,horizontal=false": {
       "model": "industrialdeco:block/wire"
     },
-    "facing=west": {
+    "facing=west,long_side=0,horizontal=false": {
       "model": "industrialdeco:block/wire",
       "y": 90
     },
-    "facing=east": {
+    "facing=east,long_side=0,horizontal=false": {
       "model": "industrialdeco:block/wire",
+      "y": 270
+    },
+    "facing=north,long_side=1,horizontal=false": {
+      "model": "industrialdeco:block/wire_1",
+      "y": 180
+    },
+    "facing=south,long_side=1,horizontal=false": {
+      "model": "industrialdeco:block/wire_1"
+    },
+    "facing=west,long_side=1,horizontal=false": {
+      "model": "industrialdeco:block/wire_1",
+      "y": 90
+    },
+    "facing=east,long_side=1,horizontal=false": {
+      "model": "industrialdeco:block/wire_1",
+      "y": 270
+    },
+    "facing=north,long_side=2,horizontal=false": {
+      "model": "industrialdeco:block/wire_2",
+      "y": 180
+    },
+    "facing=south,long_side=2,horizontal=false": {
+      "model": "industrialdeco:block/wire_2"
+    },
+    "facing=west,long_side=2,horizontal=false": {
+      "model": "industrialdeco:block/wire_2",
+      "y": 90
+    },
+    "facing=east,long_side=2,horizontal=false": {
+      "model": "industrialdeco:block/wire_2",
+      "y": 270
+    },
+    "facing=north,long_side=3,horizontal=false": {
+      "model": "industrialdeco:block/wire_3",
+      "y": 180
+    },
+    "facing=south,long_side=3,horizontal=false": {
+      "model": "industrialdeco:block/wire_3"
+    },
+    "facing=west,long_side=3,horizontal=false": {
+      "model": "industrialdeco:block/wire_3",
+      "y": 90
+    },
+    "facing=east,long_side=3,horizontal=false": {
+      "model": "industrialdeco:block/wire_3",
+      "y": 270
+    },
+    "facing=north,long_side=0,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal",
+      "y": 180
+    },
+    "facing=south,long_side=0,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal"
+    },
+    "facing=west,long_side=0,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal",
+      "y": 90
+    },
+    "facing=east,long_side=0,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal",
+      "y": 270
+    },
+    "facing=north,long_side=1,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal_1",
+      "y": 180
+    },
+    "facing=south,long_side=1,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal_1"
+    },
+    "facing=west,long_side=1,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal_1",
+      "y": 90
+    },
+    "facing=east,long_side=1,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal_1",
+      "y": 270
+    },
+    "facing=north,long_side=2,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal_2",
+      "y": 180
+    },
+    "facing=south,long_side=2,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal_2"
+    },
+    "facing=west,long_side=2,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal_2",
+      "y": 90
+    },
+    "facing=east,long_side=2,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal_2",
+      "y": 270
+    },
+    "facing=north,long_side=3,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal_3",
+      "y": 180
+    },
+    "facing=south,long_side=3,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal_3"
+    },
+    "facing=west,long_side=3,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal_3",
+      "y": 90
+    },
+    "facing=east,long_side=3,horizontal=true": {
+      "model": "industrialdeco:block/wire_horizontal_3",
       "y": 270
     }
   }

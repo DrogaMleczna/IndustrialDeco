@@ -34,5 +34,7 @@
   "block.industrialdeco.bench": "Bench",
   "block.industrialdeco.metal_fence_block": "Metal Fence",
   "block.industrialdeco.metal_fence_block_yellow": "Hazard Metal Fence",
+  "block.industrialdeco.cage_lamp": "Cage Lamp",
+  "block.industrialdeco.red_cage_lamp": "Red Cage Lamp",
   "creativetab.industrial_deco_tab": "Industrial Deco"
 }

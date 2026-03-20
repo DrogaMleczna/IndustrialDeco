@@ -1,0 +1,7 @@
+{
+  "parent": "industrialdeco:block/cage_lamp",
+  "textures": {
+    "0": "industrialdeco:block/red_cage_lamp",
+    "particle": "industrialdeco:block/red_cage_lamp"
+  }
+}

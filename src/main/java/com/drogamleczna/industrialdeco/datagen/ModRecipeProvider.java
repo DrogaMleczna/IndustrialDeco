@@ -41,6 +41,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         disabled_blocks.add(ModBlocks.WIRE_BLOCK.get());
         disabled_blocks.add(ModBlocks.WALL_SWITCH.get());
         disabled_blocks.add(ModBlocks.WIRE_BOX.get());
+        disabled_blocks.add(ModBlocks.CAGE_LAMP.get());
+        disabled_blocks.add(ModBlocks.RED_CAGE_LAMP.get());
         getKnownBlocks().forEach( block -> {
             if(!disabled_blocks.contains(block)){
                 CustomRecipeBuilder.stonecutting(Ingredient.of(Items.IRON_INGOT),RecipeCategory.MISC, block)
@@ -268,6 +270,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.WALL_SWITCH.get())
                 .requires(ModBlocks.WIRE_BOX.get())
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.RED_CAGE_LAMP.get(),3)
+                .requires(ModBlocks.CAGE_LAMP.get(),3)
+                .requires(Tags.Items.DYES_RED)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.CAGE_LAMP.get(), 3)
+                .requires(Items.GLOWSTONE)
+                .requires(Items.IRON_NUGGET, 3)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
         stonecutterResultFromBase(pWriter, RecipeCategory.MISC, ModBlocks.WIRE_BLOCK.get(), Items.COPPER_INGOT);

@@ -56,6 +56,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get())
                 .add(ModBlocks.OFFICE_CEILING.get())
                 .add(ModBlocks.WIRE_BLOCK.get())
+                .add(ModBlocks.CAGE_LAMP.get())
+                .add(ModBlocks.RED_CAGE_LAMP.get())
                 .add(ModBlocks.CEILING_OFFICE_LAMP.get());
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.STREET_LAMP.get())
@@ -89,6 +91,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.CROSSBUCK_BLOCK.get())
                 .add(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get())
                 .add(ModBlocks.WIRE_BLOCK.get())
+                .add(ModBlocks.CAGE_LAMP.get())
+                .add(ModBlocks.RED_CAGE_LAMP.get())
                 .add(ModBlocks.METAL_FENCE_BLOCK.get());
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.PALLET.get())
@@ -125,6 +129,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.OFFICE_CEILING.get())
                 .add(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get())
                 .add(ModBlocks.WIRE_BLOCK.get())
+                .add(ModBlocks.CAGE_LAMP.get())
+                .add(ModBlocks.RED_CAGE_LAMP.get())
                 .add(ModBlocks.METAL_FENCE_BLOCK.get());
     }
 

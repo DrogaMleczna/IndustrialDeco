@@ -8,6 +8,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -21,7 +22,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> STREET_LAMP = registerBlock("street_lamp",
             () -> new StreetLampBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
-                    .dynamicShape().lightLevel((state) -> {return 15;})));
+                    .dynamicShape().lightLevel((state) -> 15)));
 
     public static final RegistryObject<Block> CURVED_POLE = registerBlock("curved_pole",
             () -> new CurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
@@ -103,7 +104,7 @@ public class ModBlocks {
                     .dynamicShape()));
     public static final RegistryObject<Block> CEILING_OFFICE_LAMP = registerBlock("ceiling_office_lamp",
             () -> new CeilingBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
-                    .dynamicShape().lightLevel((state) -> {return 15;})));
+                    .dynamicShape().lightLevel((state) -> 15)));
     public static final RegistryObject<Block> OFFICE_CEILING = registerBlock("office_ceiling",
             () -> new CeilingBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
                     .dynamicShape()));
@@ -123,6 +124,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> WIRE_BLOCK = registerBlock("wire",
             () -> new WireBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
+    public static final RegistryObject<Block> CAGE_LAMP = registerBlock("cage_lamp",
+            () -> new CageLampBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).lightLevel((state) -> state.getValue(BlockStateProperties.LIT)?15:0).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> RED_CAGE_LAMP = registerBlock("red_cage_lamp",
+            () -> new CageLampBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).lightLevel((state) -> state.getValue(BlockStateProperties.LIT)?15:0).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
@@ -131,8 +138,8 @@ public class ModBlocks {
         return toReturn;
     }
 
-    private  static  <T extends Block>RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block){
-        return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    private  static  <T extends Block> void registerBlockItem(String name, RegistryObject<T> block){
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {

@@ -1,63 +1,193 @@
 {
   "variants": {
-    "facing=south,face=wall,wire=0": {
-      "model": "industrialdeco:block/wire_box"
+    "facing=south,face=wall,input=b": {
+      "model": "industrialdeco:block/wire_box_b"
     },
-    "facing=north,face=wall,wire=0": {
-      "model": "industrialdeco:block/wire_box",
+    "facing=north,face=wall,input=b": {
+      "model": "industrialdeco:block/wire_box_b",
       "y": 180
     },
-    "facing=west,face=wall,wire=0": {
-      "model": "industrialdeco:block/wire_box",
+    "facing=west,face=wall,input=b": {
+      "model": "industrialdeco:block/wire_box_b",
       "y": 90
     },
-    "facing=east,face=wall,wire=0": {
-      "model": "industrialdeco:block/wire_box",
+    "facing=east,face=wall,input=b": {
+      "model": "industrialdeco:block/wire_box_b",
+      "y": 270
+    },"facing=south,face=wall,input=t": {
+      "model": "industrialdeco:block/wire_box_t"
+    },
+    "facing=north,face=wall,input=t": {
+      "model": "industrialdeco:block/wire_box_t",
+      "y": 180
+    },
+    "facing=west,face=wall,input=t": {
+      "model": "industrialdeco:block/wire_box_t",
+      "y": 90
+    },
+    "facing=east,face=wall,input=t": {
+      "model": "industrialdeco:block/wire_box_t",
       "y": 270
     },
-    "facing=south,face=wall,wire=1": {
-      "model": "industrialdeco:block/wire_box_1"
+    "facing=south,face=wall,input=l": {
+      "model": "industrialdeco:block/wire_box_l"
     },
-    "facing=north,face=wall,wire=1": {
-      "model": "industrialdeco:block/wire_box_1",
+    "facing=north,face=wall,input=l": {
+      "model": "industrialdeco:block/wire_box_l",
       "y": 180
     },
-    "facing=west,face=wall,wire=1": {
-      "model": "industrialdeco:block/wire_box_1",
+    "facing=west,face=wall,input=l": {
+      "model": "industrialdeco:block/wire_box_l",
       "y": 90
     },
-    "facing=east,face=wall,wire=1": {
-      "model": "industrialdeco:block/wire_box_1",
+    "facing=east,face=wall,input=l": {
+      "model": "industrialdeco:block/wire_box_l",
+      "y": 270
+    },"facing=south,face=wall,input=r": {
+      "model": "industrialdeco:block/wire_box_r"
+    },
+    "facing=north,face=wall,input=r": {
+      "model": "industrialdeco:block/wire_box_r",
+      "y": 180
+    },
+    "facing=west,face=wall,input=r": {
+      "model": "industrialdeco:block/wire_box_r",
+      "y": 90
+    },
+    "facing=east,face=wall,input=r": {
+      "model": "industrialdeco:block/wire_box_r",
       "y": 270
     },
-    "facing=south,face=wall,wire=2": {
-      "model": "industrialdeco:block/wire_box_2"
+    "facing=south,face=wall,input=blr": {
+      "model": "industrialdeco:block/wire_box_blr"
     },
-    "facing=north,face=wall,wire=2": {
-      "model": "industrialdeco:block/wire_box_2",
+    "facing=north,face=wall,input=blr": {
+      "model": "industrialdeco:block/wire_box_blr",
       "y": 180
     },
-    "facing=west,face=wall,wire=2": {
-      "model": "industrialdeco:block/wire_box_2",
+    "facing=west,face=wall,input=blr": {
+      "model": "industrialdeco:block/wire_box_blr",
       "y": 90
     },
-    "facing=east,face=wall,wire=2": {
-      "model": "industrialdeco:block/wire_box_2",
+    "facing=east,face=wall,input=blr": {
+      "model": "industrialdeco:block/wire_box_blr",
+      "y": 270
+    },"facing=south,face=wall,input=trl": {
+      "model": "industrialdeco:block/wire_box_trl"
+    },
+    "facing=north,face=wall,input=trl": {
+      "model": "industrialdeco:block/wire_box_trl",
+      "y": 180
+    },
+    "facing=west,face=wall,input=trl": {
+      "model": "industrialdeco:block/wire_box_trl",
+      "y": 90
+    },
+    "facing=east,face=wall,input=trl": {
+      "model": "industrialdeco:block/wire_box_trl",
       "y": 270
     },
-    "facing=south,face=wall,wire=3": {
-      "model": "industrialdeco:block/wire_box_3"
+    "facing=south,face=wall,input=blt": {
+      "model": "industrialdeco:block/wire_box_blt"
     },
-    "facing=north,face=wall,wire=3": {
-      "model": "industrialdeco:block/wire_box_3",
+    "facing=north,face=wall,input=blt": {
+      "model": "industrialdeco:block/wire_box_blt",
       "y": 180
     },
-    "facing=west,face=wall,wire=3": {
-      "model": "industrialdeco:block/wire_box_3",
+    "facing=west,face=wall,input=blt": {
+      "model": "industrialdeco:block/wire_box_blt",
       "y": 90
     },
-    "facing=east,face=wall,wire=3": {
-      "model": "industrialdeco:block/wire_box_3",
+    "facing=east,face=wall,input=blt": {
+      "model": "industrialdeco:block/wire_box_blt",
+      "y": 270
+    },"facing=south,face=wall,input=brt": {
+      "model": "industrialdeco:block/wire_box_brt"
+    },
+    "facing=north,face=wall,input=brt": {
+      "model": "industrialdeco:block/wire_box_brt",
+      "y": 180
+    },
+    "facing=west,face=wall,input=brt": {
+      "model": "industrialdeco:block/wire_box_brt",
+      "y": 90
+    },
+    "facing=east,face=wall,input=brt": {
+      "model": "industrialdeco:block/wire_box_brt",
+      "y": 270
+    },
+    "facing=south,face=wall,input=bl": {
+      "model": "industrialdeco:block/wire_box_bl"
+    },
+    "facing=north,face=wall,input=bl": {
+      "model": "industrialdeco:block/wire_box_bl",
+      "y": 180
+    },
+    "facing=west,face=wall,input=bl": {
+      "model": "industrialdeco:block/wire_box_bl",
+      "y": 90
+    },
+    "facing=east,face=wall,input=bl": {
+      "model": "industrialdeco:block/wire_box_bl",
+      "y": 270
+    },
+    "facing=south,face=wall,input=br": {
+      "model": "industrialdeco:block/wire_box_br"
+    },
+    "facing=north,face=wall,input=br": {
+      "model": "industrialdeco:block/wire_box_br",
+      "y": 180
+    },
+    "facing=west,face=wall,input=br": {
+      "model": "industrialdeco:block/wire_box_br",
+      "y": 90
+    },
+    "facing=east,face=wall,input=br": {
+      "model": "industrialdeco:block/wire_box_br",
+      "y": 270
+    },
+    "facing=south,face=wall,input=bt": {
+      "model": "industrialdeco:block/wire_box_bt"
+    },
+    "facing=north,face=wall,input=bt": {
+      "model": "industrialdeco:block/wire_box_bt",
+      "y": 180
+    },
+    "facing=west,face=wall,input=bt": {
+      "model": "industrialdeco:block/wire_box_bt",
+      "y": 90
+    },
+    "facing=east,face=wall,input=bt": {
+      "model": "industrialdeco:block/wire_box_bt",
+      "y": 270
+    },
+    "facing=south,face=wall,input=tr": {
+      "model": "industrialdeco:block/wire_box_tr"
+    },
+    "facing=north,face=wall,input=tr": {
+      "model": "industrialdeco:block/wire_box_tr",
+      "y": 180
+    },
+    "facing=west,face=wall,input=tr": {
+      "model": "industrialdeco:block/wire_box_tr",
+      "y": 90
+    },
+    "facing=east,face=wall,input=tr": {
+      "model": "industrialdeco:block/wire_box_tr",
+      "y": 270
+    },"facing=south,face=wall,input=tl": {
+      "model": "industrialdeco:block/wire_box_tl"
+    },
+    "facing=north,face=wall,input=tl": {
+      "model": "industrialdeco:block/wire_box_tl",
+      "y": 180
+    },
+    "facing=west,face=wall,input=tl": {
+      "model": "industrialdeco:block/wire_box_tl",
+      "y": 90
+    },
+    "facing=east,face=wall,input=tl": {
+      "model": "industrialdeco:block/wire_box_tl",
       "y": 270
     },
     "facing=south,face=floor": {
