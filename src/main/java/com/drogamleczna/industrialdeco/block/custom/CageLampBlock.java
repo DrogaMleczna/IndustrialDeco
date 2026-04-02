@@ -144,29 +144,30 @@ public class CageLampBlock extends DirectionalBlock {
 
     @NotNull
     private BlockState isOn(Level level, BlockPos pos, BlockState state) {
-        int s_b = level.getBlockState(pos.below()).getSignal(level, pos.below(), Direction.UP );
-        int s_a = level.getBlockState(pos.above()).getSignal(level, pos.above(), Direction.DOWN );
-        int s_n = level.getBlockState(pos.north()).getSignal(level, pos.north(), Direction.SOUTH );
-        int s_s = level.getBlockState(pos.south()).getSignal(level, pos.south(), Direction.NORTH );
-        int s_e = level.getBlockState(pos.east()).getSignal(level, pos.east(), Direction.WEST );
-        int s_w = level.getBlockState(pos.west()).getSignal(level, pos.west(), Direction.EAST );
+        int s_b = level.getBlockState(pos.below()).getSignal(level, pos.below(), Direction.UP);
+        int s_a = level.getBlockState(pos.above()).getSignal(level, pos.above(), Direction.DOWN);
+        int s_n = level.getBlockState(pos.north()).getSignal(level, pos.north(), Direction.SOUTH);
+        int s_s = level.getBlockState(pos.south()).getSignal(level, pos.south(), Direction.NORTH);
+        int s_e = level.getBlockState(pos.east()).getSignal(level, pos.east(), Direction.WEST);
+        int s_w = level.getBlockState(pos.west()).getSignal(level, pos.west(), Direction.EAST);
+        
         if(state.getValue(FORCE_ON)){state = state.setValue(LIT, true);}
         else{
             if(!state.getValue(HORIZONTAL)) {
-                if ((s_b > 0 || s_a > 0)) {
+                if (s_a > 0 || s_b > 0) {
                     state = state.setValue(LIT, true);
                 } else {
                     state = state.setValue(LIT, false);
                 }
             }else{
                 if(state.getValue(FACING) == Direction.NORTH || state.getValue(FACING) == Direction.SOUTH){
-                    if(s_e > 0 || s_w >0){state = state.setValue(LIT, true);}
+                    if(s_w > 0 || s_e >0){state = state.setValue(LIT, true);}
                     else{state = state.setValue(LIT, false);}
                 }else if(state.getValue(FACING) == Direction.WEST || state.getValue(FACING) == Direction.EAST){
-                    if(s_n > 0 || s_s >0){state = state.setValue(LIT, true);}
+                    if(s_n >0 || s_s >0){state = state.setValue(LIT, true);}
                     else{state = state.setValue(LIT, false);}
                 }else {
-                    if(s_w > 0 || s_e > 0 || s_n > 0 || s_s > 0 || s_a >0 || s_b > 0){state = state.setValue(LIT, true);}
+                    if(s_a > 0 || s_b > 0 || s_n > 0 || s_s > 0 || s_w >0 || s_e > 0){state = state.setValue(LIT, true);}
                     else{state = state.setValue(LIT, false);}
                 }
             }

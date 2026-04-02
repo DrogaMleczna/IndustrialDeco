@@ -1,10 +1,9 @@
-package com.drogamleczna.industrialdeco.block.custom;
+package com.drogamleczna.industrialdeco.block.custom.poles;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -26,7 +25,7 @@ import javax.annotation.Nullable;
 
 import static com.drogamleczna.industrialdeco.IndustrialDeco.WRENCH_TAG;
 
-public class CurvedPoleBlock extends HorizontalDirectionalBlock {
+public class DoubleCurvedPoleBlock extends HorizontalDirectionalBlock {
 
     //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
 
@@ -42,10 +41,10 @@ public class CurvedPoleBlock extends HorizontalDirectionalBlock {
 
     static {
         BASE = Block.box(5,0,5,11,12,11);
-        SHAPE_ARM_E = Block.box(5,11,0,11,15,11);
-        SHAPE_ARM_W = Block.box(5,11,5,11,15,16);
-        SHAPE_ARM_N = Block.box(0,11,5,11,15,11);
-        SHAPE_ARM_S = Block.box(5,11,5,16,15,11);
+        SHAPE_ARM_E = Block.box(5,11,0,11,15,16);
+        SHAPE_ARM_W = Block.box(5,11,0,11,15,16);
+        SHAPE_ARM_N = Block.box(0,11,5,16,15,11);
+        SHAPE_ARM_S = Block.box(0,11,5,16,15,11);
         SHAPE_N = Shapes.or(BASE, SHAPE_ARM_N);
         SHAPE_S = Shapes.or(BASE, SHAPE_ARM_S);
         SHAPE_E = Shapes.or(BASE, SHAPE_ARM_E);
@@ -54,7 +53,7 @@ public class CurvedPoleBlock extends HorizontalDirectionalBlock {
     }
 
 
-    public CurvedPoleBlock(Properties pProperties) {
+    public DoubleCurvedPoleBlock(Properties pProperties) {
 
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
@@ -94,8 +93,9 @@ public class CurvedPoleBlock extends HorizontalDirectionalBlock {
     @Override
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getCounterClockWise());
+        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection());
     }
+
     @Override
     protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         pLevel.updateNeighborsAt(pPos, this);

@@ -1,4 +1,4 @@
-package com.drogamleczna.industrialdeco.block.custom;
+package com.drogamleczna.industrialdeco.block.custom.poles;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -16,21 +16,24 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class WallCurvedPoleBlock extends HorizontalDirectionalBlock {
+public class LargeBaseBlock extends HorizontalDirectionalBlock {
 
-    public static final VoxelShape SHAPE_N;
-    public static final VoxelShape SHAPE_S;
-    public static final VoxelShape SHAPE_E;
-    public static final VoxelShape SHAPE_W;
+    //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
+
+    public static final VoxelShape SHAPE;
+    public static final VoxelShape SHAPE_TOP;
+    public static final VoxelShape BASE;
 
     static {
-        SHAPE_N = Shapes.or(Block.box(0,-6,6,4,15,10),Block.box(0,11,6,16,15,10));
-        SHAPE_S = Shapes.or(Block.box(12,-6,6,16,15,10),Block.box(0,11,6,16,15,10));
-        SHAPE_W = Shapes.or(Block.box(6,-6,12,10,15,16),Block.box(6,11,0,10,15,16));
-        SHAPE_E = Shapes.or(Block.box(6,-6,0,10,15,4),Block.box(6,11,0,10,15,16));
+        BASE = Block.box(4,0,4,12,14,12);
+        SHAPE_TOP = Block.box(5,14,5,11,16,11);
+        SHAPE = Shapes.or(BASE, SHAPE_TOP);
+
     }
 
-    public WallCurvedPoleBlock(Properties pProperties) {
+
+    public LargeBaseBlock(Properties pProperties) {
+
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
     }
@@ -43,16 +46,7 @@ public class WallCurvedPoleBlock extends HorizontalDirectionalBlock {
     @Nullable
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        Direction direction = pState.getValue(FACING);
-        if (direction == Direction.EAST){
-            return SHAPE_E;
-        }else if (direction == Direction.WEST){
-            return SHAPE_W;
-        }else if (direction == Direction.SOUTH){
-            return SHAPE_S;
-        }else{
-            return SHAPE_N;
-        }
+        return SHAPE;
     }
 
     @Override
@@ -69,6 +63,6 @@ public class WallCurvedPoleBlock extends HorizontalDirectionalBlock {
     @Override
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getClockWise());
+        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 }

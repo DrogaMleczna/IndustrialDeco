@@ -1,23 +1,20 @@
 package com.drogamleczna.industrialdeco.block.custom;
 
+import com.drogamleczna.industrialdeco.block.custom.poles.PoleBlock;
 import com.drogamleczna.industrialdeco.block.custom.util.CrossbuckType;
 import com.drogamleczna.industrialdeco.block.custom.util.CrossbuckTypeProperty;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockEventData;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
-import net.neoforged.neoforge.event.level.BlockEvent;
 
 import javax.annotation.Nullable;
 

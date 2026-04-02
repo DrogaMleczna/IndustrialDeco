@@ -169,12 +169,12 @@ public class WireBoxBlock extends FaceAttachedHorizontalDirectionalBlock {
     }
 
     private int evalSignal(BlockState pState, BlockGetter pLevel, BlockPos pPos, Direction pSide){
-        int s_u = pLevel.getBlockState(pPos.above()).getSignal(pLevel, pPos.above(), Direction.DOWN);
-        int s_d = pLevel.getBlockState(pPos.below()).getSignal(pLevel, pPos.below(), Direction.UP);
-        int s_w = pLevel.getBlockState(pPos.west()).getSignal(pLevel, pPos.west(), Direction.EAST);
-        int s_e = pLevel.getBlockState(pPos.east()).getSignal(pLevel, pPos.east(), Direction.WEST);
-        int s_n = pLevel.getBlockState(pPos.north()).getSignal(pLevel, pPos.north(), Direction.SOUTH);
-        int s_s = pLevel.getBlockState(pPos.south()).getSignal(pLevel, pPos.south(), Direction.NORTH);
+        int s_u = pLevel.getBlockState(pPos.above()).is(ModBlocks.WIRE_BOX) ? 0 : pLevel.getBlockState(pPos.above()).getSignal(pLevel, pPos.above(), Direction.DOWN);
+        int s_d = pLevel.getBlockState(pPos.below()).is(ModBlocks.WIRE_BOX) ? 0 : pLevel.getBlockState(pPos.below()).getSignal(pLevel, pPos.below(), Direction.UP);
+        int s_w = pLevel.getBlockState(pPos.west()).is(ModBlocks.WIRE_BOX) ? 0 : pLevel.getBlockState(pPos.west()).getSignal(pLevel, pPos.west(), Direction.EAST);
+        int s_e = pLevel.getBlockState(pPos.east()).is(ModBlocks.WIRE_BOX) ? 0 : pLevel.getBlockState(pPos.east()).getSignal(pLevel, pPos.east(), Direction.WEST);
+        int s_n = pLevel.getBlockState(pPos.north()).is(ModBlocks.WIRE_BOX) ? 0 : pLevel.getBlockState(pPos.north()).getSignal(pLevel, pPos.north(), Direction.SOUTH);
+        int s_s = pLevel.getBlockState(pPos.south()).is(ModBlocks.WIRE_BOX) ? 0 : pLevel.getBlockState(pPos.south()).getSignal(pLevel, pPos.south(), Direction.NORTH);
         WireBoxType in = pState.getValue(INPUT);
 
         if(pState.getValue(FACE) == AttachFace.WALL){

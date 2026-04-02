@@ -2,6 +2,7 @@ package com.drogamleczna.industrialdeco.block;
 
 import com.drogamleczna.industrialdeco.IndustrialDeco;
 import com.drogamleczna.industrialdeco.block.custom.*;
+import com.drogamleczna.industrialdeco.block.custom.poles.*;
 import com.drogamleczna.industrialdeco.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -21,7 +22,7 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> STREET_LAMP = registerBlock("street_lamp",
             () -> new StreetLampBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
-                    .dynamicShape().lightLevel((state) -> {return 15;})));
+                    .dynamicShape().lightLevel((state) -> 15)));
 
     public static final DeferredBlock<Block> CURVED_POLE = registerBlock("curved_pole",
             () -> new CurvedPoleBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
@@ -103,7 +104,7 @@ public class ModBlocks {
                     .dynamicShape()));
     public static final DeferredBlock<Block> CEILING_OFFICE_LAMP = registerBlock("ceiling_office_lamp",
             () -> new CeilingBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(2.0f).noOcclusion()
-                    .dynamicShape().lightLevel((state) -> {return 15;})));
+                    .dynamicShape().lightLevel((state) -> 15)));
     public static final DeferredBlock<Block> OFFICE_CEILING = registerBlock("office_ceiling",
             () -> new CeilingBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(2.0f).noOcclusion()
                     .dynamicShape()));
