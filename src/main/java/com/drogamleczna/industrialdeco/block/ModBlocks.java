@@ -2,6 +2,7 @@ package com.drogamleczna.industrialdeco.block;
 
 import com.drogamleczna.industrialdeco.IndustrialDeco;
 import com.drogamleczna.industrialdeco.block.custom.*;
+import com.drogamleczna.industrialdeco.block.custom.poles.*;
 import com.drogamleczna.industrialdeco.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;

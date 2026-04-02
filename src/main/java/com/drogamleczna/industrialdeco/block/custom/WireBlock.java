@@ -100,7 +100,15 @@ public class WireBlock extends FaceAttachedHorizontalDirectionalBlock {
 
 
     public int getSignal(BlockState blockState, BlockGetter blockAccess, BlockPos pos, Direction side) {
-        return (Integer)blockState.getValue(POWER);
+        if(!blockState.getValue(HORIZONTAL)){
+            return side == Direction.DOWN || side == Direction.UP ? blockState.getValue(POWER) : 0;
+        }else{
+            if(blockState.getValue(FACING) == Direction.NORTH || blockState.getValue(FACING) == Direction.SOUTH){
+                return side == Direction.WEST || side == Direction.EAST ? blockState.getValue(POWER) : 0;
+            }else{
+                return side == Direction.NORTH || side == Direction.SOUTH ? blockState.getValue(POWER) : 0;
+            }
+        }
     }
 
     public boolean isSignalSource(BlockState state) {

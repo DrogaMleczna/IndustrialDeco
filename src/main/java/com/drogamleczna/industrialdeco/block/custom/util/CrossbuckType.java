@@ -1,6 +1,7 @@
 package com.drogamleczna.industrialdeco.block.custom.util;
 
 import net.minecraft.util.StringRepresentable;
+import org.jetbrains.annotations.NotNull;
 
 public enum CrossbuckType implements StringRepresentable {
     POLAND("poland"),
@@ -19,7 +20,7 @@ public enum CrossbuckType implements StringRepresentable {
         name = pName;
     }
     @Override
-    public String getSerializedName() {
+    public @NotNull String getSerializedName() {
         return name;
     }
 }

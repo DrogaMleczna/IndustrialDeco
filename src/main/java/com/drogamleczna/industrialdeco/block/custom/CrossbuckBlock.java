@@ -1,5 +1,6 @@
 package com.drogamleczna.industrialdeco.block.custom;
 
+import com.drogamleczna.industrialdeco.block.custom.poles.PoleBlock;
 import com.drogamleczna.industrialdeco.block.custom.util.CrossbuckType;
 import com.drogamleczna.industrialdeco.block.custom.util.CrossbuckTypeProperty;
 import net.minecraft.core.BlockPos;

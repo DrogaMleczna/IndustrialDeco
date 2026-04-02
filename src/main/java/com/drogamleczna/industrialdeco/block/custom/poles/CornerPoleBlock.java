@@ -1,4 +1,4 @@
-package com.drogamleczna.industrialdeco.block.custom;
+package com.drogamleczna.industrialdeco.block.custom.poles;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 
 import static com.drogamleczna.industrialdeco.IndustrialDeco.WRENCH_TAG;
 
-public class DoubleCurvedPoleBlock extends HorizontalDirectionalBlock {
+public class CornerPoleBlock extends HorizontalDirectionalBlock {
 
     //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
 
@@ -35,20 +35,20 @@ public class DoubleCurvedPoleBlock extends HorizontalDirectionalBlock {
     public static final VoxelShape BASE;
 
     static {
-        BASE = Block.box(5,0,5,11,12,11);
-        SHAPE_ARM_E = Block.box(5,11,0,11,15,16);
-        SHAPE_ARM_W = Block.box(5,11,0,11,15,16);
-        SHAPE_ARM_N = Block.box(0,11,5,16,15,11);
-        SHAPE_ARM_S = Block.box(0,11,5,16,15,11);
-        SHAPE_N = Shapes.or(BASE, SHAPE_ARM_N);
-        SHAPE_S = Shapes.or(BASE, SHAPE_ARM_S);
-        SHAPE_E = Shapes.or(BASE, SHAPE_ARM_E);
-        SHAPE_W = Shapes.or(BASE, SHAPE_ARM_W);
+        BASE = Block.box(5,0,5,11,15,11);
+        SHAPE_ARM_E = Block.box(5,11,8,11,15,16);
+        SHAPE_ARM_W = Block.box(5,11,0,11,15,8);
+        SHAPE_ARM_N = Block.box(0,11,5,8,15,11);
+        SHAPE_ARM_S = Block.box(8,11,5,16,15,11);
+        SHAPE_N = Shapes.or(BASE, Shapes.or(SHAPE_ARM_N, SHAPE_ARM_E));
+        SHAPE_S = Shapes.or(BASE, Shapes.or(SHAPE_ARM_S, SHAPE_ARM_W));
+        SHAPE_W = Shapes.or(BASE, Shapes.or(SHAPE_ARM_E, SHAPE_ARM_S));
+        SHAPE_E = Shapes.or(BASE, Shapes.or(SHAPE_ARM_W,SHAPE_ARM_N));
 
     }
 
 
-    public DoubleCurvedPoleBlock(Properties pProperties) {
+    public CornerPoleBlock(Properties pProperties) {
 
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));

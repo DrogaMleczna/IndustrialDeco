@@ -1,33 +1,37 @@
-package com.drogamleczna.industrialdeco.block.custom;
+package com.drogamleczna.industrialdeco.block.custom.poles;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+
 import javax.annotation.Nullable;
 
-public class QuadrupleCurvedPoleBlock extends HorizontalDirectionalBlock {
+public class LargeBaseBlock extends HorizontalDirectionalBlock {
+
+    //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
 
     public static final VoxelShape SHAPE;
-    public static final VoxelShape SHAPE_ARM_NS;
-    public static final VoxelShape SHAPE_ARM_WE;
+    public static final VoxelShape SHAPE_TOP;
     public static final VoxelShape BASE;
 
     static {
-        BASE = Block.box(5,0,5,11,12,11);
-        SHAPE_ARM_NS = Block.box(0,11,5,16,15,11);
-        SHAPE_ARM_WE = Block.box(5,11,0,11,15,16);
-        SHAPE = Shapes.or(BASE, SHAPE_ARM_NS, SHAPE_ARM_WE);
+        BASE = Block.box(4,0,4,12,14,12);
+        SHAPE_TOP = Block.box(5,14,5,11,16,11);
+        SHAPE = Shapes.or(BASE, SHAPE_TOP);
+
     }
 
 
-    public QuadrupleCurvedPoleBlock(Properties pProperties) {
+    public LargeBaseBlock(Properties pProperties) {
 
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
@@ -53,6 +57,6 @@ public class QuadrupleCurvedPoleBlock extends HorizontalDirectionalBlock {
     @Override
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getCounterClockWise());
+        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 }

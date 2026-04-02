@@ -1,4 +1,4 @@
-package com.drogamleczna.industrialdeco.block.custom;
+package com.drogamleczna.industrialdeco.block.custom.poles;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -12,24 +12,22 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 
-
-public class PoleBaseBlock extends HorizontalDirectionalBlock {
-
-    //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
+public class QuadrupleCurvedPoleBlock extends HorizontalDirectionalBlock {
 
     public static final VoxelShape SHAPE;
-    public static final VoxelShape SHAPE_TOP;
+    public static final VoxelShape SHAPE_ARM_NS;
+    public static final VoxelShape SHAPE_ARM_WE;
     public static final VoxelShape BASE;
 
     static {
-        BASE = Block.box(5,0,5,11,8,11);
-        SHAPE_TOP = Block.box(6,8,6,10,16,10);
-        SHAPE = Shapes.or(BASE, SHAPE_TOP);
-
+        BASE = Block.box(5,0,5,11,12,11);
+        SHAPE_ARM_NS = Block.box(0,11,5,16,15,11);
+        SHAPE_ARM_WE = Block.box(5,11,0,11,15,16);
+        SHAPE = Shapes.or(BASE, SHAPE_ARM_NS, SHAPE_ARM_WE);
     }
 
 
-    public PoleBaseBlock(Properties pProperties) {
+    public QuadrupleCurvedPoleBlock(Properties pProperties) {
 
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
