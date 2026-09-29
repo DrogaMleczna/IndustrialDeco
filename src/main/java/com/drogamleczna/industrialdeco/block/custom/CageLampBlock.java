@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -32,10 +33,11 @@ public class CageLampBlock extends DirectionalBlock {
     public static final BooleanProperty FORCE_ON = BooleanProperty.create("force_on");
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
     public static final BooleanProperty HORIZONTAL = BooleanProperty.create("horizontal");
+    public static final IntegerProperty POWER = IntegerProperty.create("power", 0, 15);
     public CageLampBlock(Properties pProperties) {
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(FORCE_ON, false)
-                .setValue(LIT, false).setValue(HORIZONTAL, false));
+                .setValue(LIT, false).setValue(HORIZONTAL, false).setValue(POWER, 0));
     }
 
     public static final VoxelShape SHAPE_N;
@@ -89,6 +91,7 @@ public class CageLampBlock extends DirectionalBlock {
     protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean movedByPiston) {
         Direction direction = state.getValue(FACING);
         state = isOn(level, pos, state);
+        state = state.setValue(POWER, getPower(level, pos, state));
         level.setBlock(pos, state, 15);
     }
 
@@ -121,6 +124,8 @@ public class CageLampBlock extends DirectionalBlock {
 
     @Override
     protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
+        state = state.setValue(POWER, getPower(level, pos, state));
+        level.setBlock(pos, state, 15);
         level.updateNeighborsAt(pos, this);
     }
 
@@ -182,6 +187,7 @@ public class CageLampBlock extends DirectionalBlock {
         builder.add(FORCE_ON);
         builder.add(LIT);
         builder.add(HORIZONTAL);
+        builder.add(POWER);
     }
 
     @Override
@@ -191,6 +197,56 @@ public class CageLampBlock extends DirectionalBlock {
 
     @Override
     protected int getSignal(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-        return 0;
+        if(!state.getValue(HORIZONTAL)){
+            return direction == Direction.DOWN || direction == Direction.UP ? state.getValue(POWER) : 0;
+        }else{
+            if(state.getValue(FACING) == Direction.NORTH || state.getValue(FACING) == Direction.SOUTH){
+                return direction == Direction.WEST || direction == Direction.EAST ? state.getValue(POWER) : 0;
+            }else{
+                return direction == Direction.NORTH || direction == Direction.SOUTH ? state.getValue(POWER) : 0;
+            }
+        }
+    }
+
+    private int getPower(Level level, BlockPos pos, BlockState state){
+        Direction facing = state.getValue(FACING);
+        int inPower = 0;
+
+        if(state.getValue(HORIZONTAL)){
+            if(facing == Direction.NORTH || facing == Direction.SOUTH){
+                inPower = Math.max(level.getSignal(pos.east(), Direction.WEST), level.getSignal(pos.west(), Direction.EAST));
+            }else{
+                inPower = Math.max(level.getSignal(pos.north(), Direction.SOUTH), level.getSignal(pos.south(), Direction.NORTH));
+            }
+        }else {
+            if(!(level.getBlockState(pos.above()).is(ModBlocks.WIRE_BLOCK.get()) || level.getBlockState(pos.below()).is(ModBlocks.WIRE_BLOCK.get()))){
+                inPower = Math.max(level.getSignal(pos.below(), Direction.UP), level.getSignal(pos.above(), Direction.DOWN));
+            }else if ((level.getBlockState(pos.above()).is(ModBlocks.WIRE_BLOCK.get())) && (level.getBlockState(pos.below()).is(ModBlocks.WIRE_BLOCK.get()))) {
+                if (level.getBlockState(pos.above()).getValue(WireBlock.HORIZONTAL) && level.getBlockState(pos.below()).getValue(WireBlock.HORIZONTAL)) {
+                    inPower = 0;
+                } else if (level.getBlockState(pos.below()).getValue(WireBlock.HORIZONTAL)) {
+                    inPower = level.getSignal(pos.above(), Direction.DOWN);
+                } else if (level.getBlockState(pos.above()).getValue(WireBlock.HORIZONTAL)) {
+                    inPower = level.getSignal(pos.below(), Direction.UP);
+                }else{
+                    inPower = Math.max(level.getSignal(pos.below(), Direction.UP), level.getSignal(pos.above(), Direction.DOWN));
+                }
+            }else if (level.getBlockState(pos.above()).is(ModBlocks.WIRE_BLOCK.get())){
+                if (level.getBlockState(pos.above()).getValue(WireBlock.HORIZONTAL)){
+                    inPower = level.getSignal(pos.below(), Direction.UP);
+                }else{
+                    inPower = Math.max(level.getSignal(pos.below(), Direction.UP), level.getSignal(pos.above(), Direction.DOWN));
+                }
+            }else{
+                if (level.getBlockState(pos.below()).getValue(WireBlock.HORIZONTAL)){
+                    inPower = level.getSignal(pos.above(), Direction.DOWN);
+                }else{
+                    inPower = Math.max(level.getSignal(pos.below(), Direction.UP), level.getSignal(pos.above(), Direction.DOWN));
+                }
+            }
+        }
+        if(inPower > 0){inPower -=1;}
+
+        return inPower;
     }
 }

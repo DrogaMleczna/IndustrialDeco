@@ -1,4 +1,4 @@
-package com.drogamleczna.industrialdeco.block.custom.poles;
+package com.drogamleczna.industrialdeco.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;

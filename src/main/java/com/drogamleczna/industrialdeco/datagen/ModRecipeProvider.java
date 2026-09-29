@@ -65,6 +65,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('N', Items.GLOWSTONE)
                 .unlockedBy(getHasName(Items.GLOWSTONE), has(Items.IRON_INGOT))
                 .save(pWriter);
+
+        stonecutterResultFromBase(pWriter, RecipeCategory.MISC, ModBlocks.STREET_LAMP, ModBlocks.STREET_LAMP_RUSTED);
+        stonecutterResultFromBase(pWriter, RecipeCategory.MISC, ModBlocks.STREET_LAMP_RUSTED, ModBlocks.STREET_LAMP);
+
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CURVED_POLE.get(),2)
                 .pattern("  S")
                 .pattern(" S ")

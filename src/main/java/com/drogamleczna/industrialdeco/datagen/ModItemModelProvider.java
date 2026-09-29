@@ -15,6 +15,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleBlockItem(ModBlocks.STREET_LAMP.get());
+        simpleBlockItem(ModBlocks.STREET_LAMP_RUSTED.get());
         simpleBlockItem(ModBlocks.CURVED_POLE.get());
         simpleBlockItem(ModBlocks.DOUBLE_CURVED_POLE.get());
         simpleBlockItem(ModBlocks.QUADRUPLE_CURVED_POLE.get());
@@ -49,6 +50,26 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlockItem(ModBlocks.WIRE_BLOCK.get());
         simpleBlockItem(ModBlocks.CAGE_LAMP.get());
         simpleBlockItem(ModBlocks.RED_CAGE_LAMP.get());
+        
+        simpleBlockItem(ModBlocks.CURVED_POLE_RUSTED.get());;
+        simpleBlockItem(ModBlocks.DOUBLE_CURVED_POLE_RUSTED.get());
+        simpleBlockItem(ModBlocks.WIRE_POLE_RUSTED.get());
+        simpleBlockItem(ModBlocks.QUADRUPLE_CURVED_POLE_RUSTED.get());
+        simpleBlockItem(ModBlocks.CORNER_POLE_RUSTED.get());
+        simpleBlockItem(ModBlocks.WALL_CURVED_POLE_RUSTED.get());
+        simpleBlockItem(ModBlocks.POLE_BASE_RUSTED.get());
+        simpleBlockItem(ModBlocks.LARGE_BASE_RUSTED.get());
+        simpleBlockItem(ModBlocks.MEDIUM_BASE_RUSTED.get());
+        simpleBlockItem(ModBlocks.POLE_BLOCK_RUSTED.get());
+        simpleBlockItem(ModBlocks.CAMERA_POLE_RUSTED.get());
+        simpleBlockItem(ModBlocks.CAMERA_POLE_CORNER_RUSTED.get());
+        simpleBlockItem(ModBlocks.CAMERA_POLE_TRIPLE_RUSTED.get());
+        simpleBlockItem(ModBlocks.CAMERA_POLE_QUADRUPLE_RUSTED.get());
+        simpleBlockItem(ModBlocks.SPLIT_POLE_RUSTED.get());
+        simpleBlockItem(ModBlocks.STREET_LAMP_RUSTED.get());
+        simpleBlockItem(ModBlocks.BENT_CHIMNEY_RUSTED.get());
+        simpleBlockItem(ModBlocks.WALL_CHIMNEY_RUSTED.get());
+        simpleBlockItem(ModBlocks.CHIMNEY_BLOCK_RUSTED.get());
 
     }
 

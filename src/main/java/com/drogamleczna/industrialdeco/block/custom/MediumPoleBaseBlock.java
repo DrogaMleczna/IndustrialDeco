@@ -1,4 +1,4 @@
-package com.drogamleczna.industrialdeco.block.custom.poles;
+package com.drogamleczna.industrialdeco.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;

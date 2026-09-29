@@ -1,4 +1,4 @@
-package com.drogamleczna.industrialdeco.block.custom.poles;
+package com.drogamleczna.industrialdeco.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -16,8 +16,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-
-public class PoleBaseBlock extends HorizontalDirectionalBlock {
+public class LargeBaseBlock extends HorizontalDirectionalBlock {
 
     //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
 
@@ -26,14 +25,14 @@ public class PoleBaseBlock extends HorizontalDirectionalBlock {
     public static final VoxelShape BASE;
 
     static {
-        BASE = Block.box(5,0,5,11,8,11);
-        SHAPE_TOP = Block.box(6,8,6,10,16,10);
+        BASE = Block.box(4,0,4,12,14,12);
+        SHAPE_TOP = Block.box(5,14,5,11,16,11);
         SHAPE = Shapes.or(BASE, SHAPE_TOP);
 
     }
 
 
-    public PoleBaseBlock(Properties pProperties) {
+    public LargeBaseBlock(Properties pProperties) {
 
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
@@ -64,6 +63,6 @@ public class PoleBaseBlock extends HorizontalDirectionalBlock {
     @Override
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getCounterClockWise());
+        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 }

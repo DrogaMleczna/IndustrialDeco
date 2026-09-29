@@ -1,31 +1,22 @@
-package com.drogamleczna.industrialdeco.block.custom.poles;
+package com.drogamleczna.industrialdeco.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-import static com.drogamleczna.industrialdeco.IndustrialDeco.WRENCH_TAG;
-
-public class CornerPoleBlock extends HorizontalDirectionalBlock {
+public class WirePoleBlock extends HorizontalDirectionalBlock {
 
     //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
 
@@ -40,20 +31,20 @@ public class CornerPoleBlock extends HorizontalDirectionalBlock {
     public static final VoxelShape BASE;
 
     static {
-        BASE = Block.box(5,0,5,11,15,11);
-        SHAPE_ARM_E = Block.box(5,11,8,11,15,16);
-        SHAPE_ARM_W = Block.box(5,11,0,11,15,8);
-        SHAPE_ARM_N = Block.box(0,11,5,8,15,11);
-        SHAPE_ARM_S = Block.box(8,11,5,16,15,11);
-        SHAPE_N = Shapes.or(BASE, Shapes.or(SHAPE_ARM_N, SHAPE_ARM_E));
-        SHAPE_S = Shapes.or(BASE, Shapes.or(SHAPE_ARM_S, SHAPE_ARM_W));
-        SHAPE_W = Shapes.or(BASE, Shapes.or(SHAPE_ARM_E, SHAPE_ARM_S));
-        SHAPE_E = Shapes.or(BASE, Shapes.or(SHAPE_ARM_W,SHAPE_ARM_N));
+        BASE = Block.box(6,0,6,10,16,10);
+        SHAPE_ARM_E = Block.box(6,6,0,10,10,16);
+        SHAPE_ARM_W = Block.box(6,6,0,10,10,16);
+        SHAPE_ARM_N = Block.box(0,6,6,16,10,10);
+        SHAPE_ARM_S = Block.box(0,6,6,16,10,10);
+        SHAPE_N = Shapes.or(BASE, SHAPE_ARM_N);
+        SHAPE_S = Shapes.or(BASE, SHAPE_ARM_S);
+        SHAPE_E = Shapes.or(BASE, SHAPE_ARM_E);
+        SHAPE_W = Shapes.or(BASE, SHAPE_ARM_W);
 
     }
 
 
-    public CornerPoleBlock(Properties pProperties) {
+    public WirePoleBlock(Properties pProperties) {
 
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
@@ -93,36 +84,6 @@ public class CornerPoleBlock extends HorizontalDirectionalBlock {
     @Override
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection());
-    }
-
-    @Override
-    protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        pLevel.updateNeighborsAt(pPos, this);
-        if(pPlayer.getMainHandItem().is(Items.STICK)) {
-            this.changeType(pState, pLevel, pPos);
-            return ItemInteractionResult.SUCCESS;
-        }else if(pPlayer.getMainHandItem().is(WRENCH_TAG)) {
-            this.changeType(pState, pLevel, pPos);
-            return ItemInteractionResult.SUCCESS;
-        }else{
-            return ItemInteractionResult.FAIL;
-        }
-    }
-
-    public void changeType(BlockState pState, Level pLevel, BlockPos pPos){
-
-        switch (pState.getValue(FACING)) {
-            case NORTH ->
-                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.EAST), 10);
-            case EAST ->
-                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.WEST), 10);
-            case WEST ->
-                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.SOUTH), 10);
-            case SOUTH ->
-                    pLevel.setBlock(pPos, pState.setValue(FACING, Direction.NORTH), 10);
-
-        }
-
+        return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 }
