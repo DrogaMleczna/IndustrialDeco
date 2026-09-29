@@ -59,6 +59,35 @@ public class ModCreativeModeTabs {
                     })
                     .build());
 
+    public static final RegistryObject<CreativeModeTab> INDUSTRIAL_DECO_RUSTED_TAB = CREATIVE_MODE_TABS.register("industrial_deco_rusted_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.STREET_LAMP_RUSTED.get()))
+                    .title(Component.translatable("creativetab.industrial_deco_rusted_tab"))
+                    .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(ModBlocks.STREET_LAMP_RUSTED.get());
+                        pOutput.accept(ModBlocks.POLE_BLOCK_RUSTED.get());
+                        pOutput.accept(ModBlocks.CURVED_POLE_RUSTED.get());
+                        pOutput.accept(ModBlocks.WALL_CURVED_POLE_RUSTED.get());
+                        pOutput.accept(ModBlocks.SPLIT_POLE_RUSTED.get());
+                        pOutput.accept(ModBlocks.DOUBLE_CURVED_POLE_RUSTED.get());
+                        pOutput.accept(ModBlocks.QUADRUPLE_CURVED_POLE_RUSTED.get());
+                        pOutput.accept(ModBlocks.CORNER_POLE_RUSTED.get());
+                        pOutput.accept(ModBlocks.WIRE_POLE_RUSTED.get());
+                        pOutput.accept(ModBlocks.POLE_BASE_RUSTED.get());
+                        pOutput.accept(ModBlocks.MEDIUM_BASE_RUSTED.get());
+                        pOutput.accept(ModBlocks.LARGE_BASE_RUSTED.get());
+                        //pOutput.accept(ModBlocks.CROSSBUCK_BLOCK_RUSTED.get());
+                        pOutput.accept(ModBlocks.CAMERA_POLE_RUSTED.get());
+                        pOutput.accept(ModBlocks.CAMERA_POLE_CORNER_RUSTED.get());
+                        pOutput.accept(ModBlocks.CAMERA_POLE_TRIPLE_RUSTED.get());
+                        pOutput.accept(ModBlocks.CAMERA_POLE_QUADRUPLE_RUSTED.get());
+                        pOutput.accept(ModBlocks.CHIMNEY_BLOCK_RUSTED.get());
+                        pOutput.accept(ModBlocks.BENT_CHIMNEY_RUSTED.get());
+                        pOutput.accept(ModBlocks.WALL_CHIMNEY_RUSTED.get());
+
+
+                    })
+                    .build());
+
     public static void register(IEventBus eventBus){
         CREATIVE_MODE_TABS.register(eventBus);
     }

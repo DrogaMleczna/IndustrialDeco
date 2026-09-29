@@ -1,38 +1,24 @@
-package com.drogamleczna.industrialdeco.block.custom.poles;
+package com.drogamleczna.industrialdeco.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-
 import javax.annotation.Nullable;
 
-public class LargeBaseBlock extends HorizontalDirectionalBlock {
+public class PoleBlock extends HorizontalDirectionalBlock {
 
     //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
 
-    public static final VoxelShape SHAPE;
-    public static final VoxelShape SHAPE_TOP;
-    public static final VoxelShape BASE;
-
-    static {
-        BASE = Block.box(4,0,4,12,14,12);
-        SHAPE_TOP = Block.box(5,14,5,11,16,11);
-        SHAPE = Shapes.or(BASE, SHAPE_TOP);
-
-    }
+    public static final VoxelShape SHAPE = Block.box(6,0,6,10,16,10);
 
 
-    public LargeBaseBlock(Properties pProperties) {
-
+    public PoleBlock(Properties pProperties) {
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
     }
@@ -59,4 +45,5 @@ public class LargeBaseBlock extends HorizontalDirectionalBlock {
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
         return defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
+
 }

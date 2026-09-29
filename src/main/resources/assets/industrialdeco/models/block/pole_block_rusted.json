@@ -1,0 +1,7 @@
+{
+	"parent": "industrialdeco:block/pole_block",
+	"textures": {
+		"0": "industrialdeco:block/pole_rusted",
+		"particle": "industrialdeco:block/pole_rusted"
+	}
+}

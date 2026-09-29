@@ -37,6 +37,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         disabled_blocks.add(ModBlocks.BENCH.get());
         disabled_blocks.add(ModBlocks.PALLET.get());
         disabled_blocks.add(ModBlocks.STREET_LAMP.get());
+        disabled_blocks.add(ModBlocks.STREET_LAMP_RUSTED.get());
         disabled_blocks.add(ModBlocks.CEILING_OFFICE_LAMP.get());
         disabled_blocks.add(ModBlocks.WIRE_BLOCK.get());
         disabled_blocks.add(ModBlocks.WALL_SWITCH.get());
@@ -63,6 +64,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('N', Items.GLOWSTONE)
                 .unlockedBy(getHasName(Items.GLOWSTONE), has(Items.IRON_INGOT))
                 .save(pWriter);
+
+        CustomRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.STREET_LAMP.get()),RecipeCategory.MISC, ModBlocks.STREET_LAMP_RUSTED.get())
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .saveWithSuffix("_from_unrusted",pWriter, BuiltInRegistries.ITEM.getKey(ModBlocks.STREET_LAMP_RUSTED.get().asItem()));
+        CustomRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.STREET_LAMP_RUSTED.get()),RecipeCategory.MISC, ModBlocks.STREET_LAMP.get())
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .saveWithSuffix("_from_rusted",pWriter, BuiltInRegistries.ITEM.getKey(ModBlocks.STREET_LAMP.get().asItem()));
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CURVED_POLE.get(),2)
                 .pattern("  S")
                 .pattern(" S ")

@@ -1,0 +1,7 @@
+{
+	"parent": "industrialdeco:block/wire_pole",
+	"textures": {
+		"1": "industrialdeco:block/pole_rusted",
+		"particle": "industrialdeco:block/pole_rusted"
+	}
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "industrialdeco:block/chimney_wall_rusted"
+    },
+    "facing=north": {
+      "model": "industrialdeco:block/chimney_wall_rusted",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "industrialdeco:block/chimney_wall_rusted",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "industrialdeco:block/chimney_wall_rusted",
+      "y": 270
+    }
+  }
+}

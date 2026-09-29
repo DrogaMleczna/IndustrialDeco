@@ -2,7 +2,6 @@ package com.drogamleczna.industrialdeco.block;
 
 import com.drogamleczna.industrialdeco.IndustrialDeco;
 import com.drogamleczna.industrialdeco.block.custom.*;
-import com.drogamleczna.industrialdeco.block.custom.poles.*;
 import com.drogamleczna.industrialdeco.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -52,12 +51,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> POLE_BLOCK = registerBlock("pole_block",
             () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
-    public static final RegistryObject<Block> HAZARD_POLE = registerBlock("hazard_pole",
-            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
-                    .dynamicShape()));
-    public static final RegistryObject<Block> WARNING_POLE = registerBlock("warning_pole",
-            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
-                    .dynamicShape()));
     public static final RegistryObject<Block> CAMERA_POLE = registerBlock("camera_pole",
             () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
@@ -73,20 +66,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> SPLIT_POLE = registerBlock("split_pole",
             () -> new CurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
-    public static final RegistryObject<Block> DISTRIBUTION_BOX = registerBlock("distribution_box",
-            () -> new DistributionBoxBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
-                    .dynamicShape()));
-    public static final RegistryObject<Block> WALL_DISTRIBUTION_BOX = registerBlock("wall_distribution_box",
-            () -> new WallDistributionBoxBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
-                    .dynamicShape()));
     public static final RegistryObject<Block> MEDIUM_BASE = registerBlock("medium_pole_base",
             () -> new MediumPoleBaseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
-                    .dynamicShape()));
-    public static final RegistryObject<Block> PALLET = registerBlock("pallet",
-            () -> new PalletBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
-                    .dynamicShape().forceSolidOn()));
-    public static final RegistryObject<Block> SECURITY_CAMERA = registerBlock("security_camera",
-            () -> new SecurityCameraBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
                     .dynamicShape()));
     public static final RegistryObject<Block> CHIMNEY_BLOCK = registerBlock("chimney_block",
             () -> new ChimneyBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
@@ -97,6 +78,96 @@ public class ModBlocks {
     public static final RegistryObject<Block> WALL_CHIMNEY = registerBlock("chimney_wall",
             () -> new WallChimneyBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
                     .dynamicShape()));
+
+
+    public static final RegistryObject<Block> CROSSBUCK_BLOCK = registerBlock("crossbuck_block",
+            () -> new CrossbuckBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+
+
+    public static final RegistryObject<Block> STREET_LAMP_RUSTED = registerBlock("street_lamp_rusted",
+            () -> new StreetLampBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape().lightLevel((state) -> 15)));
+
+    public static final RegistryObject<Block> CURVED_POLE_RUSTED = registerBlock("curved_pole_rusted",
+            () -> new CurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> DOUBLE_CURVED_POLE_RUSTED = registerBlock("double_curved_pole_rusted",
+            () -> new DoubleCurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> QUADRUPLE_CURVED_POLE_RUSTED = registerBlock("quadruple_curved_pole_rusted",
+            () -> new QuadrupleCurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> CORNER_POLE_RUSTED = registerBlock("corner_pole_rusted",
+            () -> new CornerPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape().forceSolidOn()));
+    public static final RegistryObject<Block> WALL_CURVED_POLE_RUSTED = registerBlock("curved_wall_pole_rusted",
+            () -> new WallCurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
+                    .dynamicShape().forceSolidOn()));
+    public static final RegistryObject<Block> WIRE_POLE_RUSTED = registerBlock("wire_pole_rusted",
+            () -> new WirePoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> POLE_BASE_RUSTED = registerBlock("pole_base_rusted",
+            () -> new PoleBaseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> LARGE_BASE_RUSTED = registerBlock("large_base_rusted",
+            () -> new LargeBaseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> POLE_BLOCK_RUSTED = registerBlock("pole_block_rusted",
+            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> CAMERA_POLE_RUSTED = registerBlock("camera_pole_rusted",
+            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> CAMERA_POLE_CORNER_RUSTED = registerBlock("camera_pole_corner_rusted",
+            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> CAMERA_POLE_TRIPLE_RUSTED = registerBlock("camera_pole_triple_rusted",
+            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> CAMERA_POLE_QUADRUPLE_RUSTED = registerBlock("camera_pole_quadruple_rusted",
+            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> SPLIT_POLE_RUSTED = registerBlock("split_pole_rusted",
+            () -> new CurvedPoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> MEDIUM_BASE_RUSTED = registerBlock("medium_pole_base_rusted",
+            () -> new MediumPoleBaseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> CHIMNEY_BLOCK_RUSTED = registerBlock("chimney_block_rusted",
+            () -> new ChimneyBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> BENT_CHIMNEY_RUSTED = registerBlock("chimney_bent_rusted",
+            () -> new BentChimneyBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> WALL_CHIMNEY_RUSTED = registerBlock("chimney_wall_rusted",
+            () -> new WallChimneyBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
+                    .dynamicShape()));
+
+
+
+
+    public static final RegistryObject<Block> HAZARD_POLE = registerBlock("hazard_pole",
+            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> WARNING_POLE = registerBlock("warning_pole",
+            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+
+    public static final RegistryObject<Block> DISTRIBUTION_BOX = registerBlock("distribution_box",
+            () -> new DistributionBoxBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+    public static final RegistryObject<Block> WALL_DISTRIBUTION_BOX = registerBlock("wall_distribution_box",
+            () -> new WallDistributionBoxBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+
+    public static final RegistryObject<Block> PALLET = registerBlock("pallet",
+            () -> new PalletBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
+                    .dynamicShape().forceSolidOn()));
+    public static final RegistryObject<Block> SECURITY_CAMERA = registerBlock("security_camera",
+            () -> new SecurityCameraBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
+                    .dynamicShape()));
+
     public static final RegistryObject<Block> WIRE_BOX = registerBlock("wire_box",
             () -> new WireBoxBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
                     .dynamicShape()));
@@ -111,10 +182,6 @@ public class ModBlocks {
                     .dynamicShape()));
     public static final RegistryObject<Block> BENCH = registerBlock("bench",
             () -> new ChairBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2.0f).noOcclusion()
-                    .dynamicShape()));
-
-    public static final RegistryObject<Block> CROSSBUCK_BLOCK = registerBlock("crossbuck_block",
-            () -> new CrossbuckBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
     public static final RegistryObject<Block> METAL_FENCE_BLOCK = registerBlock("metal_fence_block",
             () -> new MetalFenceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()

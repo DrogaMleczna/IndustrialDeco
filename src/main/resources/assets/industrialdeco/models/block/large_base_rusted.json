@@ -1,0 +1,7 @@
+{
+	"parent": "industrialdeco:block/large_base",
+	"textures": {
+		"0": "industrialdeco:block/large_base_rusted",
+		"particle": "industrialdeco:block/large_base_rusted"
+	}
+}

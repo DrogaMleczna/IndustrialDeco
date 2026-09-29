@@ -1,0 +1,7 @@
+{
+	"parent": "industrialdeco:block/camera_pole_triple",
+	"textures": {
+		"0": "industrialdeco:block/camera_pole_corner_rusted",
+		"particle": "industrialdeco:block/camera_pole_corner_rusted"
+	}
+}

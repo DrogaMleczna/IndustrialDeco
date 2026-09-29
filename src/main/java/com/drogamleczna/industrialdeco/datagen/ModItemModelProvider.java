@@ -55,6 +55,27 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.CAGE_LAMP);
         blockItem(ModBlocks.RED_CAGE_LAMP);
 
+        blockItem(ModBlocks.STREET_LAMP_RUSTED);
+        blockItem(ModBlocks.POLE_BLOCK_RUSTED);
+        blockItem(ModBlocks.CURVED_POLE_RUSTED);
+        blockItem(ModBlocks.WALL_CURVED_POLE_RUSTED);
+        blockItem(ModBlocks.SPLIT_POLE_RUSTED);
+        blockItem(ModBlocks.DOUBLE_CURVED_POLE_RUSTED);
+        blockItem(ModBlocks.QUADRUPLE_CURVED_POLE_RUSTED);
+        blockItem(ModBlocks.CORNER_POLE_RUSTED);
+        blockItem(ModBlocks.WIRE_POLE_RUSTED);
+        blockItem(ModBlocks.POLE_BASE_RUSTED);
+        blockItem(ModBlocks.MEDIUM_BASE_RUSTED);
+        blockItem(ModBlocks.LARGE_BASE_RUSTED);
+        //blockItem(ModBlocks.CROSSBUCK_BLOCK_RUSTED);
+        blockItem(ModBlocks.CAMERA_POLE_RUSTED);
+        blockItem(ModBlocks.CAMERA_POLE_CORNER_RUSTED);
+        blockItem(ModBlocks.CAMERA_POLE_TRIPLE_RUSTED);
+        blockItem(ModBlocks.CAMERA_POLE_QUADRUPLE_RUSTED);
+        blockItem(ModBlocks.CHIMNEY_BLOCK_RUSTED);
+        blockItem(ModBlocks.BENT_CHIMNEY_RUSTED);
+        blockItem(ModBlocks.WALL_CHIMNEY_RUSTED);
+
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item){

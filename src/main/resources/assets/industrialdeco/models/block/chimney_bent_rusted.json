@@ -1,0 +1,7 @@
+{
+	"parent": "industrialdeco:block/chimney_bent",
+	"textures": {
+		"0": "industrialdeco:block/chimney_rusted",
+		"particle": "industrialdeco:block/chimney_rusted"
+	}
+}

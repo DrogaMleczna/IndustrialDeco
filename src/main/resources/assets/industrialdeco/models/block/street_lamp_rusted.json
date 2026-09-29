@@ -1,0 +1,7 @@
+{
+  "parent": "industrialdeco:block/street_lamp",
+  "textures": {
+    "0": "industrialdeco:block/street_lamp_rusted",
+    "particle": "industrialdeco:block/street_lamp_rusted"
+  }
+}

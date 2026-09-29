@@ -1,5 +1,4 @@
 {
-  "item.industrialdeco.street_lamp": "Street Lamp",
   "block.industrialdeco.street_lamp": "Street Lamp",
   "block.industrialdeco.curved_pole": "Curved Pole",
   "block.industrialdeco.wire_pole": "Wire Pole",
@@ -36,5 +35,32 @@
   "block.industrialdeco.metal_fence_block_yellow": "Hazard Metal Fence",
   "block.industrialdeco.cage_lamp": "Cage Lamp",
   "block.industrialdeco.red_cage_lamp": "Red Cage Lamp",
-  "creativetab.industrial_deco_tab": "Industrial Deco"
+  "creativetab.industrial_deco_tab": "Industrial Deco",
+  "creativetab.industrial_deco_rusted_tab": "Industrial Deco - Rusted",
+
+  "block.industrialdeco.street_lamp_rusted": "Rusted Street Lamp",
+  "block.industrialdeco.curved_pole_rusted": "Rusted Curved Pole",
+  "block.industrialdeco.wire_pole_rusted": "Rusted Wire Pole",
+  "block.industrialdeco.double_curved_pole_rusted": "Rusted Double Curved Pole",
+
+  "block.industrialdeco.quadruple_curved_pole_rusted": "Rusted Quadruple Curved Pole",
+  "block.industrialdeco.pole_base_rusted": "Rusted Pole Base",
+  "block.industrialdeco.large_base_rusted": "Rusted Large Base",
+  "block.industrialdeco.pole_block_rusted": "Rusted Pole",
+  "block.industrialdeco.hazard_pole_rusted": "Rusted Hazard Pole",
+  "block.industrialdeco.warning_pole_rusted": "Rusted Warning Pole",
+  "block.industrialdeco.camera_pole_rusted": "Rusted Camera Pole",
+  "block.industrialdeco.camera_pole_corner_rusted": "Rusted Corner Camera Pole",
+  "block.industrialdeco.camera_pole_triple_rusted": "Rusted Triple Camera Pole",
+  "block.industrialdeco.camera_pole_quadruple_rusted": "Rusted Quadruple Camera Pole",
+  "block.industrialdeco.split_pole_rusted": "Rusted Split Pole",
+  "block.industrialdeco.medium_pole_base_rusted": "Rusted Medium Pole Base",
+  "block.industrialdeco.chimney_block_rusted": "Rusted Chimney",
+  "block.industrialdeco.chimney_wall_rusted": "Rusted Wall Chimney",
+  "block.industrialdeco.curved_wall_pole_rusted": "Rusted Curved Wall Pole",
+  "block.industrialdeco.corner_pole_rusted": "Rusted Corner Pole",
+  "block.industrialdeco.chimney_bent_rusted": "Rusted Bent Chimney",
+  "block.industrialdeco.crossbuck_block_rusted": "Rusted Crossbuck",
+  "block.industrialdeco.metal_fence_block_rusted": "Rusted Metal Fence",
+  "block.industrialdeco.metal_fence_block_yellow_rusted": "Rusted Hazard Metal Fence"
 }

@@ -1,0 +1,7 @@
+{
+	"parent": "industrialdeco:block/curved_pole",
+	"textures": {
+		"0": "industrialdeco:block/curved_pole_rusted",
+		"particle": "industrialdeco:block/curved_pole_rusted"
+	}
+}
