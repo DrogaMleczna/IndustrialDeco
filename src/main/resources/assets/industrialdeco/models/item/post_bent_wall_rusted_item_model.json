@@ -1,0 +1,7 @@
+{
+  "parent": "industrialdeco:item/post_bent_wall_item_model",
+  "textures": {
+    "0": "industrialdeco:block/curved_pole_rusted",
+    "particle": "industrialdeco:block/curved_pole_rusted"
+  }
+}

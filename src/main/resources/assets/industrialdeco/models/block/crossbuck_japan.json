@@ -4,7 +4,7 @@
 	"textures": {
 		"1": "industrialdeco:block/pole",
 		"2": "industrialdeco:block/cossbuck_japan",
-		"particle": "industrialdeco:block/cossbuck_poland"
+		"particle": "industrialdeco:block/cossbuck_japan"
 	},
 	"elements": [
 		{

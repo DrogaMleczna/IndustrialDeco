@@ -58,7 +58,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.STREET_LAMP_RUSTED);
         blockItem(ModBlocks.POLE_BLOCK_RUSTED);
         blockItem(ModBlocks.CURVED_POLE_RUSTED);
-        blockItem(ModBlocks.WALL_CURVED_POLE_RUSTED);
+        //blockItem(ModBlocks.WALL_CURVED_POLE_RUSTED);
+        blockItemWithExisting(ModBlocks.WALL_CURVED_POLE_RUSTED, "post_bent_wall_rusted_item_model");
         blockItem(ModBlocks.SPLIT_POLE_RUSTED);
         blockItem(ModBlocks.DOUBLE_CURVED_POLE_RUSTED);
         blockItem(ModBlocks.QUADRUPLE_CURVED_POLE_RUSTED);
@@ -67,7 +68,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.POLE_BASE_RUSTED);
         blockItem(ModBlocks.MEDIUM_BASE_RUSTED);
         blockItem(ModBlocks.LARGE_BASE_RUSTED);
-        //blockItem(ModBlocks.CROSSBUCK_BLOCK_RUSTED);
+        blockItem(ModBlocks.CROSSBUCK_BLOCK_RUSTED);
         blockItem(ModBlocks.CAMERA_POLE_RUSTED);
         blockItem(ModBlocks.CAMERA_POLE_CORNER_RUSTED);
         blockItem(ModBlocks.CAMERA_POLE_TRIPLE_RUSTED);

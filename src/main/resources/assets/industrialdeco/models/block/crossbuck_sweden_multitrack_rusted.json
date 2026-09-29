@@ -1,0 +1,8 @@
+{
+  "parent": "industrialdeco:block/crossbuck_sweden_multitrack",
+  "textures": {
+    "1": "industrialdeco:block/pole_rusted",
+    "2": "industrialdeco:block/cossbuck_sweden_rusted",
+    "particle": "industrialdeco:block/cossbuck_sweden_rusted"
+  }
+}

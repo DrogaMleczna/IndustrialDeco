@@ -1,0 +1,8 @@
+{
+  "parent": "industrialdeco:block/crossbuck_europe",
+  "textures": {
+    "1": "industrialdeco:block/pole_rusted",
+    "2": "industrialdeco:block/cossbuck_europe_rusted",
+    "particle": "industrialdeco:block/cossbuck_poland_rusted"
+  }
+}
