@@ -133,7 +133,14 @@ public class ModBlocks {
     public static final DeferredBlock<Block> WALL_CHIMNEY_RUSTED = registerBlock("chimney_wall_rusted",
             () -> new WallChimneyBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(2.0f).noOcclusion()
                     .dynamicShape()));
-    
+
+    public static final DeferredBlock<Block> CROSSBUCK_BLOCK = registerBlock("crossbuck_block",
+            () -> new CrossbuckBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
+
+    public static final DeferredBlock<Block> CROSSBUCK_BLOCK_RUSTED = registerBlock("crossbuck_block_rusted",
+            () -> new CrossbuckBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()));
     
     
     
@@ -170,10 +177,6 @@ public class ModBlocks {
                     .dynamicShape()));
     public static final DeferredBlock<Block> BENCH = registerBlock("bench",
             () -> new ChairBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(2.0f).noOcclusion()
-                    .dynamicShape()));
-
-    public static final DeferredBlock<Block> CROSSBUCK_BLOCK = registerBlock("crossbuck_block",
-            () -> new CrossbuckBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
     public static final DeferredBlock<Block> METAL_FENCE_BLOCK = registerBlock("metal_fence_block",
             () -> new MetalFenceBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
