@@ -75,6 +75,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.POLE_BASE_RUSTED.get());
                         pOutput.accept(ModBlocks.MEDIUM_BASE_RUSTED.get());
                         pOutput.accept(ModBlocks.LARGE_BASE_RUSTED.get());
+                        pOutput.accept(ModBlocks.CROSSBUCK_BLOCK_RUSTED.get());
                         pOutput.accept(ModBlocks.CAMERA_POLE_RUSTED.get());
                         pOutput.accept(ModBlocks.CAMERA_POLE_CORNER_RUSTED.get());
                         pOutput.accept(ModBlocks.CAMERA_POLE_TRIPLE_RUSTED.get());
