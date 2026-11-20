@@ -83,6 +83,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.CHIMNEY_BLOCK_RUSTED.get());
                         pOutput.accept(ModBlocks.BENT_CHIMNEY_RUSTED.get());
                         pOutput.accept(ModBlocks.WALL_CHIMNEY_RUSTED.get());
+                        pOutput.accept(ModItems.ANGLE_GRINDER);
 
 
                     })
