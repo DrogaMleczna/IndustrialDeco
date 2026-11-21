@@ -2,16 +2,23 @@ package com.drogamleczna.industrialdeco.block;
 
 import com.drogamleczna.industrialdeco.IndustrialDeco;
 import com.drogamleczna.industrialdeco.block.custom.*;
+import com.drogamleczna.industrialdeco.block.custom.util.TrainSignalStateProperty;
 import com.drogamleczna.industrialdeco.item.ModItems;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
+import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -76,6 +83,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> WALL_CHIMNEY = registerBlock("chimney_wall",
             () -> new WallChimneyBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(2.0f).noOcclusion()
                     .dynamicShape()));
+
+
+
+
     public static final DeferredBlock<Block> STREET_LAMP_RUSTED = registerBlock("street_lamp_rusted",
             () -> new StreetLampBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape().lightLevel((state) -> 15)));
@@ -193,6 +204,32 @@ public class ModBlocks {
     public static final DeferredBlock<Block> RED_CAGE_LAMP = registerBlock("red_cage_lamp",
             () -> new CageLampBlock(BlockBehaviour.Properties.of().lightLevel((state) -> state.getValue(BlockStateProperties.LIT)?15:0).sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
                     .dynamicShape()));
+
+    public static final DeferredBlock<Block> GUIDE_POST = registerBlock("guide_post",
+            () -> new PoleBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()){
+                public static final VoxelShape SHAPE = Block.box(6,0,6,10,19,10);
+                @Nullable
+                @Override
+                public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+                    return SHAPE;
+                }
+            });
+    public static final DeferredBlock<Block> TRAIN_SIGNAL = registerBlock("train_signal",
+            ()-> new TrainSignalBlock(BlockBehaviour.Properties.of().lightLevel(
+                    (state) -> {
+                        switch (state.getValue(TrainSignalBlock.LIGHTS)){
+                            case ON:
+                                return 15;
+
+                            case LEFT:
+                            case RIGHT:
+                                return 10;
+                            default:
+                                return 0;
+                        }
+                    }).sound(SoundType.METAL).strength(1.0f)
+                    .requiresCorrectToolForDrops().noOcclusion().dynamicShape()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

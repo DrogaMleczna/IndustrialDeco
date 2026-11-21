@@ -1,5 +1,6 @@
 package com.drogamleczna.industrialdeco.block.custom;
 
+import com.drogamleczna.industrialdeco.block.custom.util.RedstoneConductingHorizontalDirectionalBlock;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -16,7 +17,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class LargeBaseBlock extends HorizontalDirectionalBlock {
+public class LargeBaseBlock extends RedstoneConductingHorizontalDirectionalBlock {
 
     //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
 
@@ -33,7 +34,6 @@ public class LargeBaseBlock extends HorizontalDirectionalBlock {
 
 
     public LargeBaseBlock(Properties pProperties) {
-
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
     }

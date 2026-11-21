@@ -75,7 +75,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.BENT_CHIMNEY_RUSTED.get())
                 .add(ModBlocks.WALL_CHIMNEY_RUSTED.get())
                 .add(ModBlocks.CHIMNEY_BLOCK_RUSTED.get())
-                .add(ModBlocks.CEILING_OFFICE_LAMP.get());
+                .add(ModBlocks.CEILING_OFFICE_LAMP.get())
+                .add(ModBlocks.TRAIN_SIGNAL.get())
+                .add(ModBlocks.GUIDE_POST.get());
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.STREET_LAMP.get())
                 .add(ModBlocks.CURVED_POLE.get())
@@ -130,6 +132,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.BENT_CHIMNEY_RUSTED.get())
                 .add(ModBlocks.WALL_CHIMNEY_RUSTED.get())
                 .add(ModBlocks.CHIMNEY_BLOCK_RUSTED.get())
+                .add(ModBlocks.GUIDE_POST.get())
+                .add(ModBlocks.TRAIN_SIGNAL.get())
                 .add(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get());
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.PALLET.get())
@@ -188,6 +192,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.BENT_CHIMNEY_RUSTED.get())
                 .add(ModBlocks.WALL_CHIMNEY_RUSTED.get())
                 .add(ModBlocks.CHIMNEY_BLOCK_RUSTED.get())
+                .add(ModBlocks.GUIDE_POST.get())
+                .add(ModBlocks.TRAIN_SIGNAL.get())
                 .add(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get());
     }
 

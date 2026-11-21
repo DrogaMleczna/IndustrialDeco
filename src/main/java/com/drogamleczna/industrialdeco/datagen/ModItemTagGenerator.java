@@ -67,6 +67,8 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ModBlocks.CHIMNEY_BLOCK_RUSTED.get().asItem())
                 .add(ModBlocks.CROSSBUCK_BLOCK.get().asItem())
                 .add(ModBlocks.CROSSBUCK_BLOCK_RUSTED.get().asItem())
+                .add(ModBlocks.GUIDE_POST.get().asItem())
+                .add(ModBlocks.TRAIN_SIGNAL.get().asItem())
                 .add(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get().asItem());
     }
 }

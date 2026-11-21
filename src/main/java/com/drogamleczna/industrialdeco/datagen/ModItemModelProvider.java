@@ -51,7 +51,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlockItem(ModBlocks.WIRE_BLOCK.get());
         simpleBlockItem(ModBlocks.CAGE_LAMP.get());
         simpleBlockItem(ModBlocks.RED_CAGE_LAMP.get());
-        
+        simpleBlockItem(ModBlocks.GUIDE_POST.get());
+        simpleBlockItem(ModBlocks.TRAIN_SIGNAL.get());
+
         simpleBlockItem(ModBlocks.CURVED_POLE_RUSTED.get());;
         simpleBlockItem(ModBlocks.DOUBLE_CURVED_POLE_RUSTED.get());
         simpleBlockItem(ModBlocks.WIRE_POLE_RUSTED.get());

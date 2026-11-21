@@ -140,7 +140,7 @@ public class WireBlock extends FaceAttachedHorizontalDirectionalBlock {
     }
 
     protected boolean isSignalSource(BlockState state) {
-        return state.is(this) ? (Integer)state.getValue(POWER)>0 : false;
+        return state.is(this) && (Integer) state.getValue(POWER) > 0;
     }
 
 
