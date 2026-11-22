@@ -35,6 +35,8 @@
   "block.industrialdeco.metal_fence_block_yellow": "Hazard Metal Fence",
   "block.industrialdeco.cage_lamp": "Cage Lamp",
   "block.industrialdeco.red_cage_lamp": "Red Cage Lamp",
+  "block.industrialdeco.train_signal": "Train Signal",
+  "block.industrialdeco.guide_post": "Guide Post",
   "creativetab.industrial_deco_tab": "Industrial Deco",
   "creativetab.industrial_deco_rusted_tab": "Industrial Deco - Rusted",
 
@@ -62,5 +64,7 @@
   "block.industrialdeco.chimney_bent_rusted": "Rusted Bent Chimney",
   "block.industrialdeco.crossbuck_block_rusted": "Rusted Crossbuck",
   "block.industrialdeco.metal_fence_block_rusted": "Rusted Metal Fence",
-  "block.industrialdeco.metal_fence_block_yellow_rusted": "Rusted Hazard Metal Fence"
+  "block.industrialdeco.metal_fence_block_yellow_rusted": "Rusted Hazard Metal Fence",
+
+  "item.industrialdeco.angle_grinder": "Angle Grinder"
 }

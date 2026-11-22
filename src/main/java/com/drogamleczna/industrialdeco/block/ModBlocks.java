@@ -3,16 +3,23 @@ package com.drogamleczna.industrialdeco.block;
 import com.drogamleczna.industrialdeco.IndustrialDeco;
 import com.drogamleczna.industrialdeco.block.custom.*;
 import com.drogamleczna.industrialdeco.item.ModItems;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -78,6 +85,31 @@ public class ModBlocks {
     public static final RegistryObject<Block> WALL_CHIMNEY = registerBlock("chimney_wall",
             () -> new WallChimneyBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(2.0f).noOcclusion()
                     .dynamicShape()));
+
+    public static final RegistryObject<Block> GUIDE_POST = registerBlock("guide_post",
+            () -> new PoleBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape()){
+                public static final VoxelShape SHAPE = Block.box(6,0,6,10,19,10);
+                @Nullable
+                @Override
+                public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+                    return SHAPE;
+                }
+            });
+    public static final RegistryObject<Block> TRAIN_SIGNAL = registerBlock("train_signal",
+            () -> new TrainSignalBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f).requiresCorrectToolForDrops().noOcclusion()
+                    .dynamicShape().lightLevel((state) -> {
+                        switch (state.getValue(TrainSignalBlock.LIGHTS)){
+                            case ON:
+                                return 15;
+
+                            case LEFT:
+                            case RIGHT:
+                                return 10;
+                            default:
+                                return 0;
+                        }
+                    })));
 
 
     public static final RegistryObject<Block> CROSSBUCK_BLOCK = registerBlock("crossbuck_block",

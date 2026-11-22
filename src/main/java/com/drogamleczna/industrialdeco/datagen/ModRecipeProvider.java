@@ -1,6 +1,7 @@
 package com.drogamleczna.industrialdeco.datagen;
 
 import com.drogamleczna.industrialdeco.block.ModBlocks;
+import com.drogamleczna.industrialdeco.item.ModItems;
 import com.drogamleczna.industrialdeco.util.ModTags;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -62,6 +63,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("SNS")
                 .define('S', Items.IRON_INGOT)
                 .define('N', Items.GLOWSTONE)
+                .unlockedBy(getHasName(Items.GLOWSTONE), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ANGLE_GRINDER.get(), 1)
+                .pattern(" G ")
+                .pattern("SNS")
+                .pattern("SNS")
+                .define('S', Items.IRON_INGOT)
+                .define('N', Items.COPPER_INGOT)
+                .define('G', Items.GRINDSTONE)
                 .unlockedBy(getHasName(Items.GLOWSTONE), has(Items.IRON_INGOT))
                 .save(pWriter);
 

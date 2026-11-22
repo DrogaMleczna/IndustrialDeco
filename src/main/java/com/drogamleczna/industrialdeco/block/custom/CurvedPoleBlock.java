@@ -1,5 +1,6 @@
 package com.drogamleczna.industrialdeco.block.custom;
 
+import com.drogamleczna.industrialdeco.block.custom.util.RedstoneConductingHorizontalDirectionalBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -20,7 +21,7 @@ import javax.annotation.Nullable;
 
 import static com.drogamleczna.industrialdeco.IndustrialDeco.WRENCH_TAG;
 
-public class CurvedPoleBlock extends HorizontalDirectionalBlock {
+public class CurvedPoleBlock extends RedstoneConductingHorizontalDirectionalBlock {
 
     //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
 

@@ -1,5 +1,6 @@
 package com.drogamleczna.industrialdeco.block.custom;
 
+import com.drogamleczna.industrialdeco.block.custom.util.RedstoneConductingHorizontalDirectionalBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -24,7 +25,7 @@ import javax.annotation.Nullable;
 
 import static com.drogamleczna.industrialdeco.IndustrialDeco.WRENCH_TAG;
 
-public class MetalFenceBlock extends HorizontalDirectionalBlock {
+public class MetalFenceBlock extends RedstoneConductingHorizontalDirectionalBlock {
 
     public static final VoxelShape SHAPE_N;
     public static final VoxelShape SHAPE_S;

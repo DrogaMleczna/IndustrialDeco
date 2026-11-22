@@ -54,6 +54,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.METAL_FENCE_BLOCK_YELLOW);
         blockItem(ModBlocks.CAGE_LAMP);
         blockItem(ModBlocks.RED_CAGE_LAMP);
+        blockItem(ModBlocks.GUIDE_POST);
+        blockItem(ModBlocks.TRAIN_SIGNAL);
 
         blockItem(ModBlocks.STREET_LAMP_RUSTED);
         blockItem(ModBlocks.POLE_BLOCK_RUSTED);

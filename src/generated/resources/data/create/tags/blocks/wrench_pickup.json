@@ -53,6 +53,8 @@
     "industrialdeco:chimney_block_rusted",
     "industrialdeco:chimney_wall_rusted",
     "industrialdeco:chimney_bent_rusted",
+    "industrialdeco:guide_post",
+    "industrialdeco:train_signal",
     "industrialdeco:metal_fence_block"
   ]
 }

@@ -1,5 +1,6 @@
 package com.drogamleczna.industrialdeco.block.custom;
 
+import com.drogamleczna.industrialdeco.block.custom.util.RedstoneConductingHorizontalDirectionalBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -11,7 +12,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 
-public class PoleBlock extends HorizontalDirectionalBlock {
+public class PoleBlock extends RedstoneConductingHorizontalDirectionalBlock {
 
     //public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST);
 

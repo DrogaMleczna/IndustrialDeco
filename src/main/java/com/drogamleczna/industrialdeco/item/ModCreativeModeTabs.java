@@ -41,7 +41,9 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.WIRE_BLOCK.get());
                         pOutput.accept(ModBlocks.WARNING_POLE.get());
                         pOutput.accept(ModBlocks.HAZARD_POLE.get());
+                        pOutput.accept(ModBlocks.GUIDE_POST.get());
                         pOutput.accept(ModBlocks.CROSSBUCK_BLOCK.get());
+                        pOutput.accept(ModBlocks.TRAIN_SIGNAL.get());
                         pOutput.accept(ModBlocks.METAL_FENCE_BLOCK.get());
                         pOutput.accept(ModBlocks.METAL_FENCE_BLOCK_YELLOW.get());
                         pOutput.accept(ModBlocks.CAMERA_POLE.get());
@@ -83,6 +85,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.CHIMNEY_BLOCK_RUSTED.get());
                         pOutput.accept(ModBlocks.BENT_CHIMNEY_RUSTED.get());
                         pOutput.accept(ModBlocks.WALL_CHIMNEY_RUSTED.get());
+                        pOutput.accept(ModItems.ANGLE_GRINDER.get());
 
 
                     })

@@ -1,0 +1,10 @@
+{
+  "angle_grinder": {
+    "sounds": [
+      {
+        "name": "industrialdeco:angle_grinder"
+      }
+    ],
+    "subtitle": "industrialdeco.angle_grinder"
+  }
+}
